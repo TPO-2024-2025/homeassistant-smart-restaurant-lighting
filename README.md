@@ -328,7 +328,7 @@ If you want to see physical examples of how the pictures should look like, open 
 
 ---
 
-### Rest of the customization process
+### 2.1.2 & 2.1.3 - Rest of the customization process
 
 The rest of the customization process is nearly identical to the 2D dashboard process, refer to that. Keep in mind two crucial differences, though:
 
