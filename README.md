@@ -203,7 +203,8 @@ For sections **not controlled by Home Assistant**, you should do the following:
 If you are not using a white background for your light being off and your base image (where all the lights are off) then you may not need the `multiply` blend mode. If you are having issues try switching to the `lighten` blend mode, which we will be using below for the 3D dashboard.
 
 
-[Read more about blending modes here if you want to dive into detail on this topic, or if you want heavy customization.](%5Bhttps://helpx.adobe.com/photoshop/using/blending-modes.html%5D%28Read%20more%20about%20blending%20modes%20here%29).
+[Read more about blending modes here if you want to dive into detail on this topic, or if you want heavy customization.](https://helpx.adobe.com/photoshop/using/blending-modes.html)
+
 
 
 
@@ -328,7 +329,7 @@ If you want to see physical examples of how the pictures should look like, open 
 
 ---
 
-### 2.1.2 & 2.1.3 - Rest of the customization process
+### 2.2.2 & 2.2.3 - Rest of the customization process
 
 The rest of the customization process is nearly identical to the 2D dashboard process, refer to that. Keep in mind two crucial differences, though:
 
