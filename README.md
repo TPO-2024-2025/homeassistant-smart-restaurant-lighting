@@ -374,6 +374,71 @@ You must use `multiply` blend mode for 3D images instead of `lighten`. Code is i
 
 ---
 
-# New section
+## 3. Local Development Setup for Home Assistant Light Scene Generator
+
+This is a web application that allows you to generate lighting scenes based on user descriptions. Using artificial intelligence (OpenAI GPT-4o-mini), it creates a YAML configuration from the description, which you can directly paste into `scripts.yaml`.
+
+---
+
+## How to Use the Web Application
+
+1. Visit the website with the app (`https://miag676.github.io/ha-redirect-page/`) and select Scene Generator.
+2. Enter a scene description in the text field, e.g., `evening ambient (darker)`.
+3. Click the **"Generate Scene"** button.
+4. A YAML configuration will appear below the field, ready for use in Home Assistant.
+
+---
+
+## How to Use the Generated Scene in Home Assistant
+
+1. Open your `scripts.yaml` in the Home Assistant configuration folder (in our example: `Projekt-04/src/env/config/scripts.yaml`).
+2. Copy the generated YAML code from the application.
+3. Paste it into the file alongside existing scenes.
+4. Save the file.
+5. In Home Assistant, go to Developer Tools → YAML → Reload Scripts, or restart Home Assistant to load the new script.
+
+## Further Automation (What We Didn’t Manage)
+
+Our goal was to enable full automation—meaning the generated YAML code would automatically be saved into `scripts.yaml`.
+
+Although we laid the foundation, we ran out of time to complete the final implementation.
+
+## How to Run the Application Locally (Advanced)
+
+If you want to run the **scene generator** locally or customize it to your needs, follow these steps:
+
+1. **Download the project from the GitHub repository**  
+   Repository: [https://github.com/miag676/Tpo-SceneGenerator](https://github.com/miag676/Tpo-SceneGenerator)  
+   Download via **Code → Download ZIP** or use the command:  
+   `git clone https://github.com/miag676/Tpo-SceneGenerator.git`
+   
+2. **Install dependencies**  
+   In the terminal, go to the project folder and run:  
+   `npm install`
+
+3. **Add your OpenAI API key**  
+   In the file `api.js`, replace the OpenAI API key.
+    
+4. **Run the application**  
+   `npm start`  
+   The app will be available at a URL like `http://localhost:3000`.
+
+5. **Using the application**  
+   Same as the web version – enter a scene description and click "Generate Scene".
+    
+To also run the **landing page** locally, follow these steps:
+
+1. **Download the project from the GitHub repository**  
+   Repository: [https://github.com/miag676/ha-redirect-page](https://github.com/miag676/ha-redirect-page)  
+   Download via **Code → Download ZIP** or use the command:  
+   `git clone https://github.com/miag676/ha-redirect-page.git`
+   
+2. **Install dependencies**  
+   In the terminal, go to the project folder and run:  
+   `npm install`
+
+4. **Run the application**  
+   `npm start`  
+   The app will be available at a URL like `http://localhost:5000`.
 
 
