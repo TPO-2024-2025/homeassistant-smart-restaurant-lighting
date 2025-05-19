@@ -378,6 +378,7 @@ You must use `multiply` blend mode for 3D images instead of `lighten`. Code is i
 
 This is a web application that allows you to generate lighting scenes based on user descriptions. Using artificial intelligence (OpenAI GPT-4o-mini), it creates a YAML configuration from the description, which you can directly paste into `scripts.yaml`.
 
+![2D Image](img/scene-generator.png)
 ---
 
 ## How to Use the Web Application
