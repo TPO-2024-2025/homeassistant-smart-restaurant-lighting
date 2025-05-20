@@ -442,4 +442,140 @@ To also run the **landing page** locally, follow these steps:
    `npm start`  
    The app will be available at a URL like `http://localhost:5000`.
 
+## How to implemenet you new automation and automation management
+```markdown
+All automations for this project are defined in:
+
+```
+src/env/config/automations.yaml
+```
+
+This file uses **YAML syntax** compatible with **Home Assistant** and similar frameworks. Keeping automations centralized helps with easy management, reviewing, and extending automated behaviors.
+
+---
+
+## Structure of an Automation
+
+Each automation is a YAML object with the following keys:
+
+- `id`: Unique identifier (string or number)
+- `alias`: Human-readable name
+- `trigger`: Event(s) or condition(s) to start the automation
+- `condition` (optional): Extra checks to control execution
+- `action`: Steps to execute once triggered
+- `mode` (optional): Controls behavior on multiple triggers
+
+### Sample Structure
+
+```yaml
+- id: 'unique_automation_id'
+  alias: Example Automation
+  trigger:
+    - platform: state
+      entity_id: sensor.example
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: switch.example
+      state: 'off'
+  action:
+    - service: switch.turn_on
+      target:
+        entity_id: switch.example
+  mode: single
+```
+
+---
+
+## How to Add a New Automation
+
+1. Open `automations.yaml` in your editor.
+2. Copy an existing block or use the structure above.
+3. Assign a **unique `id`** and **clear `alias`**.
+4. Define the **trigger**:
+   - State changes (e.g., sensor turned on)
+   - Time-based (e.g., every day at 08:00)
+   - Custom events
+5. *(Optional)* Add **conditions** to restrict when it runs.
+6. Define the **action(s)**:
+   - Turn on devices, send messages, delay steps, etc.
+7. *(Optional)* Set the `mode`:
+   - `single`, `restart`, `queued`, or `parallel`
+8. Save and **reload automations** or restart the service.
+
+---
+
+## Example: Air Quality Sensor Automation
+
+Automatically turn on an air quality alert if air quality drops below a threshold.
+
+```yaml
+- alias: Air Quality Signal Light
+  trigger:
+  - platform: state
+    entity_id: sensor.co2_level
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: numeric_state
+        entity_id: sensor.co2_level
+        above: 1000
+        below: 1200
+      sequence:
+      - service: light.turn_on
+        target:
+          entity_id: light.signal_light
+        data:
+          rgb_color:
+          - 255
+          - 102
+          - 102
+          brightness: 255
+    - conditions:
+      - condition: numeric_state
+        entity_id: sensor.co2_level
+        above: 1200
+        below: 1500
+      sequence:
+      - service: light.turn_on
+        target:
+          entity_id: light.signal_light
+        data:
+          rgb_color:
+          - 255
+          - 51
+          - 51
+          brightness: 255
+    - conditions:
+      - condition: numeric_state
+        entity_id: sensor.co2_level
+        above: 1500
+      sequence:
+      - service: light.turn_on
+        target:
+          entity_id: light.signal_light
+        data:
+          rgb_color:
+          - 204
+          - 0
+          - 0
+          brightness: 255
+    default:
+    - service: light.turn_off
+      target:
+        entity_id: light.signal_light
+```
+
+### Breakdown
+
+- **`entity_id`**: Unique key `sensor.co2_level`
+- **`alias`**: Describes the purpose
+- **`trigger`**: Runs when air quality < 50
+- **`condition`**: Only if purifier is currently off
+- **`action`**: Turns on purifier + sends notification
+- **`mode`**: `single` = ignore repeated triggers until complete
+
+
+
 
