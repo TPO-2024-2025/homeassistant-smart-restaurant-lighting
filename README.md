@@ -442,7 +442,7 @@ To also run the **landing page** locally, follow these steps:
    `npm start`  
    The app will be available at a URL like `http://localhost:5000`.
 
-## How to implemenet you new automation and automation management
+## 4. How to implemenet your new automation and automation management
 ```markdown
 All automations for this project are defined in:
 
