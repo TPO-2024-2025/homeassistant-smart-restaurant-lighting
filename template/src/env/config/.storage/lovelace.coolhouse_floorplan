@@ -1,0 +1,205 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.coolhouse_floorplan",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "title": "Coolhouse Floorplan",
+          "type": "panel",
+          "path": "first",
+          "badges": [],
+          "cards": [
+            {
+              "type": "horizontal-stack",
+              "cards": [
+                {
+                  "type": "picture-elements",
+                  "image": "/local/3DL/3DL_0.png",
+                  "panel": true,
+                  "elements": [
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_one",
+                      "style": {
+                        "left": "50%",
+                        "top": "50%",
+                        "width": "100%",
+                        "mix-blend-mode": "lighten",
+                        "filter": "${ \"hue-rotate(\" + (states[‘light.fake_light_one’].attributes.hs_color ? states[‘light.fake_light_one’].attributes.hs_color[0] : 0) + \"deg)\"}",
+                        "opacity": "${states[‘light.fake_light_one’].state === 'on' ? (states[‘light.fake_light_one’].attributes.brightness / 255) : '0'}"
+                      },
+                      "state_image": {
+                        "on": "/local/3DL/3DL_1.png",
+                        "off": "/local/3DL/3DL_0.png"
+                      },
+                      "tap_action": {
+                        "action": "none"
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_two",
+                      "style": {
+                        "left": "50%",
+                        "top": "50%",
+                        "width": "100%",
+                        "mix-blend-mode": "lighten",
+                        "filter": "${ \"hue-rotate(\" + (states[‘light.fake_light_two’].attributes.hs_color ? states[‘light.fake_light_two’].attributes.hs_color[0] : 0) + \"deg)\"}",
+                        "opacity": "${states[‘light.fake_light_two’].state === 'on' ? (states[‘light.fake_light_two’].attributes.brightness / 255) : '0'}"
+                      },
+                      "state_image": {
+                        "on": "/local/3DL/3DL_2.png",
+                        "off": "/local/3DL/3DL_0.png"
+                      },
+                      "tap_action": {
+                        "action": "none"
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_three",
+                      "style": {
+                        "left": "50%",
+                        "top": "50%",
+                        "width": "100%",
+                        "mix-blend-mode": "lighten",
+                        "filter": "${ \"hue-rotate(\" + (states[‘light.fake_light_three’].attributes.hs_color ? states[‘light.fake_light_three’].attributes.hs_color[0] : 0) + \"deg)\"}",
+                        "opacity": "${states[‘light.fake_light_three’].state === 'on' ? (states[‘light.fake_light_three’].attributes.brightness / 255) : '0'}"
+                      },
+                      "state_image": {
+                        "on": "/local/3DL/3DL_3.png",
+                        "off": "/local/3DL/3DL_0.png"
+                      },
+                      "tap_action": {
+                        "action": "none"
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_four",
+                      "style": {
+                        "left": "50%",
+                        "top": "50%",
+                        "width": "100%",
+                        "mix-blend-mode": "lighten",
+                        "filter": "${ \"hue-rotate(\" + (states[‘light.fake_light_four’].attributes.hs_color ? states[‘light.fake_light_four’].attributes.hs_color[0] : 0) + \"deg)\"}",
+                        "opacity": "${states[‘light.fake_light_four’].state === 'on' ? (states[‘light.fake_light_four’].attributes.brightness / 255) : '0'}"
+                      },
+                      "state_image": {
+                        "on": "/local/3DL/3DL_4.png",
+                        "off": "/local/3DL/3DL_0.png"
+                      },
+                      "tap_action": {
+                        "action": "none"
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_five",
+                      "style": {
+                        "left": "50%",
+                        "top": "50%",
+                        "width": "100%",
+                        "mix-blend-mode": "lighten",
+                        "filter": "${ \"hue-rotate(\" + (states[‘light.fake_light_five’].attributes.hs_color ? states[‘light.fake_light_five’].attributes.hs_color[0] : 0) + \"deg)\"}",
+                        "opacity": "${states[‘light.fake_light_five’].state === 'on' ? (states[‘light.fake_light_five’].attributes.brightness / 255) : '0'}"
+                      },
+                      "state_image": {
+                        "on": "/local/3DL/3DL_5.png",
+                        "off": "/local/3DL/3DL_0.png"
+                      },
+                      "tap_action": {
+                        "action": "none"
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "entity": "light.signal_light",
+                      "style": {
+                        "left": "50%",
+                        "top": "50%",
+                        "width": "100%",
+                        "mix-blend-mode": "lighten",
+                        "filter": "${ \"hue-rotate(\" + (states[‘light.signal_light’].attributes.hs_color ? states[‘light.signal_light’].attributes.hs_color[0] : 0) + \"deg)\"}",
+                        "opacity": "${states[‘light.signal_light’].state === 'on' ? (states[‘light.signal_light’].attributes.brightness / 255) : '0'}"
+                      },
+                      "state_image": {
+                        "on": "/local/3DL/3DL_R2.png",
+                        "off": "/local/3DL/3DL_0.png"
+                      },
+                      "tap_action": {
+                        "action": "none"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "light.fake_light_one",
+                      "style": {
+                        "left": "47%",
+                        "top": "43%",
+                        "opacity": "100%"
+                      },
+                      "tap_action": {
+                        "action": "toggle"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "light.fake_light_two",
+                      "style": {
+                        "left": "35%",
+                        "top": "47%",
+                        "opacity": "100%"
+                      },
+                      "tap_action": {
+                        "action": "toggle"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "light.fake_light_three",
+                      "style": {
+                        "left": "41%",
+                        "top": "58%",
+                        "opacity": "100%"
+                      },
+                      "tap_action": {
+                        "action": "toggle"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "light.fake_light_four",
+                      "style": {
+                        "left": "46%",
+                        "top": "68%",
+                        "opacity": "100%"
+                      },
+                      "tap_action": {
+                        "action": "toggle"
+                      }
+                    },
+                    {
+                      "type": "state-icon",
+                      "entity": "light.fake_light_five",
+                      "style": {
+                        "left": "52%",
+                        "top": "75%",
+                        "opacity": "100%"
+                      },
+                      "tap_action": {
+                        "action": "toggle"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

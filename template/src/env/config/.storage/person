@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "minor_version": 1,
+  "key": "person",
+  "data": {
+    "items": [
+      {
+        "id": "coolhouse_restavracija",
+        "name": "Coolhouse Restavracija",
+        "user_id": "e30434cbebdc45709543007c78edd70e",
+        "device_trackers": []
+      }
+    ]
+  }
+}

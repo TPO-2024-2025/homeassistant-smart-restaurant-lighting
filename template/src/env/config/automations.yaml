@@ -1,0 +1,289 @@
+- alias: Dynamic Illumination with Time and Lux
+  trigger:
+    - platform: state
+      entity_id: input_number.test_lux
+  condition: []
+  action:
+    - choose:
+        - conditions:
+            - condition: numeric_state
+              entity_id: input_number.test_lux
+              below: 500
+          sequence:
+            - service: light.turn_on
+              data:
+                entity_id:
+                  - light.fake_light_one
+                  - light.fake_light_two
+                  - light.fake_light_three
+                  - light.fake_light_four
+                  - light.fake_light_five
+                rgb_color: [255, 160, 80]
+                brightness_pct: 70
+        - conditions:
+            - condition: numeric_state
+              entity_id: input_number.test_lux
+              above: 500
+              below: 2000
+          sequence:
+            - service: light.turn_on
+              data:
+                entity_id:
+                  - light.fake_light_one
+                  - light.fake_light_two
+                  - light.fake_light_three
+                  - light.fake_light_four
+                  - light.fake_light_five
+                rgb_color: [255, 200, 120]
+                brightness_pct: 85
+        - conditions:
+            - condition: numeric_state
+              entity_id: input_number.test_lux
+              above: 2000
+          sequence:
+            - service: light.turn_on
+              data:
+                entity_id:
+                  - light.fake_light_one
+                  - light.fake_light_two
+                  - light.fake_light_three
+                  - light.fake_light_four
+                  - light.fake_light_five
+                rgb_color: [255, 255, 200]
+                brightness_pct: 100
+      default: []
+- alias: Air Quality Signal Light
+  trigger:
+  - platform: state
+    entity_id: sensor.co2_level
+  condition: []
+  action:
+  - choose:
+    - conditions:
+      - condition: numeric_state
+        entity_id: sensor.co2_level
+        above: 1000
+        below: 1200
+      sequence:
+      - service: light.turn_on
+        target:
+          entity_id: light.signal_light
+        data:
+          rgb_color:
+          - 255
+          - 102
+          - 102
+          brightness: 255
+    - conditions:
+      - condition: numeric_state
+        entity_id: sensor.co2_level
+        above: 1200
+        below: 1500
+      sequence:
+      - service: light.turn_on
+        target:
+          entity_id: light.signal_light
+        data:
+          rgb_color:
+          - 255
+          - 51
+          - 51
+          brightness: 255
+    - conditions:
+      - condition: numeric_state
+        entity_id: sensor.co2_level
+        above: 1500
+      sequence:
+      - service: light.turn_on
+        target:
+          entity_id: light.signal_light
+        data:
+          rgb_color:
+          - 204
+          - 0
+          - 0
+          brightness: 255
+    default:
+    - service: light.turn_off
+      target:
+        entity_id: light.signal_light
+  id: 224f01bf9c0b4acbb28e4c1832448a81
+- alias: Auto Light One On/Off
+  trigger:
+  - platform: state
+    entity_id: input_boolean.fake_light_one_presence
+    to: 'on'
+  action:
+  - service: light.turn_on
+    target:
+      entity_id: light.fake_light_one
+  - delay: 00:00:10
+  - service: light.turn_off
+    target:
+      entity_id: light.fake_light_one
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.fake_light_one_presence
+  id: 1dbc7a70ee4e443484d520df92f4133b
+- alias: Auto Light Two On/Off
+  trigger:
+  - platform: state
+    entity_id: input_boolean.fake_light_two_presence
+    to: 'on'
+  action:
+  - service: light.turn_on
+    target:
+      entity_id: light.fake_light_two
+  - delay: 00:00:10
+  - service: light.turn_off
+    target:
+      entity_id: light.fake_light_two
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.fake_light_two_presence
+  id: 7975cb3d0b1f4b47a787c8d0af699b5d
+- alias: Auto Light Three On/Off
+  trigger:
+  - platform: state
+    entity_id: input_boolean.fake_light_three_presence
+    to: 'on'
+  action:
+  - service: light.turn_on
+    target:
+      entity_id: light.fake_light_three
+  - delay: 00:00:10
+  - service: light.turn_off
+    target:
+      entity_id: light.fake_light_three
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.fake_light_three_presence
+  id: deac4ae6a70a44649069ee851b63cd38
+- alias: Auto Light Four On/Off
+  trigger:
+  - platform: state
+    entity_id: input_boolean.fake_light_four_presence
+    to: 'on'
+  action:
+  - service: light.turn_on
+    target:
+      entity_id: light.fake_light_four
+  - delay: 00:00:10
+  - service: light.turn_off
+    target:
+      entity_id: light.fake_light_four
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.fake_light_four_presence
+  id: 8a4ba15a78bd4d19923a3742e257b4be
+- alias: Auto Light Five On/Off
+  trigger:
+  - platform: state
+    entity_id: input_boolean.fake_light_five_presence
+    to: 'on'
+  action:
+  - service: light.turn_on
+    target:
+      entity_id: light.fake_light_five
+  - delay: 00:00:10
+  - service: light.turn_off
+    target:
+      entity_id: light.fake_light_five
+  - service: input_boolean.turn_off
+    target:
+      entity_id: input_boolean.fake_light_five_presence
+  id: c6619a7395a9446c89cabd3f898c7eb5
+- id: '1745440597558'
+  alias: test_co2_light
+  description: ''
+  triggers:
+  - trigger: state
+    entity_id:
+    - automation.co2_high_show_bad_air_overlay
+    from:
+    to:
+  conditions: []
+  actions:
+  - action: light.toggle
+    metadata: {}
+    data:
+      brightness_pct: 100
+    target:
+      entity_id: light.signal_light_two
+  mode: single
+- id: romantic_mode_individual_auto_deactivation
+  alias: "Romantic Mode - Individual Auto Deactivation"
+  description: "Automatically deactivate romantic mode for individual lights after 5 minutes of no presence"
+  trigger:
+    - platform: state
+      entity_id: 
+        - input_boolean.fake_light_one_presence
+        - input_boolean.fake_light_two_presence
+        - input_boolean.fake_light_three_presence
+        - input_boolean.fake_light_four_presence
+        - input_boolean.fake_light_five_presence
+      to: 'off'
+      for:
+        minutes: 5
+  condition:
+    # Check if the corresponding light is in romantic mode
+    - condition: template
+      value_template: >
+        {% set entity_map = {
+          'input_boolean.fake_light_one_presence': 'light.fake_light_one',
+          'input_boolean.fake_light_two_presence': 'light.fake_light_two',
+          'input_boolean.fake_light_three_presence': 'light.fake_light_three',
+          'input_boolean.fake_light_four_presence': 'light.fake_light_four',
+          'input_boolean.fake_light_five_presence': 'light.fake_light_five'
+        } %}
+        {% set light_entity = entity_map[trigger.entity_id] %}
+        {{
+          is_state(light_entity, 'on') and 
+          state_attr(light_entity, 'rgb_color') == [255, 147, 141] and
+          (state_attr(light_entity, 'brightness')|int / 255 * 100) | round == 40
+        }}
+  action:
+    # Reset to normal lighting
+    - service: light.turn_on
+      data:
+        entity_id: >
+          {% set entity_map = {
+            'input_boolean.fake_light_one_presence': 'light.fake_light_one',
+            'input_boolean.fake_light_two_presence': 'light.fake_light_two',
+            'input_boolean.fake_light_three_presence': 'light.fake_light_three',
+            'input_boolean.fake_light_four_presence': 'light.fake_light_four',
+            'input_boolean.fake_light_five_presence': 'light.fake_light_five'
+          } %}
+          {{ entity_map[trigger.entity_id] }}
+        brightness_pct: 100
+        rgb_color: [255, 255, 255]  # Use white instead of kelvin
+        transition: 2
+    - service: persistent_notification.create
+      data:
+        title: "Romantic Mode Auto-Disabled"
+        message: >
+          Romantic mode automatically disabled at {{ trigger.to_state.attributes.friendly_name }} 
+          after 5 minutes of no presence detected.
+
+# Also consider adding a notification when someone returns
+- id: romantic_mode_presence_return
+  alias: "Romantic Mode - Presence Returned Notification"
+  description: "Notify when presence returns to a table that had romantic mode auto-deactivated"
+  trigger:
+    - platform: state
+      entity_id: 
+        - input_boolean.fake_light_one_presence
+        - input_boolean.fake_light_two_presence
+        - input_boolean.fake_light_three_presence
+        - input_boolean.fake_light_four_presence
+        - input_boolean.fake_light_five_presence
+        - input_boolean.fake_light_six_presence
+        - input_boolean.fake_light_seven_presence
+        - input_boolean.fake_light_eight_presence
+        - input_boolean.fake_light_nine_presence
+      to: 'on'
+  action:
+    - service: persistent_notification.create
+      data:
+        title: "Presence Detected"
+        message: "Presence detected at {{ trigger.to_state.attributes.friendly_name }}. You can reactivate romantic mode if needed."

@@ -1,0 +1,619 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.3_scenariji_in_dogodki",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "title": "Home",
+          "cards": [
+            {
+              "type": "entities",
+              "title": "Simulate Presence (Zones)",
+              "entities": [
+                {
+                  "entity": "input_boolean.fake_light_one_presence",
+                  "name": "Presence: Light One"
+                },
+                {
+                  "entity": "input_boolean.fake_light_two_presence",
+                  "name": "Presence: Light Two"
+                },
+                {
+                  "entity": "input_boolean.fake_light_three_presence",
+                  "name": "Presence: Light Three"
+                },
+                {
+                  "entity": "input_boolean.fake_light_four_presence",
+                  "name": "Presence: Light Four"
+                },
+                {
+                  "entity": "input_boolean.fake_light_five_presence",
+                  "name": "Presence: Light Five"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "entities": [
+                {
+                  "entity": "input_number.fake_co2_sensor",
+                  "name": "Set CO₂ Level"
+                },
+                {
+                  "entity": "sensor.co2_level",
+                  "name": "CO₂ Level (ppm)"
+                }
+              ]
+            },
+            {
+              "type": "entities",
+              "title": "Test Lux Slider",
+              "entities": [
+                {
+                  "entity": "input_number.test_lux",
+                  "name": "Test Lux Value"
+                }
+              ]
+            },
+            {
+              "type": "entity",
+              "entity": "sensor.co2_level",
+              "name": "CO₂ Level"
+            },
+            {
+              "type": "light",
+              "entity": "light.signal_light",
+              "name": "Air Quality Signal Light"
+            },
+            {
+              "type": "custom:mushroom-template-card",
+              "primary": "Selected Lights",
+              "secondary": "{{ states('sensor.selected_lights') }}",
+              "icon": "mdi:lightbulb-group-outline",
+              "icon_color": "{% if states('sensor.selected_lights') != 'None selected' %}amber{% else %}grey{% endif %}",
+              "fill_container": true,
+              "card_mod": {
+                "style": "ha-card { margin-bottom: 10px; border-radius: 12px; background-color: rgba(255, 193, 7, 0.1); } .primary { font-size: 1.1rem; font-weight: bold; } .secondary { font-size: 0.9rem; text-align: center; }"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Način osvetlitve & Scene",
+          "icon": "",
+          "cards": [
+            {
+              "type": "custom:mushroom-title-card",
+              "title": "Izberite Luči",
+              "subtitle": "Izberite luči, ki jih želite upravljati",
+              "icon": "mdi:lightbulb-multiple",
+              "card_mod": {
+                "style": ".title { font-size: 18px; } .subtitle { opacity: 0.8; }"
+              }
+            },
+            {
+              "type": "horizontal-stack",
+              "cards": [
+                {
+                  "type": "custom:mushroom-template-card",
+                  "primary": "Izberi vse",
+                  "icon": "mdi:checkbox-multiple-marked",
+                  "icon_color": "{% if is_state('input_boolean.select_light_one', 'on') and is_state('input_boolean.select_light_two', 'on') and is_state('input_boolean.select_light_three', 'on') and is_state('input_boolean.select_light_four', 'on') and is_state('input_boolean.select_light_five', 'on') and is_state('input_boolean.select_light_six', 'on') and is_state('input_boolean.select_light_seven', 'on') and is_state('input_boolean.select_light_eight', 'on') and is_state('input_boolean.select_light_nine', 'on') %}blue{% else %}grey{% endif %}",
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "script.select_all_lights"
+                  },
+                  "card_mod": {
+                    "style": "ha-card { cursor: pointer; margin: 0 4px; border-radius: 12px; } ha-card:hover { box-shadow: 0 4px 8px rgba(0,150,255,0.4); transform: translateY(-2px); transition: all 0.2s ease; }"
+                  }
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "primary": "Odznači vse",
+                  "icon": "mdi:checkbox-multiple-blank-outline",
+                  "icon_color": "{% if is_state('input_boolean.select_light_one', 'off') and is_state('input_boolean.select_light_two', 'off') and is_state('input_boolean.select_light_three', 'off') and is_state('input_boolean.select_light_four', 'off') and is_state('input_boolean.select_light_five', 'off') and is_state('input_boolean.select_light_six', 'off') and is_state('input_boolean.select_light_seven', 'off') and is_state('input_boolean.select_light_eight', 'off') and is_state('input_boolean.select_light_nine', 'off') %}blue{% else %}grey{% endif %}",
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "script.deselect_all_lights"
+                  },
+                  "card_mod": {
+                    "style": "ha-card { cursor: pointer; margin: 0 4px; border-radius: 12px; } ha-card:hover { box-shadow: 0 4px 8px rgba(0,0,0,0.4); transform: translateY(-2px); transition: all 0.2s ease; }"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "horizontal-stack",
+              "cards": [
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "custom:mushroom-title-card",
+                      "title": "Leva Sekcija",
+                      "icon": "mdi:sofa",
+                      "icon_color": "blue",
+                      "card_mod": {
+                        "style": ".title { font-size: 16px; }"
+                      }
+                    },
+                    {
+                      "type": "grid",
+                      "columns": 2,
+                      "square": true,
+                      "cards": [
+                        {
+                          "type": "custom:mushroom-template-card",
+                          "primary": "Sekundarna Jedilnica",
+                          "icon": "mdi:ceiling-light",
+                          "icon_color": "{% if is_state('input_boolean.select_light_one', 'on') %}blue{% else %}grey{% endif %}",
+                          "layout": "vertical",
+                          "fill_container": true,
+                          "card_mod": {
+                            "style": "ha-card { height: 80px; cursor: pointer; border-radius: 12px; border: 1px solid {% if is_state('input_boolean.select_light_one', 'on') %}rgba(0, 140, 255, 0.5){% else %}rgba(0,0,0,0.1){% endif %}; box-shadow: {% if is_state('input_boolean.select_light_one', 'on') %}0 0 10px 0px rgba(0, 140, 255, 0.3){% else %}none{% endif %}; background-color: {% if is_state('input_boolean.select_light_one', 'on') %}rgba(0, 140, 255, 0.1){% else %}var(--card-background-color){% endif %}; } ha-card:hover { box-shadow: 0 4px 8px rgba(0,0,0,0.4); transform: translateY(-2px); transition: all 0.2s ease; }"
+                          },
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "input_boolean.toggle",
+                            "service_data": {
+                              "entity_id": "input_boolean.select_light_one"
+                            }
+                          }
+                        },
+                        {
+                          "type": "custom:mushroom-template-card",
+                          "primary": "Miza L1",
+                          "icon": "mdi:ceiling-light",
+                          "icon_color": "{% if is_state('input_boolean.select_light_two', 'on') %}blue{% else %}grey{% endif %}",
+                          "layout": "vertical",
+                          "fill_container": true,
+                          "card_mod": {
+                            "style": "ha-card { height: 80px; cursor: pointer; border-radius: 12px; border: 1px solid {% if is_state('input_boolean.select_light_two', 'on') %}rgba(0, 140, 255, 0.5){% else %}rgba(0,0,0,0.1){% endif %}; box-shadow: {% if is_state('input_boolean.select_light_two', 'on') %}0 0 10px 0px rgba(0, 140, 255, 0.3){% else %}none{% endif %}; background-color: {% if is_state('input_boolean.select_light_two', 'on') %}rgba(0, 140, 255, 0.1){% else %}var(--card-background-color){% endif %}; } ha-card:hover { box-shadow: 0 4px 8px rgba(0,0,0,0.4); transform: translateY(-2px); transition: all 0.2s ease; }"
+                          },
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "input_boolean.toggle",
+                            "service_data": {
+                              "entity_id": "input_boolean.select_light_two"
+                            }
+                          }
+                        },
+                        {
+                          "type": "custom:mushroom-template-card",
+                          "primary": "Miza L2",
+                          "icon": "mdi:ceiling-light",
+                          "icon_color": "{% if is_state('input_boolean.select_light_three', 'on') %}blue{% else %}grey{% endif %}",
+                          "layout": "vertical",
+                          "fill_container": true,
+                          "card_mod": {
+                            "style": "ha-card { height: 80px; cursor: pointer; border-radius: 12px; border: 1px solid {% if is_state('input_boolean.select_light_three', 'on') %}rgba(0, 140, 255, 0.5){% else %}rgba(0,0,0,0.1){% endif %}; box-shadow: {% if is_state('input_boolean.select_light_three', 'on') %}0 0 10px 0px rgba(0, 140, 255, 0.3){% else %}none{% endif %}; background-color: {% if is_state('input_boolean.select_light_three', 'on') %}rgba(0, 140, 255, 0.1){% else %}var(--card-background-color){% endif %}; } ha-card:hover { box-shadow: 0 4px 8px rgba(0,0,0,0.4); transform: translateY(-2px); transition: all 0.2s ease; }"
+                          },
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "input_boolean.toggle",
+                            "service_data": {
+                              "entity_id": "input_boolean.select_light_three"
+                            }
+                          }
+                        },
+                        {
+                          "type": "custom:mushroom-template-card",
+                          "primary": "Miza L3",
+                          "icon": "mdi:ceiling-light",
+                          "icon_color": "{% if is_state('input_boolean.select_light_four', 'on') %}blue{% else %}grey{% endif %}",
+                          "layout": "vertical",
+                          "fill_container": true,
+                          "card_mod": {
+                            "style": "ha-card { height: 80px; cursor: pointer; border-radius: 12px; border: 1px solid {% if is_state('input_boolean.select_light_four', 'on') %}rgba(0, 140, 255, 0.5){% else %}rgba(0,0,0,0.1){% endif %}; box-shadow: {% if is_state('input_boolean.select_light_four', 'on') %}0 0 10px 0px rgba(0, 140, 255, 0.3){% else %}none{% endif %}; background-color: {% if is_state('input_boolean.select_light_four', 'on') %}rgba(0, 140, 255, 0.1){% else %}var(--card-background-color){% endif %}; } ha-card:hover { box-shadow: 0 4px 8px rgba(0,0,0,0.4); transform: translateY(-2px); transition: all 0.2s ease; }"
+                          },
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "input_boolean.toggle",
+                            "service_data": {
+                              "entity_id": "input_boolean.select_light_four"
+                            }
+                          }
+                        },
+                        {
+                          "type": "custom:mushroom-template-card",
+                          "primary": "Miza L4",
+                          "icon": "mdi:ceiling-light",
+                          "icon_color": "{% if is_state('input_boolean.select_light_five', 'on') %}blue{% else %}grey{% endif %}",
+                          "layout": "vertical",
+                          "fill_container": true,
+                          "card_mod": {
+                            "style": "ha-card { height: 80px; cursor: pointer; border-radius: 12px; border: 1px solid {% if is_state('input_boolean.select_light_five', 'on') %}rgba(0, 140, 255, 0.5){% else %}rgba(0,0,0,0.1){% endif %}; box-shadow: {% if is_state('input_boolean.select_light_five', 'on') %}0 0 10px 0px rgba(0, 140, 255, 0.3){% else %}none{% endif %}; background-color: {% if is_state('input_boolean.select_light_five', 'on') %}rgba(0, 140, 255, 0.1){% else %}var(--card-background-color){% endif %}; } ha-card:hover { box-shadow: 0 4px 8px rgba(0,0,0,0.4); transform: translateY(-2px); transition: all 0.2s ease; }"
+                          },
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "input_boolean.toggle",
+                            "service_data": {
+                              "entity_id": "input_boolean.select_light_five"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "custom:mushroom-title-card",
+                      "title": "Desna Sekcija",
+                      "icon": "mdi:table-chair",
+                      "icon_color": "amber",
+                      "card_mod": {
+                        "style": ".title { font-size: 16px; }"
+                      }
+                    },
+                    {
+                      "type": "grid",
+                      "columns": 2,
+                      "square": true,
+                      "cards": [
+                        {
+                          "type": "custom:mushroom-template-card",
+                          "primary": "Primarna Jedilnica",
+                          "icon": "mdi:ceiling-light",
+                          "icon_color": "{% if is_state('input_boolean.select_light_six', 'on') %}amber{% else %}grey{% endif %}",
+                          "layout": "vertical",
+                          "fill_container": true,
+                          "card_mod": {
+                            "style": "ha-card { height: 80px; cursor: pointer; border-radius: 12px; border: 1px solid {% if is_state('input_boolean.select_light_six', 'on') %}rgba(255, 170, 0, 0.5){% else %}rgba(0,0,0,0.1){% endif %}; box-shadow: {% if is_state('input_boolean.select_light_six', 'on') %}0 0 10px 0px rgba(255, 170, 0, 0.3){% else %}none{% endif %}; background-color: {% if is_state('input_boolean.select_light_six', 'on') %}rgba(255, 170, 0, 0.1){% else %}var(--card-background-color){% endif %}; } ha-card:hover { box-shadow: 0 4px 8px rgba(0,0,0,0.4); transform: translateY(-2px); transition: all 0.2s ease; }"
+                          },
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "input_boolean.toggle",
+                            "service_data": {
+                              "entity_id": "input_boolean.select_light_six"
+                            }
+                          }
+                        },
+                        {
+                          "type": "custom:mushroom-template-card",
+                          "primary": "Miza D1",
+                          "icon": "mdi:ceiling-light",
+                          "icon_color": "{% if is_state('input_boolean.select_light_seven', 'on') %}amber{% else %}grey{% endif %}",
+                          "layout": "vertical",
+                          "fill_container": true,
+                          "card_mod": {
+                            "style": "ha-card { height: 80px; cursor: pointer; border-radius: 12px; border: 1px solid {% if is_state('input_boolean.select_light_seven', 'on') %}rgba(255, 170, 0, 0.5){% else %}rgba(0,0,0,0.1){% endif %}; box-shadow: {% if is_state('input_boolean.select_light_seven', 'on') %}0 0 10px 0px rgba(255, 170, 0, 0.3){% else %}none{% endif %}; background-color: {% if is_state('input_boolean.select_light_seven', 'on') %}rgba(255, 170, 0, 0.1){% else %}var(--card-background-color){% endif %}; } ha-card:hover { box-shadow: 0 4px 8px rgba(0,0,0,0.4); transform: translateY(-2px); transition: all 0.2s ease; }"
+                          },
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "input_boolean.toggle",
+                            "service_data": {
+                              "entity_id": "input_boolean.select_light_seven"
+                            }
+                          }
+                        },
+                        {
+                          "type": "custom:mushroom-template-card",
+                          "primary": "Miza D2",
+                          "icon": "mdi:ceiling-light",
+                          "icon_color": "{% if is_state('input_boolean.select_light_eight', 'on') %}amber{% else %}grey{% endif %}",
+                          "layout": "vertical",
+                          "fill_container": true,
+                          "card_mod": {
+                            "style": "ha-card { height: 80px; cursor: pointer; border-radius: 12px; border: 1px solid {% if is_state('input_boolean.select_light_eight', 'on') %}rgba(255, 170, 0, 0.5){% else %}rgba(0,0,0,0.1){% endif %}; box-shadow: {% if is_state('input_boolean.select_light_eight', 'on') %}0 0 10px 0px rgba(255, 170, 0, 0.3){% else %}none{% endif %}; background-color: {% if is_state('input_boolean.select_light_eight', 'on') %}rgba(255, 170, 0, 0.1){% else %}var(--card-background-color){% endif %}; } ha-card:hover { box-shadow: 0 4px 8px rgba(0,0,0,0.4); transform: translateY(-2px); transition: all 0.2s ease; }"
+                          },
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "input_boolean.toggle",
+                            "service_data": {
+                              "entity_id": "input_boolean.select_light_eight"
+                            }
+                          }
+                        },
+                        {
+                          "type": "custom:mushroom-template-card",
+                          "primary": "Miza D3",
+                          "icon": "mdi:ceiling-light",
+                          "icon_color": "{% if is_state('input_boolean.select_light_nine', 'on') %}amber{% else %}grey{% endif %}",
+                          "layout": "vertical",
+                          "fill_container": true,
+                          "card_mod": {
+                            "style": "ha-card { height: 80px; cursor: pointer; border-radius: 12px; border: 1px solid {% if is_state('input_boolean.select_light_nine', 'on') %}rgba(255, 170, 0, 0.5){% else %}rgba(0,0,0,0.1){% endif %}; box-shadow: {% if is_state('input_boolean.select_light_nine', 'on') %}0 0 10px 0px rgba(255, 170, 0, 0.3){% else %}none{% endif %}; background-color: {% if is_state('input_boolean.select_light_nine', 'on') %}rgba(255, 170, 0, 0.1){% else %}var(--card-background-color){% endif %}; } ha-card:hover { box-shadow: 0 4px 8px rgba(0,0,0,0.4); transform: translateY(-2px); transition: all 0.2s ease; }"
+                          },
+                          "tap_action": {
+                            "action": "call-service",
+                            "service": "input_boolean.toggle",
+                            "service_data": {
+                              "entity_id": "input_boolean.select_light_nine"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "custom:mushroom-title-card",
+              "title": "Načini Osvetlitve",
+              "subtitle": "Izberite način osvetlitve za izbrane luči",
+              "icon": "mdi:lightbulb-group",
+              "card_mod": {
+                "style": ".title { font-size: 18px; } .subtitle { opacity: 0.8; }"
+              }
+            },
+            {
+              "type": "horizontal-stack",
+              "cards": [
+                {
+                  "type": "custom:mushroom-template-card",
+                  "primary": "Izklopi Luči",
+                  "icon": "mdi:lightbulb-off",
+                  "icon_color": "grey",
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "script.turn_off_selected_lights"
+                  },
+                  "card_mod": {
+                    "style": "ha-card { cursor: pointer; margin: 0 4px; border-radius: 12px; } ha-card:hover { box-shadow: 0 4px 8px rgba(0,0,0,0.4); transform: translateY(-2px); transition: all 0.2s ease; }"
+                  }
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "primary": "Vklopi Luči",
+                  "icon": "mdi:lightbulb-on",
+                  "icon_color": "yellow",
+                  "tap_action": {
+                    "action": "call-service",
+                    "service": "script.turn_on_selected_lights"
+                  },
+                  "card_mod": {
+                    "style": "ha-card { cursor: pointer; margin: 0 4px; border-radius: 12px; } ha-card:hover { box-shadow: 0 4px 8px rgba(255,220,0,0.4); transform: translateY(-2px); transition: all 0.2s ease; }"
+                  }
+                }
+              ]
+            },
+            {
+              "square": false,
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "custom:mushroom-template-card",
+                      "primary": "Poročni Način",
+                      "secondary": "Romantična topla svetloba",
+                      "icon": "mdi:heart-multiple",
+                      "icon_color": "{% if is_state('input_boolean.active_wedding_mode', 'on') %}pink{% else %}grey{% endif %}",
+                      "layout": "vertical",
+                      "fill_container": true,
+                      "card_mod": {
+                        "style": "ha-card { height: 120px; cursor: pointer; border-radius: 12px; box-shadow: {% if is_state('input_boolean.active_wedding_mode', 'on') %}0 0 15px 5px rgba(255, 64, 129, 0.4){% else %}none{% endif %}; background-color: {% if is_state('input_boolean.active_wedding_mode', 'on') %}rgba(255, 64, 129, 0.1){% else %}var(--card-background-color){% endif %}; } .primary { font-size: 1.1rem; font-weight: bold; } .secondary { font-size: 0.85rem; text-align: center; } ha-card:hover { box-shadow: 0 0 15px 5px rgba(255, 64, 129, 0.4); transform: translateY(-2px); transition: all 0.2s ease; }"
+                      },
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.apply_wedding_mode_to_selected"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "custom:mushroom-template-card",
+                      "primary": "Rojstnodnevna Zabava",
+                      "secondary": "Praznična barvna osvetlitev",
+                      "icon": "mdi:cake-variant",
+                      "icon_color": "{% if is_state('input_boolean.active_birthday_party_mode', 'on') %}purple{% else %}grey{% endif %}",
+                      "layout": "vertical",
+                      "fill_container": true,
+                      "card_mod": {
+                        "style": "ha-card { height: 120px; cursor: pointer; border-radius: 12px; box-shadow: {% if is_state('input_boolean.active_birthday_party_mode', 'on') %}0 0 15px 5px rgba(156, 39, 176, 0.4){% else %}none{% endif %}; background-color: {% if is_state('input_boolean.active_birthday_party_mode', 'on') %}rgba(156, 39, 176, 0.1){% else %}var(--card-background-color){% endif %}; } .primary { font-size: 1.1rem; font-weight: bold; } .secondary { font-size: 0.85rem; text-align: center; } ha-card:hover { box-shadow: 0 0 15px 5px rgba(156, 39, 176, 0.4); transform: translateY(-2px); transition: all 0.2s ease; }"
+                      },
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.apply_birthday_party_to_selected"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "custom:mushroom-template-card",
+                      "primary": "Team Building",
+                      "secondary": "Svetla, energična osvetlitev",
+                      "icon": "mdi:account-group",
+                      "icon_color": "{% if is_state('input_boolean.active_team_building_mode', 'on') %}blue{% else %}grey{% endif %}",
+                      "layout": "vertical",
+                      "fill_container": true,
+                      "card_mod": {
+                        "style": "ha-card { height: 120px; cursor: pointer; border-radius: 12px; box-shadow: {% if is_state('input_boolean.active_team_building_mode', 'on') %}0 0 15px 5px rgba(33, 150, 243, 0.4){% else %}none{% endif %}; background-color: {% if is_state('input_boolean.active_team_building_mode', 'on') %}rgba(33, 150, 243, 0.1){% else %}var(--card-background-color){% endif %}; } .primary { font-size: 1.1rem; font-weight: bold; } .secondary { font-size: 0.85rem; text-align: center; } ha-card:hover { box-shadow: 0 0 15px 5px rgba(33, 150, 243, 0.4); transform: translateY(-2px); transition: all 0.2s ease; }"
+                      },
+                      "tap_action": {
+                        "action": "call-service",
+                        "service": "script.apply_team_building_to_selected"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "columns": 3
+            },
+            {
+              "type": "entities",
+              "title": "Seznam luči in njihovi načini",
+              "show_header_toggle": false,
+              "state_color": true,
+              "entities": [
+                {
+                  "type": "section",
+                  "label": "Leva Sekcija"
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "entity": "light.fake_light_one",
+                  "primary": "Sekundarna Jedilnica",
+                  "secondary": "{% if is_state('light.fake_light_one', 'on') %}{% set rgb = state_attr('light.fake_light_one', 'rgb_color')|default([0,0,0]) %}{% if rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 223 %}Poročni Način{% elif rgb[0] == 255 and rgb[1] == 255 and rgb[2] == 255 %}Team Building{% elif rgb[0] == 255 and rgb[1] == 182 and rgb[2] == 193 %}Rojstnodnevna Zabava{% elif rgb[0] == 255 and rgb[1] == 147 and rgb[2] == 141 %}Romantični Način{% elif rgb[0] >= 30 and rgb[0] <= 70 and rgb[1] >= 80 and rgb[1] <= 130 and rgb[2] >= 220 and rgb[2] <= 255 %}Jazz Mode{% elif rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 180 %}Obhajilo{% else %}On{% endif %}{% else %}Off{% endif %}",
+                  "icon": "mdi:ceiling-light",
+                  "icon_color": "{% if is_state('light.fake_light_one', 'on') %}{% set rgb = state_attr('light.fake_light_one', 'rgb_color')|default([0,0,0]) %}{% if rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 223 %}pink{% elif rgb[0] == 255 and rgb[1] == 255 and rgb[2] == 255 %}blue{% elif rgb[0] == 255 and rgb[1] == 182 and rgb[2] == 193 %}purple{% elif rgb[0] == 255 and rgb[1] == 147 and rgb[2] == 141 %}pink{% elif rgb[0] >= 30 and rgb[0] <= 70 and rgb[1] >= 80 and rgb[1] <= 130 and rgb[2] >= 220 and rgb[2] <= 255 %}blue{% elif rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 180 %}amber{% else %}yellow{% endif %}{% else %}grey{% endif %}",
+                  "tap_action": {
+                    "action": "none"
+                  }
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "entity": "light.fake_light_two",
+                  "primary": "Miza L1",
+                  "secondary": "{% if is_state('light.fake_light_two', 'on') %}{% set rgb = state_attr('light.fake_light_two', 'rgb_color')|default([0,0,0]) %}{% if rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 223 %}Poročni Način{% elif rgb[0] == 255 and rgb[1] == 255 and rgb[2] == 255 %}Team Building{% elif rgb[0] == 255 and rgb[1] == 182 and rgb[2] == 193 %}Rojstnodnevna Zabava{% elif rgb[0] == 255 and rgb[1] == 147 and rgb[2] == 141 %}Romantični Način{% elif rgb[0] >= 30 and rgb[0] <= 70 and rgb[1] >= 80 and rgb[1] <= 130 and rgb[2] >= 220 and rgb[2] <= 255 %}Jazz Mode{% elif rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 180 %}Obhajilo{% else %}On{% endif %}{% else %}Off{% endif %}",
+                  "icon": "mdi:ceiling-light",
+                  "icon_color": "{% if is_state('light.fake_light_two', 'on') %}{% set rgb = state_attr('light.fake_light_two', 'rgb_color')|default([0,0,0]) %}{% if rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 223 %}pink{% elif rgb[0] == 255 and rgb[1] == 255 and rgb[2] == 255 %}blue{% elif rgb[0] == 255 and rgb[1] == 182 and rgb[2] == 193 %}purple{% elif rgb[0] == 255 and rgb[1] == 147 and rgb[2] == 141 %}pink{% elif rgb[0] >= 30 and rgb[0] <= 70 and rgb[1] >= 80 and rgb[1] <= 130 and rgb[2] >= 220 and rgb[2] <= 255 %}blue{% elif rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 180 %}amber{% else %}yellow{% endif %}{% else %}grey{% endif %}",
+                  "tap_action": {
+                    "action": "none"
+                  }
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "entity": "light.fake_light_three",
+                  "primary": "Miza L2",
+                  "secondary": "{% if is_state('light.fake_light_three', 'on') %}{% set rgb = state_attr('light.fake_light_three', 'rgb_color')|default([0,0,0]) %}{% if rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 223 %}Poročni Način{% elif rgb[0] == 255 and rgb[1] == 255 and rgb[2] == 255 %}Team Building{% elif rgb[0] == 255 and rgb[1] == 182 and rgb[2] == 193 %}Rojstnodnevna Zabava{% elif rgb[0] == 255 and rgb[1] == 147 and rgb[2] == 141 %}Romantični Način{% elif rgb[0] >= 30 and rgb[0] <= 70 and rgb[1] >= 80 and rgb[1] <= 130 and rgb[2] >= 220 and rgb[2] <= 255 %}Jazz Mode{% elif rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 180 %}Obhajilo{% else %}On{% endif %}{% else %}Off{% endif %}",
+                  "icon": "mdi:ceiling-light",
+                  "icon_color": "{% if is_state('light.fake_light_three', 'on') %}{% set rgb = state_attr('light.fake_light_three', 'rgb_color')|default([0,0,0]) %}{% if rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 223 %}pink{% elif rgb[0] == 255 and rgb[1] == 255 and rgb[2] == 255 %}blue{% elif rgb[0] == 255 and rgb[1] == 182 and rgb[2] == 193 %}purple{% elif rgb[0] == 255 and rgb[1] == 147 and rgb[2] == 141 %}pink{% elif rgb[0] >= 30 and rgb[0] <= 70 and rgb[1] >= 80 and rgb[1] <= 130 and rgb[2] >= 220 and rgb[2] <= 255 %}blue{% elif rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 180 %}amber{% else %}yellow{% endif %}{% else %}grey{% endif %}",
+                  "tap_action": {
+                    "action": "none"
+                  }
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "entity": "light.fake_light_four",
+                  "primary": "Miza L3",
+                  "secondary": "{% if is_state('light.fake_light_four', 'on') %}{% set rgb = state_attr('light.fake_light_four', 'rgb_color')|default([0,0,0]) %}{% if rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 223 %}Poročni Način{% elif rgb[0] == 255 and rgb[1] == 255 and rgb[2] == 255 %}Team Building{% elif rgb[0] == 255 and rgb[1] == 182 and rgb[2] == 193 %}Rojstnodnevna Zabava{% elif rgb[0] == 255 and rgb[1] == 147 and rgb[2] == 141 %}Romantični Način{% elif rgb[0] >= 30 and rgb[0] <= 70 and rgb[1] >= 80 and rgb[1] <= 130 and rgb[2] >= 220 and rgb[2] <= 255 %}Jazz Mode{% elif rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 180 %}Obhajilo{% else %}On{% endif %}{% else %}Off{% endif %}",
+                  "icon": "mdi:ceiling-light",
+                  "icon_color": "{% if is_state('light.fake_light_four', 'on') %}{% set rgb = state_attr('light.fake_light_four', 'rgb_color')|default([0,0,0]) %}{% if rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 223 %}pink{% elif rgb[0] == 255 and rgb[1] == 255 and rgb[2] == 255 %}blue{% elif rgb[0] == 255 and rgb[1] == 182 and rgb[2] == 193 %}purple{% elif rgb[0] == 255 and rgb[1] == 147 and rgb[2] == 141 %}pink{% elif rgb[0] >= 30 and rgb[0] <= 70 and rgb[1] >= 80 and rgb[1] <= 130 and rgb[2] >= 220 and rgb[2] <= 255 %}blue{% elif rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 180 %}amber{% else %}yellow{% endif %}{% else %}grey{% endif %}",
+                  "tap_action": {
+                    "action": "none"
+                  }
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "entity": "light.fake_light_five",
+                  "primary": "Miza L4",
+                  "secondary": "{% if is_state('light.fake_light_five', 'on') %}{% set rgb = state_attr('light.fake_light_five', 'rgb_color')|default([0,0,0]) %}{% if rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 223 %}Poročni Način{% elif rgb[0] == 255 and rgb[1] == 255 and rgb[2] == 255 %}Team Building{% elif rgb[0] == 255 and rgb[1] == 182 and rgb[2] == 193 %}Rojstnodnevna Zabava{% elif rgb[0] == 255 and rgb[1] == 147 and rgb[2] == 141 %}Romantični Način{% elif rgb[0] >= 30 and rgb[0] <= 70 and rgb[1] >= 80 and rgb[1] <= 130 and rgb[2] >= 220 and rgb[2] <= 255 %}Jazz Mode{% elif rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 180 %}Obhajilo{% else %}On{% endif %}{% else %}Off{% endif %}",
+                  "icon": "mdi:ceiling-light",
+                  "icon_color": "{% if is_state('light.fake_light_five', 'on') %}{% set rgb = state_attr('light.fake_light_five', 'rgb_color')|default([0,0,0]) %}{% if rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 223 %}pink{% elif rgb[0] == 255 and rgb[1] == 255 and rgb[2] == 255 %}blue{% elif rgb[0] == 255 and rgb[1] == 182 and rgb[2] == 193 %}purple{% elif rgb[0] == 255 and rgb[1] == 147 and rgb[2] == 141 %}pink{% elif rgb[0] >= 30 and rgb[0] <= 70 and rgb[1] >= 80 and rgb[1] <= 130 and rgb[2] >= 220 and rgb[2] <= 255 %}blue{% elif rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 180 %}amber{% else %}yellow{% endif %}{% else %}grey{% endif %}",
+                  "tap_action": {
+                    "action": "none"
+                  }
+                },
+                {
+                  "type": "section",
+                  "label": "Desna Sekcija"
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "entity": "light.fake_light_six",
+                  "primary": "Primarna Jedilnica",
+                  "secondary": "{% if is_state('light.fake_light_six', 'on') %}{% set rgb = state_attr('light.fake_light_six', 'rgb_color')|default([0,0,0]) %}{% if rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 223 %}Poročni Način{% elif rgb[0] == 255 and rgb[1] == 255 and rgb[2] == 255 %}Team Building{% elif rgb[0] == 255 and rgb[1] == 182 and rgb[2] == 193 %}Rojstnodnevna Zabava{% elif rgb[0] == 255 and rgb[1] == 147 and rgb[2] == 141 %}Romantični Način{% elif rgb[0] >= 30 and rgb[0] <= 70 and rgb[1] >= 80 and rgb[1] <= 130 and rgb[2] >= 220 and rgb[2] <= 255 %}Jazz Mode{% elif rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 180 %}Obhajilo{% else %}On{% endif %}{% else %}Off{% endif %}",
+                  "icon": "mdi:ceiling-light",
+                  "icon_color": "{% if is_state('light.fake_light_six', 'on') %}{% set rgb = state_attr('light.fake_light_six', 'rgb_color')|default([0,0,0]) %}{% if rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 223 %}pink{% elif rgb[0] == 255 and rgb[1] == 255 and rgb[2] == 255 %}blue{% elif rgb[0] == 255 and rgb[1] == 182 and rgb[2] == 193 %}purple{% elif rgb[0] == 255 and rgb[1] == 147 and rgb[2] == 141 %}pink{% elif rgb[0] >= 30 and rgb[0] <= 70 and rgb[1] >= 80 and rgb[1] <= 130 and rgb[2] >= 220 and rgb[2] <= 255 %}blue{% elif rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 180 %}amber{% else %}yellow{% endif %}{% else %}grey{% endif %}",
+                  "tap_action": {
+                    "action": "none"
+                  }
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "entity": "light.fake_light_seven",
+                  "primary": "Miza D1",
+                  "secondary": "{% if is_state('light.fake_light_seven', 'on') %}{% set rgb = state_attr('light.fake_light_seven', 'rgb_color')|default([0,0,0]) %}{% if rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 223 %}Poročni Način{% elif rgb[0] == 255 and rgb[1] == 255 and rgb[2] == 255 %}Team Building{% elif rgb[0] == 255 and rgb[1] == 182 and rgb[2] == 193 %}Rojstnodnevna Zabava{% elif rgb[0] == 255 and rgb[1] == 147 and rgb[2] == 141 %}Romantični Način{% elif rgb[0] >= 30 and rgb[0] <= 70 and rgb[1] >= 80 and rgb[1] <= 130 and rgb[2] >= 220 and rgb[2] <= 255 %}Jazz Mode{% elif rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 180 %}Obhajilo{% else %}On{% endif %}{% else %}Off{% endif %}",
+                  "icon": "mdi:ceiling-light",
+                  "icon_color": "{% if is_state('light.fake_light_seven', 'on') %}{% set rgb = state_attr('light.fake_light_seven', 'rgb_color')|default([0,0,0]) %}{% if rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 223 %}pink{% elif rgb[0] == 255 and rgb[1] == 255 and rgb[2] == 255 %}blue{% elif rgb[0] == 255 and rgb[1] == 182 and rgb[2] == 193 %}purple{% elif rgb[0] == 255 and rgb[1] == 147 and rgb[2] == 141 %}pink{% elif rgb[0] >= 30 and rgb[0] <= 70 and rgb[1] >= 80 and rgb[1] <= 130 and rgb[2] >= 220 and rgb[2] <= 255 %}blue{% elif rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 180 %}amber{% else %}yellow{% endif %}{% else %}grey{% endif %}",
+                  "tap_action": {
+                    "action": "none"
+                  }
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "entity": "light.fake_light_eight",
+                  "primary": "Miza D2",
+                  "secondary": "{% if is_state('light.fake_light_eight', 'on') %}{% set rgb = state_attr('light.fake_light_eight', 'rgb_color')|default([0,0,0]) %}{% if rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 223 %}Poročni Način{% elif rgb[0] == 255 and rgb[1] == 255 and rgb[2] == 255 %}Team Building{% elif rgb[0] == 255 and rgb[1] == 182 and rgb[2] == 193 %}Rojstnodnevna Zabava{% elif rgb[0] == 255 and rgb[1] == 147 and rgb[2] == 141 %}Romantični Način{% elif rgb[0] >= 30 and rgb[0] <= 70 and rgb[1] >= 80 and rgb[1] <= 130 and rgb[2] >= 220 and rgb[2] <= 255 %}Jazz Mode{% elif rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 180 %}Obhajilo{% else %}On{% endif %}{% else %}Off{% endif %}",
+                  "icon": "mdi:ceiling-light",
+                  "icon_color": "{% if is_state('light.fake_light_eight', 'on') %}{% set rgb = state_attr('light.fake_light_eight', 'rgb_color')|default([0,0,0]) %}{% if rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 223 %}pink{% elif rgb[0] == 255 and rgb[1] == 255 and rgb[2] == 255 %}blue{% elif rgb[0] == 255 and rgb[1] == 182 and rgb[2] == 193 %}purple{% elif rgb[0] == 255 and rgb[1] == 147 and rgb[2] == 141 %}pink{% elif rgb[0] >= 30 and rgb[0] <= 70 and rgb[1] >= 80 and rgb[1] <= 130 and rgb[2] >= 220 and rgb[2] <= 255 %}blue{% elif rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 180 %}amber{% else %}yellow{% endif %}{% else %}grey{% endif %}",
+                  "tap_action": {
+                    "action": "none"
+                  }
+                },
+                {
+                  "type": "custom:mushroom-template-card",
+                  "entity": "light.fake_light_nine",
+                  "primary": "Miza D3",
+                  "secondary": "{% if is_state('light.fake_light_nine', 'on') %}{% set rgb = state_attr('light.fake_light_nine', 'rgb_color')|default([0,0,0]) %}{% if rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 223 %}Poročni Način{% elif rgb[0] == 255 and rgb[1] == 255 and rgb[2] == 255 %}Team Building{% elif rgb[0] == 255 and rgb[1] == 182 and rgb[2] == 193 %}Rojstnodnevna Zabava{% elif rgb[0] == 255 and rgb[1] == 147 and rgb[2] == 141 %}Romantični Način{% elif rgb[0] >= 30 and rgb[0] <= 70 and rgb[1] >= 80 and rgb[1] <= 130 and rgb[2] >= 220 and rgb[2] <= 255 %}Jazz Mode{% elif rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 180 %}Obhajilo{% else %}On{% endif %}{% else %}Off{% endif %}",
+                  "icon": "mdi:ceiling-light",
+                  "icon_color": "{% if is_state('light.fake_light_nine', 'on') %}{% set rgb = state_attr('light.fake_light_nine', 'rgb_color')|default([0,0,0]) %}{% if rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 223 %}pink{% elif rgb[0] == 255 and rgb[1] == 255 and rgb[2] == 255 %}blue{% elif rgb[0] == 255 and rgb[1] == 182 and rgb[2] == 193 %}purple{% elif rgb[0] == 255 and rgb[1] == 147 and rgb[2] == 141 %}pink{% elif rgb[0] >= 30 and rgb[0] <= 70 and rgb[1] >= 80 and rgb[1] <= 130 and rgb[2] >= 220 and rgb[2] <= 255 %}blue{% elif rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 180 %}amber{% else %}yellow{% endif %}{% else %}grey{% endif %}",
+                  "tap_action": {
+                    "action": "none"
+                  }
+                }
+              ],
+              "card_mod": {
+                "style": "ha-card { border-radius: 12px; margin-top: 8px; cursor: default; }"
+              }
+            },
+            {
+              "type": "custom:mushroom-title-card",
+              "title": "Home Assistant Scene Management",
+              "subtitle": "Built-in scenes with fixed light selections",
+              "icon": "mdi:palette-advanced",
+              "card_mod": {
+                "style": ".title { font-size: 18px; } .subtitle { opacity: 0.8; }"
+              }
+            },
+            {
+              "type": "markdown",
+              "content": "### Scene vs. Light Selection Mode\n\n**Built-in Scenes:** Fixed light selections with predefined settings.\n\n**Light Selection Mode:** Choose which lights to include in a mode.",
+              "style": "ha-card {\n  border-radius: 12px;\n  padding: 8px 16px;\n  background-color: rgba(0, 0, 0, 0.03);\n}"
+            },
+            {
+              "type": "custom:mushroom-template-card",
+              "primary": "Create New Scene",
+              "icon": "mdi:plus-circle-outline",
+              "icon_color": "green",
+              "tap_action": {
+                "action": "navigate",
+                "navigation_path": "/config/scene/edit/new"
+              },
+              "card_mod": {
+                "style": "ha-card { cursor: pointer; border-radius: 12px; background-color: rgba(76, 175, 80, 0.1); border: 1px solid rgba(76, 175, 80, 0.3); margin-bottom: 12px; } ha-card:hover { box-shadow: 0 4px 8px rgba(76, 175, 80, 0.4); transform: translateY(-2px); transition: all 0.2s ease; }"
+              }
+            },
+            {
+              "type": "custom:mushroom-template-card",
+              "primary": "Jazz Mode",
+              "secondary": "Sekundarna Jedilnica • Miza L1 • Miza L3 • Primarna Jedilnica",
+              "icon": "mdi:music-note",
+              "icon_color": "{% if is_state('light.fake_light_one', 'on') and is_state('light.fake_light_two', 'on') and is_state('light.fake_light_four', 'on') and is_state('light.fake_light_six', 'on') and state_attr('light.fake_light_one', 'rgb_color')[2] > 220 %}blue{% else %}grey{% endif %}",
+              "layout": "vertical",
+              "tap_action": {
+                "action": "call-service",
+                "service": "script.toggle_jazz_scene"
+              },
+              "card_mod": {
+                "style": "ha-card { cursor: pointer; border-radius: 12px; background-color: {% if is_state('light.fake_light_one', 'on') and is_state('light.fake_light_two', 'on') and is_state('light.fake_light_four', 'on') and is_state('light.fake_light_six', 'on') and state_attr('light.fake_light_one', 'rgb_color')[2] > 220 %}rgba(33, 150, 243, 0.1){% else %}var(--card-background-color){% endif %}; border: 1px solid {% if is_state('light.fake_light_one', 'on') and is_state('light.fake_light_two', 'on') and is_state('light.fake_light_four', 'on') and is_state('light.fake_light_six', 'on') and state_attr('light.fake_light_one', 'rgb_color')[2] > 220 %}rgba(33, 150, 243, 0.3){% else %}rgba(0,0,0,0.1){% endif %}; margin-bottom: 8px; } ha-card:hover { box-shadow: 0 4px 8px rgba(33, 150, 243, 0.4); transform: translateY(-2px); transition: all 0.2s ease; } .secondary { font-size: 0.8rem; opacity: 0.8; }"
+              }
+            }
+          ],
+          "background": {
+            "opacity": 100,
+            "alignment": "center",
+            "size": "cover",
+            "repeat": "repeat",
+            "attachment": "scroll"
+          },
+          "type": "masonry"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,67 @@
+{
+    "version": 1,
+    "devices": {
+        "Imported": {
+            "virtual_co2_sensor": {
+                "unique_id": "6ead6478-ca9a-44a0-ac40-6f250a1a511f.virtual",
+                "entity_id": "sensor.virtual_co2_sensor",
+                "device_id": "test_lights"
+            },
+            "fake_light_one": {
+                "unique_id": "a6efb246-ec53-47c7-9682-da760a2ab950.virtual",
+                "entity_id": "light.fake_light_one",
+                "device_id": "test_lights"
+            },
+            "fake_light_two": {
+                "unique_id": "b745bc1e-b0dc-4510-8be7-bd2fc7755b6e.virtual",
+                "entity_id": "light.fake_light_two",
+                "device_id": "test_lights"
+            },
+            "fake_light_three": {
+                "unique_id": "36b5f1bf-d255-4088-83b0-22cb15d427f8.virtual",
+                "entity_id": "light.fake_light_three",
+                "device_id": "test_lights"
+            },
+            "fake_light_four": {
+                "unique_id": "a0937fd3-f184-47be-b9eb-29854e4d09b4.virtual",
+                "entity_id": "light.fake_light_four",
+                "device_id": "test_lights"
+            },
+            "fake_light_five": {
+                "unique_id": "02cc2836-0f7f-4463-965e-53e25781c595.virtual",
+                "entity_id": "light.fake_light_five",
+                "device_id": "test_lights"
+            },
+            "fake_light_six": {
+                "unique_id": "c471b44e-cb59-4223-9692-65b14fbed2d4.virtual",
+                "entity_id": "light.fake_light_six",
+                "device_id": "test_lights"
+            },
+            "fake_light_seven": {
+                "unique_id": "eaf4b122-4904-4316-ba92-47da6222cc24.virtual",
+                "entity_id": "light.fake_light_seven",
+                "device_id": "test_lights"
+            },
+            "fake_light_eight": {
+                "unique_id": "a344ea16-365a-4c04-91fb-963c8ce66377.virtual",
+                "entity_id": "light.fake_light_eight",
+                "device_id": "test_lights"
+            },
+            "fake_light_nine": {
+                "unique_id": "7f78198a-5f4d-452b-8d6a-7f0be11e5ec1.virtual",
+                "entity_id": "light.fake_light_nine",
+                "device_id": "test_lights"
+            },
+            "signal_light": {
+                "unique_id": "2c57dffa-d9d2-4184-932a-2423b4a7a888.virtual",
+                "entity_id": "light.signal_light",
+                "device_id": "test_lights"
+            },
+            "signal_light_two": {
+                "unique_id": "5752f65d-5d4c-4b0e-8d58-3ef62204f594.virtual",
+                "entity_id": "light.signal_light_two",
+                "device_id": "test_lights"
+            }
+        }
+    }
+}

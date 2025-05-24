@@ -1,0 +1,487 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "core.restore_state",
+  "data": [
+    {
+      "state": {"entity_id":"person.coolhouse_restavracija","state":"unknown","attributes":{"editable":true,"id":"coolhouse_restavracija","device_trackers":[],"source":"person.coolhouse_restavracija","user_id":"e30434cbebdc45709543007c78edd70e","friendly_name":"Coolhouse Restavracija"},"last_changed":"2025-05-16T13:40:41.613285+00:00","last_reported":"2025-05-16T13:40:41.613285+00:00","last_updated":"2025-05-16T13:40:41.613285+00:00","context":{"id":"01JVCN6QGDB8J2GMQCAMW0FRJB","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"conversation.home_assistant","state":"unknown","attributes":{"friendly_name":"Home Assistant","supported_features":1},"last_changed":"2025-05-16T13:40:42.193641+00:00","last_reported":"2025-05-16T13:40:42.193641+00:00","last_updated":"2025-05-16T13:40:42.193641+00:00","context":{"id":"01JVCN6R2HGK4JVX756KRP8WRS","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.set_romantic_scene","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Set Romantic Scene"},"last_changed":"2025-05-16T13:40:42.235252+00:00","last_reported":"2025-05-16T13:40:42.235252+00:00","last_updated":"2025-05-16T13:40:42.235252+00:00","context":{"id":"01JVCN6R3VFZXJQWECG2TP9MWV","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.set_working_scene","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Set Working Scene"},"last_changed":"2025-05-16T13:40:42.235336+00:00","last_reported":"2025-05-16T13:40:42.235336+00:00","last_updated":"2025-05-16T13:40:42.235336+00:00","context":{"id":"01JVCN6R3V3A99VGHNT4G1EX4Y","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.set_dining_scene","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Set Dining Scene"},"last_changed":"2025-05-16T13:40:42.235409+00:00","last_reported":"2025-05-16T13:40:42.235409+00:00","last_updated":"2025-05-16T13:40:42.235409+00:00","context":{"id":"01JVCN6R3V3R4MB2QXZ4G6EJJ0","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.turn_off_table","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Turn Off Table"},"last_changed":"2025-05-16T13:40:42.235457+00:00","last_reported":"2025-05-16T13:40:42.235457+00:00","last_updated":"2025-05-16T13:40:42.235457+00:00","context":{"id":"01JVCN6R3VT752T89HYYBHEFYD","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.apply_wedding_mode_to_selected","state":"off","attributes":{"last_triggered":"2025-05-05T13:45:00.403189+00:00","mode":"single","current":0,"friendly_name":"Apply Wedding Mode to Selected Lights"},"last_changed":"2025-05-16T13:40:42.235528+00:00","last_reported":"2025-05-16T13:40:42.235528+00:00","last_updated":"2025-05-16T13:40:42.235528+00:00","context":{"id":"01JVCN6R3V57N2BNT9FCPNP7R6","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.apply_team_building_to_selected","state":"off","attributes":{"last_triggered":"2025-05-05T13:44:35.434120+00:00","mode":"single","current":0,"friendly_name":"Apply Team Building Mode to Selected Lights"},"last_changed":"2025-05-16T13:40:42.235586+00:00","last_reported":"2025-05-16T13:40:42.235586+00:00","last_updated":"2025-05-16T13:40:42.235586+00:00","context":{"id":"01JVCN6R3V3NV6V4BSWBJAM4AJ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.apply_birthday_party_to_selected","state":"off","attributes":{"last_triggered":"2025-05-05T13:44:42.953640+00:00","mode":"single","current":0,"friendly_name":"Apply Birthday Party Mode to Selected Lights"},"last_changed":"2025-05-16T13:40:42.235630+00:00","last_reported":"2025-05-16T13:40:42.235630+00:00","last_updated":"2025-05-16T13:40:42.235630+00:00","context":{"id":"01JVCN6R3V79WKDB9CK1073W6W","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.turn_on_selected_lights","state":"off","attributes":{"last_triggered":"2025-05-05T13:45:03.287960+00:00","mode":"single","current":0,"friendly_name":"Turn On Selected Lights"},"last_changed":"2025-05-16T13:40:42.235911+00:00","last_reported":"2025-05-16T13:40:42.235911+00:00","last_updated":"2025-05-16T13:40:42.235911+00:00","context":{"id":"01JVCN6R3V5JFTM2677NTYZEPG","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.turn_off_selected_lights","state":"off","attributes":{"last_triggered":"2025-05-05T13:45:01.349339+00:00","mode":"single","current":0,"friendly_name":"Turn Off Selected Lights"},"last_changed":"2025-05-16T13:40:42.236010+00:00","last_reported":"2025-05-16T13:40:42.236010+00:00","last_updated":"2025-05-16T13:40:42.236010+00:00","context":{"id":"01JVCN6R3WBTQPBXAJ7P2MSVH6","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.toggle_selected_left_section","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Toggle Left Section Lights"},"last_changed":"2025-05-16T13:40:42.236065+00:00","last_reported":"2025-05-16T13:40:42.236065+00:00","last_updated":"2025-05-16T13:40:42.236065+00:00","context":{"id":"01JVCN6R3WEYBFEFMK3B6R6Z5D","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.toggle_selected_right_section","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Toggle Right Section Lights"},"last_changed":"2025-05-16T13:40:42.236112+00:00","last_reported":"2025-05-16T13:40:42.236112+00:00","last_updated":"2025-05-16T13:40:42.236112+00:00","context":{"id":"01JVCN6R3WNC5Z7R2M7P9YWJEE","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.select_all_lights","state":"off","attributes":{"last_triggered":"2025-05-05T13:44:31.067685+00:00","mode":"single","current":0,"friendly_name":"Select All Lights"},"last_changed":"2025-05-16T13:40:42.236154+00:00","last_reported":"2025-05-16T13:40:42.236154+00:00","last_updated":"2025-05-16T13:40:42.236154+00:00","context":{"id":"01JVCN6R3WCNP2ZN72BHG8YR33","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.deselect_all_lights","state":"off","attributes":{"last_triggered":"2025-05-05T13:46:02.886335+00:00","mode":"single","current":0,"friendly_name":"Deselect All Lights"},"last_changed":"2025-05-16T13:40:42.236195+00:00","last_reported":"2025-05-16T13:40:42.236195+00:00","last_updated":"2025-05-16T13:40:42.236195+00:00","context":{"id":"01JVCN6R3WMW0VRESRX89DDJC4","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.update_active_lighting_mode","state":"off","attributes":{"last_triggered":"2025-05-05T13:45:00.409313+00:00","mode":"single","current":0,"friendly_name":"Update Active Lighting Mode"},"last_changed":"2025-05-16T13:40:42.236237+00:00","last_reported":"2025-05-16T13:40:42.236237+00:00","last_updated":"2025-05-16T13:40:42.236237+00:00","context":{"id":"01JVCN6R3W5QHGN1AANA5P25PS","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.apply_custom_mode_to_selected","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Apply Custom Mode to Selected Lights"},"last_changed":"2025-05-16T13:40:42.236278+00:00","last_reported":"2025-05-16T13:40:42.236278+00:00","last_updated":"2025-05-16T13:40:42.236278+00:00","context":{"id":"01JVCN6R3W2DRW7ZD7R7NRJEHR","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.save_custom_mode","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Save Custom Light Mode"},"last_changed":"2025-05-16T13:40:42.236315+00:00","last_reported":"2025-05-16T13:40:42.236315+00:00","last_updated":"2025-05-16T13:40:42.236315+00:00","context":{"id":"01JVCN6R3W65XXCE6EE0KE856R","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.load_custom_mode","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Load Custom Light Mode"},"last_changed":"2025-05-16T13:40:42.236373+00:00","last_reported":"2025-05-16T13:40:42.236373+00:00","last_updated":"2025-05-16T13:40:42.236373+00:00","context":{"id":"01JVCN6R3WZ8TS7MNAHAEYNHTZ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.apply_custom_color_to_selected","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Apply Custom Color to Selected Lights"},"last_changed":"2025-05-16T13:40:42.236411+00:00","last_reported":"2025-05-16T13:40:42.236411+00:00","last_updated":"2025-05-16T13:40:42.236411+00:00","context":{"id":"01JVCN6R3W29G1WC4XXZR41VBF","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.load_wedding_preset","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Load Wedding Mode Preset"},"last_changed":"2025-05-16T13:40:42.236447+00:00","last_reported":"2025-05-16T13:40:42.236447+00:00","last_updated":"2025-05-16T13:40:42.236447+00:00","context":{"id":"01JVCN6R3WSM3M9396ZT1N0N3N","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.load_team_building_preset","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Load Team Building Preset"},"last_changed":"2025-05-16T13:40:42.236490+00:00","last_reported":"2025-05-16T13:40:42.236490+00:00","last_updated":"2025-05-16T13:40:42.236490+00:00","context":{"id":"01JVCN6R3WDY694JTWCMPQXM8N","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.load_birthday_preset","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Load Birthday Party Preset"},"last_changed":"2025-05-16T13:40:42.236528+00:00","last_reported":"2025-05-16T13:40:42.236528+00:00","last_updated":"2025-05-16T13:40:42.236528+00:00","context":{"id":"01JVCN6R3WFV54EX05JEE5YE79","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.load_wedding_preset_for_edit","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Load Wedding Mode for Edit"},"last_changed":"2025-05-16T13:40:42.236593+00:00","last_reported":"2025-05-16T13:40:42.236593+00:00","last_updated":"2025-05-16T13:40:42.236593+00:00","context":{"id":"01JVCN6R3WW3TMGG58M90B4AMC","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.load_team_building_preset_for_edit","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Load Team Building Preset for Edit"},"last_changed":"2025-05-16T13:40:42.236632+00:00","last_reported":"2025-05-16T13:40:42.236632+00:00","last_updated":"2025-05-16T13:40:42.236632+00:00","context":{"id":"01JVCN6R3WA2ABHFC29RA9BW54","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.load_birthday_preset_for_edit","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Load Birthday Party Preset for Edit"},"last_changed":"2025-05-16T13:40:42.236669+00:00","last_reported":"2025-05-16T13:40:42.236669+00:00","last_updated":"2025-05-16T13:40:42.236669+00:00","context":{"id":"01JVCN6R3W67936W31T18Q472D","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.save_wedding_preset","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Save Wedding Mode"},"last_changed":"2025-05-16T13:40:42.236706+00:00","last_reported":"2025-05-16T13:40:42.236706+00:00","last_updated":"2025-05-16T13:40:42.236706+00:00","context":{"id":"01JVCN6R3WHWKSK23Q2470F3YC","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.save_team_building_preset","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Save Team Building Mode"},"last_changed":"2025-05-16T13:40:42.236743+00:00","last_reported":"2025-05-16T13:40:42.236743+00:00","last_updated":"2025-05-16T13:40:42.236743+00:00","context":{"id":"01JVCN6R3W8GXZV83WNKMBNC3Q","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.save_birthday_preset","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Save Birthday Party Mode"},"last_changed":"2025-05-16T13:40:42.236778+00:00","last_reported":"2025-05-16T13:40:42.236778+00:00","last_updated":"2025-05-16T13:40:42.236778+00:00","context":{"id":"01JVCN6R3WJ2TDGMN7KKNWP8DV","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.apply_custom_edit_to_selected","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Apply Edited Mode to Selected Lights"},"last_changed":"2025-05-16T13:40:42.236813+00:00","last_reported":"2025-05-16T13:40:42.236813+00:00","last_updated":"2025-05-16T13:40:42.236813+00:00","context":{"id":"01JVCN6R3WS95P1MVHDGHSQEB2","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.save_current_preset","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Save Current Preset"},"last_changed":"2025-05-16T13:40:42.236848+00:00","last_reported":"2025-05-16T13:40:42.236848+00:00","last_updated":"2025-05-16T13:40:42.236848+00:00","context":{"id":"01JVCN6R3W8MVV48CQ31JB2WKC","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.reset_edited_preset","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Reset Edited Preset"},"last_changed":"2025-05-16T13:40:42.236885+00:00","last_reported":"2025-05-16T13:40:42.236885+00:00","last_updated":"2025-05-16T13:40:42.236885+00:00","context":{"id":"01JVCN6R3W4KWTHR2B6V32NCXG","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"script.apply_romantic_mode_to_selected","state":"off","attributes":{"last_triggered":null,"mode":"single","current":0,"friendly_name":"Apply Romantic Mode to Selected Lights"},"last_changed":"2025-05-16T13:40:42.236919+00:00","last_reported":"2025-05-16T13:40:42.236919+00:00","last_updated":"2025-05-16T13:40:42.236919+00:00","context":{"id":"01JVCN6R3WKQY9BDABX5QBRJY4","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_select.illumination_mode","state":"High","attributes":{"options":["High","Medium","Low","Manual"],"editable":false,"friendly_name":"Illumination Mode"},"last_changed":"2025-05-16T13:40:42.239053+00:00","last_reported":"2025-05-16T13:40:42.239053+00:00","last_updated":"2025-05-16T13:40:42.239053+00:00","context":{"id":"01JVCN6R3ZEY56ASGXA8PCE2S1","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_select.selected_table","state":"Miza 1","attributes":{"options":["Sekundarna Jedilnica (Leva)","Primarna Jedilnica (Desna)","Miza 1","Miza 2","Miza 3","Miza 4","Jedilnica D2","Jedilnica D3","Jedilnica D4","Jedilnica D5"],"editable":false,"icon":"mdi:table-chair","friendly_name":"Selected Table"},"last_changed":"2025-05-16T13:40:42.239112+00:00","last_reported":"2025-05-16T13:40:42.239112+00:00","last_updated":"2025-05-16T13:40:42.239112+00:00","context":{"id":"01JVCN6R3ZCEKHS40Y6F32ARNP","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_number.fake_co2_sensor","state":"800.0","attributes":{"initial":800.0,"editable":false,"min":400.0,"max":2000.0,"step":10.0,"mode":"slider","friendly_name":"Fake CO₂ Sensor"},"last_changed":"2025-05-16T13:40:42.239216+00:00","last_reported":"2025-05-16T13:40:42.239216+00:00","last_updated":"2025-05-16T13:40:42.239216+00:00","context":{"id":"01JVCN6R3ZA6N20A5A3GZ0WK57","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_number.custom_mode_red","state":"255.0","attributes":{"initial":255.0,"editable":false,"min":0.0,"max":255.0,"step":1.0,"mode":"slider","icon":"mdi:palette","friendly_name":"Red Value"},"last_changed":"2025-05-16T13:40:42.239259+00:00","last_reported":"2025-05-16T13:40:42.239259+00:00","last_updated":"2025-05-16T13:40:42.239259+00:00","context":{"id":"01JVCN6R3ZJAW1SESXZRHG7YH7","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_number.custom_mode_green","state":"200.0","attributes":{"initial":200.0,"editable":false,"min":0.0,"max":255.0,"step":1.0,"mode":"slider","icon":"mdi:palette","friendly_name":"Green Value"},"last_changed":"2025-05-16T13:40:42.239293+00:00","last_reported":"2025-05-16T13:40:42.239293+00:00","last_updated":"2025-05-16T13:40:42.239293+00:00","context":{"id":"01JVCN6R3ZEWMFDVG5TKYEFD51","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_number.custom_mode_blue","state":"200.0","attributes":{"initial":200.0,"editable":false,"min":0.0,"max":255.0,"step":1.0,"mode":"slider","icon":"mdi:palette","friendly_name":"Blue Value"},"last_changed":"2025-05-16T13:40:42.239322+00:00","last_reported":"2025-05-16T13:40:42.239322+00:00","last_updated":"2025-05-16T13:40:42.239322+00:00","context":{"id":"01JVCN6R3Z5R2W6CPTSCNXZNJX","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_number.custom_mode_brightness","state":"70.0","attributes":{"initial":70.0,"editable":false,"min":10.0,"max":100.0,"step":5.0,"mode":"slider","unit_of_measurement":"%","icon":"mdi:brightness-6","friendly_name":"Brightness"},"last_changed":"2025-05-16T13:40:42.239362+00:00","last_reported":"2025-05-16T13:40:42.239362+00:00","last_updated":"2025-05-16T13:40:42.239362+00:00","context":{"id":"01JVCN6R3ZN1TZH3KEV6K0KB3R","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_number.light_mode_red","state":"255.0","attributes":{"initial":255.0,"editable":false,"min":0.0,"max":255.0,"step":1.0,"mode":"slider","icon":"mdi:palette","friendly_name":"Red Value"},"last_changed":"2025-05-16T13:40:42.239391+00:00","last_reported":"2025-05-16T13:40:42.239391+00:00","last_updated":"2025-05-16T13:40:42.239391+00:00","context":{"id":"01JVCN6R3ZXKQ1Z01XW493XMZY","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_number.light_mode_green","state":"150.0","attributes":{"initial":150.0,"editable":false,"min":0.0,"max":255.0,"step":1.0,"mode":"slider","icon":"mdi:palette","friendly_name":"Green Value"},"last_changed":"2025-05-16T13:40:42.239417+00:00","last_reported":"2025-05-16T13:40:42.239417+00:00","last_updated":"2025-05-16T13:40:42.239417+00:00","context":{"id":"01JVCN6R3ZQETRSJW1FN47845V","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_number.light_mode_blue","state":"150.0","attributes":{"initial":150.0,"editable":false,"min":0.0,"max":255.0,"step":1.0,"mode":"slider","icon":"mdi:palette","friendly_name":"Blue Value"},"last_changed":"2025-05-16T13:40:42.239444+00:00","last_reported":"2025-05-16T13:40:42.239444+00:00","last_updated":"2025-05-16T13:40:42.239444+00:00","context":{"id":"01JVCN6R3Z52WVZM1YXDG68H81","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_number.light_mode_brightness","state":"70.0","attributes":{"initial":70.0,"editable":false,"min":10.0,"max":100.0,"step":5.0,"mode":"slider","unit_of_measurement":"%","icon":"mdi:brightness-6","friendly_name":"Brightness"},"last_changed":"2025-05-16T13:40:42.239470+00:00","last_reported":"2025-05-16T13:40:42.239470+00:00","last_updated":"2025-05-16T13:40:42.239470+00:00","context":{"id":"01JVCN6R3ZHJZP0MR3VAGMJ5GB","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_boolean.illumination_auto_enabled","state":"on","attributes":{"editable":false,"friendly_name":"Illumination Automation Enabled"},"last_changed":"2025-05-16T13:40:42.239569+00:00","last_reported":"2025-05-16T13:40:42.239569+00:00","last_updated":"2025-05-16T13:40:42.239569+00:00","context":{"id":"01JVCN6R3ZER1HG243KSQVZ2WQ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_boolean.fake_light_one_presence","state":"off","attributes":{"editable":false,"friendly_name":"Presence: Light One"},"last_changed":"2025-05-16T13:40:42.239610+00:00","last_reported":"2025-05-16T13:40:42.239610+00:00","last_updated":"2025-05-16T13:40:42.239610+00:00","context":{"id":"01JVCN6R3ZES15MRGVA3KJWN9M","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_boolean.fake_light_two_presence","state":"off","attributes":{"editable":false,"friendly_name":"Presence: Light Two"},"last_changed":"2025-05-16T13:40:42.239639+00:00","last_reported":"2025-05-16T13:40:42.239639+00:00","last_updated":"2025-05-16T13:40:42.239639+00:00","context":{"id":"01JVCN6R3ZCH6WR38PRKMK51QP","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_boolean.fake_light_three_presence","state":"off","attributes":{"editable":false,"friendly_name":"Presence: Light Three"},"last_changed":"2025-05-16T13:40:42.239664+00:00","last_reported":"2025-05-16T13:40:42.239664+00:00","last_updated":"2025-05-16T13:40:42.239664+00:00","context":{"id":"01JVCN6R3ZQPAYKS23C44XJCGH","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_boolean.fake_light_four_presence","state":"off","attributes":{"editable":false,"friendly_name":"Presence: Light Four"},"last_changed":"2025-05-16T13:40:42.239688+00:00","last_reported":"2025-05-16T13:40:42.239688+00:00","last_updated":"2025-05-16T13:40:42.239688+00:00","context":{"id":"01JVCN6R3ZT0575WRMQXQZC7CF","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_boolean.fake_light_five_presence","state":"off","attributes":{"editable":false,"friendly_name":"Presence: Light Five"},"last_changed":"2025-05-16T13:40:42.239713+00:00","last_reported":"2025-05-16T13:40:42.239713+00:00","last_updated":"2025-05-16T13:40:42.239713+00:00","context":{"id":"01JVCN6R3Z23B983C9202SKYWC","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_boolean.select_light_one","state":"off","attributes":{"editable":false,"icon":"mdi:checkbox-marked-circle-outline","friendly_name":"Select: Sekundarna Jedilnica (Leva)"},"last_changed":"2025-05-16T13:40:42.239738+00:00","last_reported":"2025-05-16T13:40:42.239738+00:00","last_updated":"2025-05-16T13:40:42.239738+00:00","context":{"id":"01JVCN6R3ZT1FNGKQR8H087PYQ","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_boolean.select_light_two","state":"off","attributes":{"editable":false,"icon":"mdi:checkbox-marked-circle-outline","friendly_name":"Select: Miza L1"},"last_changed":"2025-05-16T13:40:42.239762+00:00","last_reported":"2025-05-16T13:40:42.239762+00:00","last_updated":"2025-05-16T13:40:42.239762+00:00","context":{"id":"01JVCN6R3ZESTMMEBRAA8EAYAD","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_boolean.select_light_three","state":"off","attributes":{"editable":false,"icon":"mdi:checkbox-marked-circle-outline","friendly_name":"Select: Miza L2"},"last_changed":"2025-05-16T13:40:42.239792+00:00","last_reported":"2025-05-16T13:40:42.239792+00:00","last_updated":"2025-05-16T13:40:42.239792+00:00","context":{"id":"01JVCN6R3ZD1MKFXJZTTKZ8CRX","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_boolean.select_light_four","state":"off","attributes":{"editable":false,"icon":"mdi:checkbox-marked-circle-outline","friendly_name":"Select: Miza L3"},"last_changed":"2025-05-16T13:40:42.239819+00:00","last_reported":"2025-05-16T13:40:42.239819+00:00","last_updated":"2025-05-16T13:40:42.239819+00:00","context":{"id":"01JVCN6R3ZYQYGEW4GJRSVXB9E","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_boolean.select_light_five","state":"off","attributes":{"editable":false,"icon":"mdi:checkbox-marked-circle-outline","friendly_name":"Select: Miza L4"},"last_changed":"2025-05-16T13:40:42.239845+00:00","last_reported":"2025-05-16T13:40:42.239845+00:00","last_updated":"2025-05-16T13:40:42.239845+00:00","context":{"id":"01JVCN6R3ZTGMAQR7JA56HTP0P","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_boolean.select_light_six","state":"off","attributes":{"editable":false,"icon":"mdi:checkbox-marked-circle-outline","friendly_name":"Select: Primarna Jedilnica"},"last_changed":"2025-05-16T13:40:42.239869+00:00","last_reported":"2025-05-16T13:40:42.239869+00:00","last_updated":"2025-05-16T13:40:42.239869+00:00","context":{"id":"01JVCN6R3ZS7145QXRPASE6TKG","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_boolean.select_light_seven","state":"off","attributes":{"editable":false,"icon":"mdi:checkbox-marked-circle-outline","friendly_name":"Select: Miza D1"},"last_changed":"2025-05-16T13:40:42.239895+00:00","last_reported":"2025-05-16T13:40:42.239895+00:00","last_updated":"2025-05-16T13:40:42.239895+00:00","context":{"id":"01JVCN6R3ZD417XC4YJTG8QJWB","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_boolean.select_light_eight","state":"off","attributes":{"editable":false,"icon":"mdi:checkbox-marked-circle-outline","friendly_name":"Select: Miza D2"},"last_changed":"2025-05-16T13:40:42.239921+00:00","last_reported":"2025-05-16T13:40:42.239921+00:00","last_updated":"2025-05-16T13:40:42.239921+00:00","context":{"id":"01JVCN6R3Z5JFB7QZEZ8WYMRRP","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_boolean.select_light_nine","state":"off","attributes":{"editable":false,"icon":"mdi:checkbox-marked-circle-outline","friendly_name":"Select: Miza D3"},"last_changed":"2025-05-16T13:40:42.239947+00:00","last_reported":"2025-05-16T13:40:42.239947+00:00","last_updated":"2025-05-16T13:40:42.239947+00:00","context":{"id":"01JVCN6R3Z86ECWST8KYMJKHTD","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_boolean.active_wedding_mode","state":"off","attributes":{"editable":false,"icon":"mdi:heart-multiple","friendly_name":"Wedding Mode Active"},"last_changed":"2025-05-16T13:40:42.239971+00:00","last_reported":"2025-05-16T13:40:42.239971+00:00","last_updated":"2025-05-16T13:40:42.239971+00:00","context":{"id":"01JVCN6R3ZPQ236CDJ6X7C6E60","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_boolean.active_team_building_mode","state":"off","attributes":{"editable":false,"icon":"mdi:account-group","friendly_name":"Team Building Mode Active"},"last_changed":"2025-05-16T13:40:42.239995+00:00","last_reported":"2025-05-16T13:40:42.239995+00:00","last_updated":"2025-05-16T13:40:42.239995+00:00","context":{"id":"01JVCN6R3ZMFVN2K47D9ASA32P","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_boolean.active_birthday_party_mode","state":"off","attributes":{"editable":false,"icon":"mdi:cake-variant","friendly_name":"Birthday Party Mode Active"},"last_changed":"2025-05-16T13:40:42.240017+00:00","last_reported":"2025-05-16T13:40:42.240017+00:00","last_updated":"2025-05-16T13:40:42.240017+00:00","context":{"id":"01JVCN6R40E2KKRRK2Q78AJ4WK","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_boolean.active_romantic_mode","state":"off","attributes":{"editable":false,"icon":"mdi:heart","friendly_name":"Romantic Mode Active"},"last_changed":"2025-05-16T13:40:42.240042+00:00","last_reported":"2025-05-16T13:40:42.240042+00:00","last_updated":"2025-05-16T13:40:42.240042+00:00","context":{"id":"01JVCN6R40MJHS79XEGRC06QVM","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_select.light_state_image_path","state":"/local/pics/3DL_0.png","attributes":{"options":["/local/pics/3DL_0.png","/local/pics/3DL_1.png","/local/pics/3DL_2.png","/local/pics/3DL_3.png","/local/pics/3DL_4.png","/local/pics/3DL_5.png","/local/pics/3DL_6.png","/local/pics/3DL_7.png","/local/pics/3DL_8.png","/local/pics/3DL_9.png","/local/pics/3DL_10.png","/local/pics/3DL_11.png","/local/pics/3DL_12.png","/local/pics/3DL_13.png","/local/pics/3DL_14.png","/local/pics/3DL_15.png","/local/pics/3DL_16.png","/local/pics/3DL_17.png","/local/pics/3DL_18.png","/local/pics/3DL_19.png","/local/pics/3DL_20.png","/local/pics/3DL_21.png","/local/pics/3DL_22.png","/local/pics/3DL_23.png","/local/pics/3DL_24.png","/local/pics/3DL_25.png","/local/pics/3DL_26.png","/local/pics/3DL_27.png","/local/pics/3DL_28.png","/local/pics/3DL_29.png","/local/pics/3DL_30.png"],"editable":true,"icon":"mdi:awning-outline","friendly_name":"Light State Image Path"},"last_changed":"2025-05-16T13:40:42.241086+00:00","last_reported":"2025-05-16T13:40:42.241086+00:00","last_updated":"2025-05-16T13:40:42.241086+00:00","context":{"id":"01JVCN6R4143FF1R6FX0QEE4Z6","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_number.test_lux","state":"554.0","attributes":{"initial":null,"editable":true,"min":0.0,"max":2500.0,"step":1.0,"mode":"slider","icon":"mdi:alarm-light","friendly_name":"Test Lux"},"last_changed":"2025-05-16T13:40:42.241151+00:00","last_reported":"2025-05-16T13:40:42.241151+00:00","last_updated":"2025-05-16T13:40:42.241151+00:00","context":{"id":"01JVCN6R417BK003CH3AYYVXCB","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_text.custom_mode_name","state":"New Mode","attributes":{"editable":false,"min":0,"max":100,"pattern":null,"mode":"text","friendly_name":"Custom Mode Name"},"last_changed":"2025-05-16T13:40:42.501607+00:00","last_reported":"2025-05-16T13:40:42.501607+00:00","last_updated":"2025-05-16T13:40:42.501607+00:00","context":{"id":"01JVCN6RC5E3BAY1TW8F81K1T1","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"input_text.light_mode_name","state":"Custom Mode","attributes":{"editable":false,"min":0,"max":100,"pattern":null,"mode":"text","friendly_name":"Mode Name"},"last_changed":"2025-05-16T13:40:42.501712+00:00","last_reported":"2025-05-16T13:40:42.501712+00:00","last_updated":"2025-05-16T13:40:42.501712+00:00","context":{"id":"01JVCN6RC55XMF3YSR0BYSNFA0","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"tts.google_translate_en_com","state":"unknown","attributes":{"friendly_name":"Google Translate en com"},"last_changed":"2025-05-16T13:40:42.745394+00:00","last_reported":"2025-05-16T13:40:42.745394+00:00","last_updated":"2025-05-16T13:40:42.745394+00:00","context":{"id":"01JVCN6RKS7NBDMXWA3W6GGY10","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"update.hue_like_light_card_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"v1.7.1","in_progress":false,"latest_version":"v1.7.1","release_summary":null,"release_url":"https://github.com/Gh61/lovelace-hue-like-light-card/releases/v1.7.1","skipped_version":null,"title":null,"update_percentage":null,"friendly_name":"Hue-Like Light Card update","supported_features":23},"last_changed":"2025-05-16T13:40:42.752431+00:00","last_reported":"2025-05-16T13:40:42.752431+00:00","last_updated":"2025-05-16T13:40:42.752431+00:00","context":{"id":"01JVCN6RM0C9DD7PYHPBPJZ43S","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"update.button_card_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"v4.1.2","in_progress":false,"latest_version":"v4.1.2","release_summary":null,"release_url":"https://github.com/custom-cards/button-card/releases/v4.1.2","skipped_version":null,"title":null,"update_percentage":null,"friendly_name":"button-card update","supported_features":23},"last_changed":"2025-05-16T13:40:42.752519+00:00","last_reported":"2025-05-16T13:40:42.752519+00:00","last_updated":"2025-05-16T13:40:42.752519+00:00","context":{"id":"01JVCN6RM09TR72MGYSTRKXH8M","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"update.adaptive_lighting_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"v1.25.0","in_progress":false,"latest_version":"v1.25.0","release_summary":null,"release_url":"https://github.com/basnijholt/adaptive-lighting/releases/v1.25.0","skipped_version":null,"title":null,"update_percentage":null,"entity_picture":"https://brands.home-assistant.io/_/adaptive_lighting/icon.png","friendly_name":"Adaptive Lighting update","supported_features":23},"last_changed":"2025-05-16T13:40:42.752603+00:00","last_reported":"2025-05-16T13:40:42.752603+00:00","last_updated":"2025-05-16T13:40:42.752603+00:00","context":{"id":"01JVCN6RM035RJHF1FHC2JYCFA","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"update.hacs_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"2.0.5","in_progress":false,"latest_version":"2.0.5","release_summary":null,"release_url":"https://github.com/hacs/integration/releases/2.0.5","skipped_version":null,"title":null,"update_percentage":null,"entity_picture":"https://brands.home-assistant.io/_/hacs/icon.png","friendly_name":"HACS update","supported_features":23},"last_changed":"2025-05-16T13:40:42.752667+00:00","last_reported":"2025-05-16T13:40:42.752667+00:00","last_updated":"2025-05-16T13:40:42.752667+00:00","context":{"id":"01JVCN6RM01QVQHASWPC32PDPK","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"update.mushroom_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"v4.4.0","in_progress":false,"latest_version":"v4.4.0","release_summary":null,"release_url":"https://github.com/piitaya/lovelace-mushroom/releases/v4.4.0","skipped_version":null,"title":null,"update_percentage":null,"friendly_name":"Mushroom update","supported_features":23},"last_changed":"2025-05-16T13:40:42.752726+00:00","last_reported":"2025-05-16T13:40:42.752726+00:00","last_updated":"2025-05-16T13:40:42.752726+00:00","context":{"id":"01JVCN6RM0K9GFRT6DHMPKTKGH","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"update.layout_card_update","state":"on","attributes":{"auto_update":false,"display_precision":0,"installed_version":"v2.4.5","in_progress":false,"latest_version":"v2.4.6","release_summary":null,"release_url":"https://github.com/thomasloven/lovelace-layout-card/releases/v2.4.6","skipped_version":null,"title":null,"update_percentage":null,"friendly_name":"layout-card update","supported_features":23},"last_changed":"2025-05-16T13:40:42.752852+00:00","last_reported":"2025-05-16T13:40:42.752852+00:00","last_updated":"2025-05-16T13:40:42.752852+00:00","context":{"id":"01JVCN6RM0RSBT79PSPYN88A2C","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"update.config_template_card_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"1.3.6","in_progress":false,"latest_version":"1.3.6","release_summary":null,"release_url":"https://github.com/iantrich/config-template-card/releases/1.3.6","skipped_version":null,"title":null,"update_percentage":null,"friendly_name":"Config Template Card update","supported_features":23},"last_changed":"2025-05-16T13:40:42.752925+00:00","last_reported":"2025-05-16T13:40:42.752925+00:00","last_updated":"2025-05-16T13:40:42.752925+00:00","context":{"id":"01JVCN6RM0501GT6AT54NW3M2H","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"update.virtual_components_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"v0.9.2","in_progress":false,"latest_version":"v0.9.2","release_summary":null,"release_url":"https://github.com/twrecked/hass-virtual/releases/v0.9.2","skipped_version":null,"title":null,"update_percentage":null,"entity_picture":"https://brands.home-assistant.io/_/virtual/icon.png","friendly_name":"Virtual Components update","supported_features":23},"last_changed":"2025-05-16T13:40:42.752987+00:00","last_reported":"2025-05-16T13:40:42.752987+00:00","last_updated":"2025-05-16T13:40:42.752987+00:00","context":{"id":"01JVCN6RM084PZH7YC5M56RE45","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"update.mushroom_better_sliders_update","state":"off","attributes":{"auto_update":false,"display_precision":0,"installed_version":"v3.0.2","in_progress":false,"latest_version":"v3.0.2","release_summary":null,"release_url":"https://github.com/phischdev/lovelace-mushroom-better-sliders/releases/v3.0.2","skipped_version":null,"title":null,"update_percentage":null,"friendly_name":"Mushroom - Better Sliders update","supported_features":23},"last_changed":"2025-05-16T13:40:42.753037+00:00","last_reported":"2025-05-16T13:40:42.753037+00:00","last_updated":"2025-05-16T13:40:42.753037+00:00","context":{"id":"01JVCN6RM1KZEKRWBH00EMYR2F","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"automation.dynamic_illumination_with_time_and_lux","state":"on","attributes":{"last_triggered":"2025-05-16T13:40:00.142272+00:00","mode":"single","current":0,"friendly_name":"Dynamic Illumination with Time and Lux"},"last_changed":"2025-05-16T13:40:42.756201+00:00","last_reported":"2025-05-16T13:40:42.756201+00:00","last_updated":"2025-05-16T13:40:42.756201+00:00","context":{"id":"01JVCN6RM4F959RQ7TNECYZ705","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"automation.air_quality_signal_light","state":"on","attributes":{"id":"224f01bf9c0b4acbb28e4c1832448a81","last_triggered":"2025-05-16T13:39:15.898290+00:00","mode":"single","current":0,"friendly_name":"Air Quality Signal Light"},"last_changed":"2025-05-16T13:40:42.756315+00:00","last_reported":"2025-05-16T13:40:42.756315+00:00","last_updated":"2025-05-16T13:40:42.756315+00:00","context":{"id":"01JVCN6RM4P6VCMHFQ3A1EHDSF","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"automation.auto_light_one_on_off","state":"on","attributes":{"id":"1dbc7a70ee4e443484d520df92f4133b","last_triggered":"2025-05-05T13:16:28.493565+00:00","mode":"single","current":0,"friendly_name":"Auto Light One On/Off"},"last_changed":"2025-05-16T13:40:42.756386+00:00","last_reported":"2025-05-16T13:40:42.756386+00:00","last_updated":"2025-05-16T13:40:42.756386+00:00","context":{"id":"01JVCN6RM4WCA6DPV7QN6B11R8","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"automation.auto_light_two_on_off","state":"on","attributes":{"id":"7975cb3d0b1f4b47a787c8d0af699b5d","last_triggered":"2025-05-05T13:16:29.261829+00:00","mode":"single","current":0,"friendly_name":"Auto Light Two On/Off"},"last_changed":"2025-05-16T13:40:42.756437+00:00","last_reported":"2025-05-16T13:40:42.756437+00:00","last_updated":"2025-05-16T13:40:42.756437+00:00","context":{"id":"01JVCN6RM4ZJRVTTCKH0F07K18","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"automation.auto_light_three_on_off","state":"on","attributes":{"id":"deac4ae6a70a44649069ee851b63cd38","last_triggered":"2025-05-05T13:16:30.694402+00:00","mode":"single","current":0,"friendly_name":"Auto Light Three On/Off"},"last_changed":"2025-05-16T13:40:42.756495+00:00","last_reported":"2025-05-16T13:40:42.756495+00:00","last_updated":"2025-05-16T13:40:42.756495+00:00","context":{"id":"01JVCN6RM4JKG1JDR5PN18C143","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"automation.auto_light_four_on_off","state":"on","attributes":{"id":"8a4ba15a78bd4d19923a3742e257b4be","last_triggered":"2025-05-05T13:16:31.645769+00:00","mode":"single","current":0,"friendly_name":"Auto Light Four On/Off"},"last_changed":"2025-05-16T13:40:42.756539+00:00","last_reported":"2025-05-16T13:40:42.756539+00:00","last_updated":"2025-05-16T13:40:42.756539+00:00","context":{"id":"01JVCN6RM47EQQY2H5BN27Y4SH","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"automation.auto_light_five_on_off","state":"on","attributes":{"id":"c6619a7395a9446c89cabd3f898c7eb5","last_triggered":"2025-05-05T13:16:32.748089+00:00","mode":"single","current":0,"friendly_name":"Auto Light Five On/Off"},"last_changed":"2025-05-16T13:40:42.756581+00:00","last_reported":"2025-05-16T13:40:42.756581+00:00","last_updated":"2025-05-16T13:40:42.756581+00:00","context":{"id":"01JVCN6RM4EZQMGKTKDVG12NFE","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"automation.test_co2_light","state":"on","attributes":{"id":"1745440597558","last_triggered":"2025-04-23T20:37:17.174186+00:00","mode":"single","current":0,"friendly_name":"test_co2_light"},"last_changed":"2025-05-16T13:40:42.756640+00:00","last_reported":"2025-05-16T13:40:42.756640+00:00","last_updated":"2025-05-16T13:40:42.756640+00:00","context":{"id":"01JVCN6RM41WZZQXN1629MZS8S","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"light.fake_light_one","state":"on","attributes":{"min_color_temp_kelvin":2000,"max_color_temp_kelvin":6535,"min_mireds":153,"max_mireds":500,"supported_color_modes":["color_temp","hs"],"color_mode":"hs","brightness":122,"color_temp_kelvin":null,"color_temp":null,"hs_color":[27.429,68.627],"rgb_color":[255,160,80],"xy_color":[0.538,0.385],"persistent":true,"available":true,"friendly_name":"fake_light_one","supported_features":0},"last_changed":"2025-05-16T13:40:43.713001+00:00","last_reported":"2025-05-16T13:40:43.713001+00:00","last_updated":"2025-05-16T13:40:43.713001+00:00","context":{"id":"01JVCN6SJ13JBAGEXT5NGZXC8D","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"light.fake_light_two","state":"on","attributes":{"min_color_temp_kelvin":2000,"max_color_temp_kelvin":6535,"min_mireds":153,"max_mireds":500,"supported_color_modes":["color_temp","hs"],"color_mode":"hs","brightness":69,"color_temp_kelvin":null,"color_temp":null,"hs_color":[27.429,68.627],"rgb_color":[255,160,80],"xy_color":[0.538,0.385],"persistent":true,"available":true,"friendly_name":"fake_light_two","supported_features":0},"last_changed":"2025-05-16T13:40:43.715924+00:00","last_reported":"2025-05-16T13:40:43.715924+00:00","last_updated":"2025-05-16T13:40:43.715924+00:00","context":{"id":"01JVCN6SJ3EYQEQM3K5718QP4N","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"light.fake_light_three","state":"on","attributes":{"min_color_temp_kelvin":2000,"max_color_temp_kelvin":6535,"min_mireds":153,"max_mireds":500,"supported_color_modes":["color_temp","hs"],"color_mode":"hs","brightness":97,"color_temp_kelvin":null,"color_temp":null,"hs_color":[27.429,68.627],"rgb_color":[255,160,80],"xy_color":[0.538,0.385],"persistent":true,"available":true,"friendly_name":"fake_light_three","supported_features":0},"last_changed":"2025-05-16T13:40:43.718848+00:00","last_reported":"2025-05-16T13:40:43.718848+00:00","last_updated":"2025-05-16T13:40:43.718848+00:00","context":{"id":"01JVCN6SJ6H2TVCEGRWZEHD52Y","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"light.fake_light_four","state":"off","attributes":{"min_color_temp_kelvin":2000,"max_color_temp_kelvin":6535,"min_mireds":153,"max_mireds":500,"supported_color_modes":["color_temp","hs"],"color_mode":"hs","brightness":178,"color_temp_kelvin":null,"color_temp":null,"hs_color":[27.429,68.627],"rgb_color":null,"xy_color":null,"persistent":true,"available":true,"friendly_name":"fake_light_four","supported_features":0},"last_changed":"2025-05-16T13:40:43.721289+00:00","last_reported":"2025-05-16T13:40:43.721289+00:00","last_updated":"2025-05-16T13:40:43.721289+00:00","context":{"id":"01JVCN6SJ90VY7CANMARNESCMX","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"light.fake_light_five","state":"off","attributes":{"min_color_temp_kelvin":2000,"max_color_temp_kelvin":6535,"min_mireds":153,"max_mireds":500,"supported_color_modes":["color_temp","hs"],"color_mode":"hs","brightness":178,"color_temp_kelvin":null,"color_temp":null,"hs_color":[27.429,68.627],"rgb_color":null,"xy_color":null,"persistent":true,"available":true,"friendly_name":"fake_light_five","supported_features":0},"last_changed":"2025-05-16T13:40:43.723783+00:00","last_reported":"2025-05-16T13:40:43.723783+00:00","last_updated":"2025-05-16T13:40:43.723783+00:00","context":{"id":"01JVCN6SJBBMHBNQ7GYF5Z6TGC","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"light.fake_light_six","state":"off","attributes":{"min_color_temp_kelvin":2000,"max_color_temp_kelvin":6535,"min_mireds":153,"max_mireds":500,"supported_color_modes":["color_temp","hs"],"color_mode":"hs","brightness":128,"color_temp_kelvin":null,"color_temp":null,"hs_color":[0.0,41.176],"rgb_color":null,"xy_color":null,"persistent":true,"available":true,"friendly_name":"fake_light_six","supported_features":0},"last_changed":"2025-05-16T13:40:43.726213+00:00","last_reported":"2025-05-16T13:40:43.726213+00:00","last_updated":"2025-05-16T13:40:43.726213+00:00","context":{"id":"01JVCN6SJE7WGBK83ZYRNYEH60","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"light.fake_light_seven","state":"off","attributes":{"min_color_temp_kelvin":2000,"max_color_temp_kelvin":6535,"min_mireds":153,"max_mireds":500,"supported_color_modes":["color_temp","hs"],"color_mode":"hs","brightness":173,"color_temp_kelvin":null,"color_temp":null,"hs_color":[0.0,41.176],"rgb_color":null,"xy_color":null,"persistent":true,"available":true,"friendly_name":"fake_light_seven","supported_features":0},"last_changed":"2025-05-16T13:40:43.728674+00:00","last_reported":"2025-05-16T13:40:43.728674+00:00","last_updated":"2025-05-16T13:40:43.728674+00:00","context":{"id":"01JVCN6SJGVTAY9WZW0TBX0MRM","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"light.fake_light_eight","state":"off","attributes":{"min_color_temp_kelvin":2000,"max_color_temp_kelvin":6535,"min_mireds":153,"max_mireds":500,"supported_color_modes":["color_temp","hs"],"color_mode":"hs","brightness":84,"color_temp_kelvin":null,"color_temp":null,"hs_color":[0.0,41.176],"rgb_color":null,"xy_color":null,"persistent":true,"available":true,"friendly_name":"fake_light_eight","supported_features":0},"last_changed":"2025-05-16T13:40:43.731483+00:00","last_reported":"2025-05-16T13:40:43.731483+00:00","last_updated":"2025-05-16T13:40:43.731483+00:00","context":{"id":"01JVCN6SJK1QPAYDNZ1SJMGKNR","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"light.fake_light_nine","state":"on","attributes":{"min_color_temp_kelvin":2000,"max_color_temp_kelvin":6535,"min_mireds":153,"max_mireds":500,"supported_color_modes":["color_temp","hs"],"color_mode":"hs","brightness":178,"color_temp_kelvin":null,"color_temp":null,"hs_color":[0.0,41.176],"rgb_color":[255,150,150],"xy_color":[0.48,0.317],"persistent":true,"available":true,"friendly_name":"fake_light_nine","supported_features":0},"last_changed":"2025-05-16T13:40:43.733942+00:00","last_reported":"2025-05-16T13:40:43.733942+00:00","last_updated":"2025-05-16T13:40:43.733942+00:00","context":{"id":"01JVCN6SJNYCWPXA2EWQ20Q2CK","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"light.signal_light","state":"off","attributes":{"supported_color_modes":["hs"],"color_mode":"hs","brightness":255,"hs_color":[0.0,80.0],"rgb_color":null,"xy_color":null,"persistent":true,"available":true,"friendly_name":"signal_light","supported_features":0},"last_changed":"2025-05-16T13:40:43.734060+00:00","last_reported":"2025-05-16T13:40:43.734060+00:00","last_updated":"2025-05-16T13:40:43.734060+00:00","context":{"id":"01JVCN6SJP4Q6RZ5K0Q81WT363","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    },
+    {
+      "state": {"entity_id":"light.signal_light_two","state":"on","attributes":{"min_color_temp_kelvin":2000,"max_color_temp_kelvin":6535,"min_mireds":153,"max_mireds":500,"supported_color_modes":["color_temp","hs"],"color_mode":"color_temp","brightness":100,"color_temp_kelvin":255,"color_temp":3921,"hs_color":[15.981,100.0],"rgb_color":[255,68,0],"xy_color":[0.673,0.322],"persistent":true,"available":true,"friendly_name":"signal_light_two","supported_features":0},"last_changed":"2025-05-16T13:40:43.736625+00:00","last_reported":"2025-05-16T13:40:43.736625+00:00","last_updated":"2025-05-16T13:40:43.736625+00:00","context":{"id":"01JVCN6SJRWHSHQWW1X0X5D426","parent_id":null,"user_id":null}},
+      "extra_data": null,
+      "last_seen": "2025-05-16T13:40:43.740722+00:00"
+    }
+  ]
+}

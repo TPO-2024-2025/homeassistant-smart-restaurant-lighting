@@ -1,0 +1,2097 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "trace.saved_traces",
+  "data": {
+    "automation.224f01bf9c0b4acbb28e4c1832448a81": [
+      {
+        "extended_dict": {
+          "last_step": "action/0/choose/1/sequence/0",
+          "run_id": "5e3312f5a30124537c220d298967e85c",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-05-16T13:39:12.158015+00:00",
+            "finish": "2025-05-16T13:39:12.172836+00:00"
+          },
+          "domain": "automation",
+          "item_id": "224f01bf9c0b4acbb28e4c1832448a81",
+          "trigger": "state of sensor.co2_level",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-05-16T13:39:12.158339+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.air_quality_signal_light",
+                    "state": "on",
+                    "attributes": {
+                      "id": "224f01bf9c0b4acbb28e4c1832448a81",
+                      "last_triggered": "2025-05-05T13:32:44.827250+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Air Quality Signal Light"
+                    },
+                    "last_changed": "2025-05-16T13:38:15.653303+00:00",
+                    "last_reported": "2025-05-16T13:38:15.653303+00:00",
+                    "last_updated": "2025-05-16T13:38:15.653303+00:00",
+                    "context": {
+                      "id": "01JVCN28Z5F959RQ7TNECYZ705",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "state",
+                    "entity_id": "sensor.co2_level",
+                    "from_state": {
+                      "entity_id": "sensor.co2_level",
+                      "state": "800",
+                      "attributes": {
+                        "unit_of_measurement": "ppm",
+                        "friendly_name": "CO\u2082 Level"
+                      },
+                      "last_changed": "2025-05-16T13:38:16.658217+00:00",
+                      "last_reported": "2025-05-16T13:38:16.658217+00:00",
+                      "last_updated": "2025-05-16T13:38:16.658217+00:00",
+                      "context": {
+                        "id": "01JVCN29YJSWMGV0988WY4RWZJ",
+                        "parent_id": null,
+                        "user_id": null
+                      }
+                    },
+                    "to_state": {
+                      "entity_id": "sensor.co2_level",
+                      "state": "1440",
+                      "attributes": {
+                        "unit_of_measurement": "ppm",
+                        "friendly_name": "CO\u2082 Level"
+                      },
+                      "last_changed": "2025-05-16T13:39:12.157162+00:00",
+                      "last_reported": "2025-05-16T13:39:12.157162+00:00",
+                      "last_updated": "2025-05-16T13:39:12.157162+00:00",
+                      "context": {
+                        "id": "01JVCN404SCJ2D86B3N21EE5QJ",
+                        "parent_id": null,
+                        "user_id": "e30434cbebdc45709543007c78edd70e"
+                      }
+                    },
+                    "for": null,
+                    "attribute": null,
+                    "description": "state of sensor.co2_level"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-05-16T13:39:12.161828+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01JVCN404X28SBZN6193176MM5",
+                    "parent_id": "01JVCN404SCJ2D86B3N21EE5QJ",
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "choice": 1
+                }
+              }
+            ],
+            "action/0/choose/0": [
+              {
+                "path": "action/0/choose/0",
+                "timestamp": "2025-05-16T13:39:12.162299+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/0/choose/0/conditions/0": [
+              {
+                "path": "action/0/choose/0/conditions/0",
+                "timestamp": "2025-05-16T13:39:12.162425+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/0/choose/0/conditions/0/entity_id/0": [
+              {
+                "path": "action/0/choose/0/conditions/0/entity_id/0",
+                "timestamp": "2025-05-16T13:39:12.162449+00:00",
+                "result": {
+                  "result": false,
+                  "state": 1440.0,
+                  "wanted_state_below": 1200.0
+                }
+              }
+            ],
+            "action/0/choose/1": [
+              {
+                "path": "action/0/choose/1",
+                "timestamp": "2025-05-16T13:39:12.162525+00:00",
+                "result": {
+                  "result": true
+                }
+              }
+            ],
+            "action/0/choose/1/conditions/0": [
+              {
+                "path": "action/0/choose/1/conditions/0",
+                "timestamp": "2025-05-16T13:39:12.162549+00:00",
+                "result": {
+                  "result": true
+                }
+              }
+            ],
+            "action/0/choose/1/conditions/0/entity_id/0": [
+              {
+                "path": "action/0/choose/1/conditions/0/entity_id/0",
+                "timestamp": "2025-05-16T13:39:12.162566+00:00",
+                "result": {
+                  "result": true,
+                  "state": 1440.0
+                }
+              }
+            ],
+            "action/0/choose/1/sequence/0": [
+              {
+                "path": "action/0/choose/1/sequence/0",
+                "timestamp": "2025-05-16T13:39:12.162708+00:00",
+                "result": {
+                  "params": {
+                    "domain": "light",
+                    "service": "turn_on",
+                    "service_data": {
+                      "rgb_color": [
+                        255,
+                        51,
+                        51
+                      ],
+                      "brightness": 255,
+                      "entity_id": [
+                        "light.signal_light"
+                      ]
+                    },
+                    "target": {
+                      "entity_id": [
+                        "light.signal_light"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "alias": "Air Quality Signal Light",
+            "trigger": [
+              {
+                "platform": "state",
+                "entity_id": "sensor.co2_level"
+              }
+            ],
+            "condition": [],
+            "action": [
+              {
+                "choose": [
+                  {
+                    "conditions": [
+                      {
+                        "condition": "numeric_state",
+                        "entity_id": "sensor.co2_level",
+                        "above": 1000,
+                        "below": 1200
+                      }
+                    ],
+                    "sequence": [
+                      {
+                        "target": {
+                          "entity_id": "light.signal_light"
+                        },
+                        "data": {
+                          "rgb_color": [
+                            255,
+                            102,
+                            102
+                          ],
+                          "brightness": 255
+                        },
+                        "action": "light.turn_on"
+                      }
+                    ]
+                  },
+                  {
+                    "conditions": [
+                      {
+                        "condition": "numeric_state",
+                        "entity_id": "sensor.co2_level",
+                        "above": 1200,
+                        "below": 1500
+                      }
+                    ],
+                    "sequence": [
+                      {
+                        "target": {
+                          "entity_id": "light.signal_light"
+                        },
+                        "data": {
+                          "rgb_color": [
+                            255,
+                            51,
+                            51
+                          ],
+                          "brightness": 255
+                        },
+                        "action": "light.turn_on"
+                      }
+                    ]
+                  },
+                  {
+                    "conditions": [
+                      {
+                        "condition": "numeric_state",
+                        "entity_id": "sensor.co2_level",
+                        "above": 1500
+                      }
+                    ],
+                    "sequence": [
+                      {
+                        "target": {
+                          "entity_id": "light.signal_light"
+                        },
+                        "data": {
+                          "rgb_color": [
+                            204,
+                            0,
+                            0
+                          ],
+                          "brightness": 255
+                        },
+                        "action": "light.turn_on"
+                      }
+                    ]
+                  }
+                ],
+                "default": [
+                  {
+                    "target": {
+                      "entity_id": "light.signal_light"
+                    },
+                    "action": "light.turn_off"
+                  }
+                ]
+              }
+            ],
+            "id": "224f01bf9c0b4acbb28e4c1832448a81"
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JVCN404X28SBZN6193176MM5",
+            "parent_id": "01JVCN404SCJ2D86B3N21EE5QJ",
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0/choose/1/sequence/0",
+          "run_id": "5e3312f5a30124537c220d298967e85c",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-05-16T13:39:12.158015+00:00",
+            "finish": "2025-05-16T13:39:12.172836+00:00"
+          },
+          "domain": "automation",
+          "item_id": "224f01bf9c0b4acbb28e4c1832448a81",
+          "trigger": "state of sensor.co2_level"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/0/default/0",
+          "run_id": "d9c208da7e491d62f90ede99d34c9582",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-05-16T13:39:13.658788+00:00",
+            "finish": "2025-05-16T13:39:13.660850+00:00"
+          },
+          "domain": "automation",
+          "item_id": "224f01bf9c0b4acbb28e4c1832448a81",
+          "trigger": "state of sensor.co2_level",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-05-16T13:39:13.658911+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.air_quality_signal_light",
+                    "state": "on",
+                    "attributes": {
+                      "id": "224f01bf9c0b4acbb28e4c1832448a81",
+                      "last_triggered": "2025-05-16T13:39:12.158804+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Air Quality Signal Light"
+                    },
+                    "last_changed": "2025-05-16T13:38:15.653303+00:00",
+                    "last_reported": "2025-05-16T13:39:12.172790+00:00",
+                    "last_updated": "2025-05-16T13:39:12.172790+00:00",
+                    "context": {
+                      "id": "01JVCN404X28SBZN6193176MM5",
+                      "parent_id": "01JVCN404SCJ2D86B3N21EE5QJ",
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "state",
+                    "entity_id": "sensor.co2_level",
+                    "from_state": {
+                      "entity_id": "sensor.co2_level",
+                      "state": "1440",
+                      "attributes": {
+                        "unit_of_measurement": "ppm",
+                        "friendly_name": "CO\u2082 Level"
+                      },
+                      "last_changed": "2025-05-16T13:39:12.157162+00:00",
+                      "last_reported": "2025-05-16T13:39:12.157162+00:00",
+                      "last_updated": "2025-05-16T13:39:12.157162+00:00",
+                      "context": {
+                        "id": "01JVCN404SCJ2D86B3N21EE5QJ",
+                        "parent_id": null,
+                        "user_id": "e30434cbebdc45709543007c78edd70e"
+                      }
+                    },
+                    "to_state": {
+                      "entity_id": "sensor.co2_level",
+                      "state": "900",
+                      "attributes": {
+                        "unit_of_measurement": "ppm",
+                        "friendly_name": "CO\u2082 Level"
+                      },
+                      "last_changed": "2025-05-16T13:39:13.658553+00:00",
+                      "last_reported": "2025-05-16T13:39:13.658553+00:00",
+                      "last_updated": "2025-05-16T13:39:13.658553+00:00",
+                      "context": {
+                        "id": "01JVCN41KS7J6PW7C6FVS4TNJS",
+                        "parent_id": null,
+                        "user_id": "e30434cbebdc45709543007c78edd70e"
+                      }
+                    },
+                    "for": null,
+                    "attribute": null,
+                    "description": "state of sensor.co2_level"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-05-16T13:39:13.659190+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01JVCN41KTM6EZA4YYQ0E9H214",
+                    "parent_id": "01JVCN41KS7J6PW7C6FVS4TNJS",
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "choice": "default"
+                }
+              }
+            ],
+            "action/0/choose/0": [
+              {
+                "path": "action/0/choose/0",
+                "timestamp": "2025-05-16T13:39:13.659399+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/0/choose/0/conditions/0": [
+              {
+                "path": "action/0/choose/0/conditions/0",
+                "timestamp": "2025-05-16T13:39:13.659456+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/0/choose/0/conditions/0/entity_id/0": [
+              {
+                "path": "action/0/choose/0/conditions/0/entity_id/0",
+                "timestamp": "2025-05-16T13:39:13.659492+00:00",
+                "result": {
+                  "result": false,
+                  "state": 900.0,
+                  "wanted_state_above": 1000.0
+                }
+              }
+            ],
+            "action/0/choose/1": [
+              {
+                "path": "action/0/choose/1",
+                "timestamp": "2025-05-16T13:39:13.659574+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/0/choose/1/conditions/0": [
+              {
+                "path": "action/0/choose/1/conditions/0",
+                "timestamp": "2025-05-16T13:39:13.659606+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/0/choose/1/conditions/0/entity_id/0": [
+              {
+                "path": "action/0/choose/1/conditions/0/entity_id/0",
+                "timestamp": "2025-05-16T13:39:13.659633+00:00",
+                "result": {
+                  "result": false,
+                  "state": 900.0,
+                  "wanted_state_above": 1200.0
+                }
+              }
+            ],
+            "action/0/choose/2": [
+              {
+                "path": "action/0/choose/2",
+                "timestamp": "2025-05-16T13:39:13.659684+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/0/choose/2/conditions/0": [
+              {
+                "path": "action/0/choose/2/conditions/0",
+                "timestamp": "2025-05-16T13:39:13.659712+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/0/choose/2/conditions/0/entity_id/0": [
+              {
+                "path": "action/0/choose/2/conditions/0/entity_id/0",
+                "timestamp": "2025-05-16T13:39:13.659738+00:00",
+                "result": {
+                  "result": false,
+                  "state": 900.0,
+                  "wanted_state_above": 1500.0
+                }
+              }
+            ],
+            "action/0/default/0": [
+              {
+                "path": "action/0/default/0",
+                "timestamp": "2025-05-16T13:39:13.659993+00:00",
+                "result": {
+                  "params": {
+                    "domain": "light",
+                    "service": "turn_off",
+                    "service_data": {},
+                    "target": {
+                      "entity_id": [
+                        "light.signal_light"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "alias": "Air Quality Signal Light",
+            "trigger": [
+              {
+                "platform": "state",
+                "entity_id": "sensor.co2_level"
+              }
+            ],
+            "condition": [],
+            "action": [
+              {
+                "choose": [
+                  {
+                    "conditions": [
+                      {
+                        "condition": "numeric_state",
+                        "entity_id": "sensor.co2_level",
+                        "above": 1000,
+                        "below": 1200
+                      }
+                    ],
+                    "sequence": [
+                      {
+                        "target": {
+                          "entity_id": "light.signal_light"
+                        },
+                        "data": {
+                          "rgb_color": [
+                            255,
+                            102,
+                            102
+                          ],
+                          "brightness": 255
+                        },
+                        "action": "light.turn_on"
+                      }
+                    ]
+                  },
+                  {
+                    "conditions": [
+                      {
+                        "condition": "numeric_state",
+                        "entity_id": "sensor.co2_level",
+                        "above": 1200,
+                        "below": 1500
+                      }
+                    ],
+                    "sequence": [
+                      {
+                        "target": {
+                          "entity_id": "light.signal_light"
+                        },
+                        "data": {
+                          "rgb_color": [
+                            255,
+                            51,
+                            51
+                          ],
+                          "brightness": 255
+                        },
+                        "action": "light.turn_on"
+                      }
+                    ]
+                  },
+                  {
+                    "conditions": [
+                      {
+                        "condition": "numeric_state",
+                        "entity_id": "sensor.co2_level",
+                        "above": 1500
+                      }
+                    ],
+                    "sequence": [
+                      {
+                        "target": {
+                          "entity_id": "light.signal_light"
+                        },
+                        "data": {
+                          "rgb_color": [
+                            204,
+                            0,
+                            0
+                          ],
+                          "brightness": 255
+                        },
+                        "action": "light.turn_on"
+                      }
+                    ]
+                  }
+                ],
+                "default": [
+                  {
+                    "target": {
+                      "entity_id": "light.signal_light"
+                    },
+                    "action": "light.turn_off"
+                  }
+                ]
+              }
+            ],
+            "id": "224f01bf9c0b4acbb28e4c1832448a81"
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JVCN41KTM6EZA4YYQ0E9H214",
+            "parent_id": "01JVCN41KS7J6PW7C6FVS4TNJS",
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0/default/0",
+          "run_id": "d9c208da7e491d62f90ede99d34c9582",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-05-16T13:39:13.658788+00:00",
+            "finish": "2025-05-16T13:39:13.660850+00:00"
+          },
+          "domain": "automation",
+          "item_id": "224f01bf9c0b4acbb28e4c1832448a81",
+          "trigger": "state of sensor.co2_level"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/0/choose/2/sequence/0",
+          "run_id": "5ba17d77962f079c1784c98b7db3f20b",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-05-16T13:39:14.657821+00:00",
+            "finish": "2025-05-16T13:39:14.660545+00:00"
+          },
+          "domain": "automation",
+          "item_id": "224f01bf9c0b4acbb28e4c1832448a81",
+          "trigger": "state of sensor.co2_level",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-05-16T13:39:14.657910+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.air_quality_signal_light",
+                    "state": "on",
+                    "attributes": {
+                      "id": "224f01bf9c0b4acbb28e4c1832448a81",
+                      "last_triggered": "2025-05-16T13:39:13.659019+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Air Quality Signal Light"
+                    },
+                    "last_changed": "2025-05-16T13:38:15.653303+00:00",
+                    "last_reported": "2025-05-16T13:39:13.660819+00:00",
+                    "last_updated": "2025-05-16T13:39:13.660819+00:00",
+                    "context": {
+                      "id": "01JVCN41KTM6EZA4YYQ0E9H214",
+                      "parent_id": "01JVCN41KS7J6PW7C6FVS4TNJS",
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "state",
+                    "entity_id": "sensor.co2_level",
+                    "from_state": {
+                      "entity_id": "sensor.co2_level",
+                      "state": "900",
+                      "attributes": {
+                        "unit_of_measurement": "ppm",
+                        "friendly_name": "CO\u2082 Level"
+                      },
+                      "last_changed": "2025-05-16T13:39:13.658553+00:00",
+                      "last_reported": "2025-05-16T13:39:13.658553+00:00",
+                      "last_updated": "2025-05-16T13:39:13.658553+00:00",
+                      "context": {
+                        "id": "01JVCN41KS7J6PW7C6FVS4TNJS",
+                        "parent_id": null,
+                        "user_id": "e30434cbebdc45709543007c78edd70e"
+                      }
+                    },
+                    "to_state": {
+                      "entity_id": "sensor.co2_level",
+                      "state": "1760",
+                      "attributes": {
+                        "unit_of_measurement": "ppm",
+                        "friendly_name": "CO\u2082 Level"
+                      },
+                      "last_changed": "2025-05-16T13:39:14.657595+00:00",
+                      "last_reported": "2025-05-16T13:39:14.657595+00:00",
+                      "last_updated": "2025-05-16T13:39:14.657595+00:00",
+                      "context": {
+                        "id": "01JVCN42K0EN2GDPVHV55R0X4P",
+                        "parent_id": null,
+                        "user_id": "e30434cbebdc45709543007c78edd70e"
+                      }
+                    },
+                    "for": null,
+                    "attribute": null,
+                    "description": "state of sensor.co2_level"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-05-16T13:39:14.658259+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01JVCN42K1SJJP7KQ4VGKZDSVG",
+                    "parent_id": "01JVCN42K0EN2GDPVHV55R0X4P",
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "choice": 2
+                }
+              }
+            ],
+            "action/0/choose/0": [
+              {
+                "path": "action/0/choose/0",
+                "timestamp": "2025-05-16T13:39:14.658387+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/0/choose/0/conditions/0": [
+              {
+                "path": "action/0/choose/0/conditions/0",
+                "timestamp": "2025-05-16T13:39:14.658439+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/0/choose/0/conditions/0/entity_id/0": [
+              {
+                "path": "action/0/choose/0/conditions/0/entity_id/0",
+                "timestamp": "2025-05-16T13:39:14.658466+00:00",
+                "result": {
+                  "result": false,
+                  "state": 1760.0,
+                  "wanted_state_below": 1200.0
+                }
+              }
+            ],
+            "action/0/choose/1": [
+              {
+                "path": "action/0/choose/1",
+                "timestamp": "2025-05-16T13:39:14.658527+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/0/choose/1/conditions/0": [
+              {
+                "path": "action/0/choose/1/conditions/0",
+                "timestamp": "2025-05-16T13:39:14.658552+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/0/choose/1/conditions/0/entity_id/0": [
+              {
+                "path": "action/0/choose/1/conditions/0/entity_id/0",
+                "timestamp": "2025-05-16T13:39:14.658573+00:00",
+                "result": {
+                  "result": false,
+                  "state": 1760.0,
+                  "wanted_state_below": 1500.0
+                }
+              }
+            ],
+            "action/0/choose/2": [
+              {
+                "path": "action/0/choose/2",
+                "timestamp": "2025-05-16T13:39:14.658651+00:00",
+                "result": {
+                  "result": true
+                }
+              }
+            ],
+            "action/0/choose/2/conditions/0": [
+              {
+                "path": "action/0/choose/2/conditions/0",
+                "timestamp": "2025-05-16T13:39:14.658675+00:00",
+                "result": {
+                  "result": true
+                }
+              }
+            ],
+            "action/0/choose/2/conditions/0/entity_id/0": [
+              {
+                "path": "action/0/choose/2/conditions/0/entity_id/0",
+                "timestamp": "2025-05-16T13:39:14.658694+00:00",
+                "result": {
+                  "result": true,
+                  "state": 1760.0
+                }
+              }
+            ],
+            "action/0/choose/2/sequence/0": [
+              {
+                "path": "action/0/choose/2/sequence/0",
+                "timestamp": "2025-05-16T13:39:14.658885+00:00",
+                "result": {
+                  "params": {
+                    "domain": "light",
+                    "service": "turn_on",
+                    "service_data": {
+                      "rgb_color": [
+                        204,
+                        0,
+                        0
+                      ],
+                      "brightness": 255,
+                      "entity_id": [
+                        "light.signal_light"
+                      ]
+                    },
+                    "target": {
+                      "entity_id": [
+                        "light.signal_light"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "alias": "Air Quality Signal Light",
+            "trigger": [
+              {
+                "platform": "state",
+                "entity_id": "sensor.co2_level"
+              }
+            ],
+            "condition": [],
+            "action": [
+              {
+                "choose": [
+                  {
+                    "conditions": [
+                      {
+                        "condition": "numeric_state",
+                        "entity_id": "sensor.co2_level",
+                        "above": 1000,
+                        "below": 1200
+                      }
+                    ],
+                    "sequence": [
+                      {
+                        "target": {
+                          "entity_id": "light.signal_light"
+                        },
+                        "data": {
+                          "rgb_color": [
+                            255,
+                            102,
+                            102
+                          ],
+                          "brightness": 255
+                        },
+                        "action": "light.turn_on"
+                      }
+                    ]
+                  },
+                  {
+                    "conditions": [
+                      {
+                        "condition": "numeric_state",
+                        "entity_id": "sensor.co2_level",
+                        "above": 1200,
+                        "below": 1500
+                      }
+                    ],
+                    "sequence": [
+                      {
+                        "target": {
+                          "entity_id": "light.signal_light"
+                        },
+                        "data": {
+                          "rgb_color": [
+                            255,
+                            51,
+                            51
+                          ],
+                          "brightness": 255
+                        },
+                        "action": "light.turn_on"
+                      }
+                    ]
+                  },
+                  {
+                    "conditions": [
+                      {
+                        "condition": "numeric_state",
+                        "entity_id": "sensor.co2_level",
+                        "above": 1500
+                      }
+                    ],
+                    "sequence": [
+                      {
+                        "target": {
+                          "entity_id": "light.signal_light"
+                        },
+                        "data": {
+                          "rgb_color": [
+                            204,
+                            0,
+                            0
+                          ],
+                          "brightness": 255
+                        },
+                        "action": "light.turn_on"
+                      }
+                    ]
+                  }
+                ],
+                "default": [
+                  {
+                    "target": {
+                      "entity_id": "light.signal_light"
+                    },
+                    "action": "light.turn_off"
+                  }
+                ]
+              }
+            ],
+            "id": "224f01bf9c0b4acbb28e4c1832448a81"
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JVCN42K1SJJP7KQ4VGKZDSVG",
+            "parent_id": "01JVCN42K0EN2GDPVHV55R0X4P",
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0/choose/2/sequence/0",
+          "run_id": "5ba17d77962f079c1784c98b7db3f20b",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-05-16T13:39:14.657821+00:00",
+            "finish": "2025-05-16T13:39:14.660545+00:00"
+          },
+          "domain": "automation",
+          "item_id": "224f01bf9c0b4acbb28e4c1832448a81",
+          "trigger": "state of sensor.co2_level"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/0/choose/1/sequence/0",
+          "run_id": "f494b7973ee530fc97a0eb7d9d59f470",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-05-16T13:39:15.446319+00:00",
+            "finish": "2025-05-16T13:39:15.447972+00:00"
+          },
+          "domain": "automation",
+          "item_id": "224f01bf9c0b4acbb28e4c1832448a81",
+          "trigger": "state of sensor.co2_level",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-05-16T13:39:15.446386+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.air_quality_signal_light",
+                    "state": "on",
+                    "attributes": {
+                      "id": "224f01bf9c0b4acbb28e4c1832448a81",
+                      "last_triggered": "2025-05-16T13:39:14.658019+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Air Quality Signal Light"
+                    },
+                    "last_changed": "2025-05-16T13:38:15.653303+00:00",
+                    "last_reported": "2025-05-16T13:39:14.660491+00:00",
+                    "last_updated": "2025-05-16T13:39:14.660491+00:00",
+                    "context": {
+                      "id": "01JVCN42K1SJJP7KQ4VGKZDSVG",
+                      "parent_id": "01JVCN42K0EN2GDPVHV55R0X4P",
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "state",
+                    "entity_id": "sensor.co2_level",
+                    "from_state": {
+                      "entity_id": "sensor.co2_level",
+                      "state": "1760",
+                      "attributes": {
+                        "unit_of_measurement": "ppm",
+                        "friendly_name": "CO\u2082 Level"
+                      },
+                      "last_changed": "2025-05-16T13:39:14.657595+00:00",
+                      "last_reported": "2025-05-16T13:39:14.657595+00:00",
+                      "last_updated": "2025-05-16T13:39:14.657595+00:00",
+                      "context": {
+                        "id": "01JVCN42K0EN2GDPVHV55R0X4P",
+                        "parent_id": null,
+                        "user_id": "e30434cbebdc45709543007c78edd70e"
+                      }
+                    },
+                    "to_state": {
+                      "entity_id": "sensor.co2_level",
+                      "state": "1350",
+                      "attributes": {
+                        "unit_of_measurement": "ppm",
+                        "friendly_name": "CO\u2082 Level"
+                      },
+                      "last_changed": "2025-05-16T13:39:15.446191+00:00",
+                      "last_reported": "2025-05-16T13:39:15.446191+00:00",
+                      "last_updated": "2025-05-16T13:39:15.446191+00:00",
+                      "context": {
+                        "id": "01JVCN43BN0Z0FDT4X53J5K76N",
+                        "parent_id": null,
+                        "user_id": "e30434cbebdc45709543007c78edd70e"
+                      }
+                    },
+                    "for": null,
+                    "attribute": null,
+                    "description": "state of sensor.co2_level"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-05-16T13:39:15.446643+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01JVCN43BP1VYW5CYKGYV6MGZF",
+                    "parent_id": "01JVCN43BN0Z0FDT4X53J5K76N",
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "choice": 1
+                }
+              }
+            ],
+            "action/0/choose/0": [
+              {
+                "path": "action/0/choose/0",
+                "timestamp": "2025-05-16T13:39:15.446769+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/0/choose/0/conditions/0": [
+              {
+                "path": "action/0/choose/0/conditions/0",
+                "timestamp": "2025-05-16T13:39:15.446809+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/0/choose/0/conditions/0/entity_id/0": [
+              {
+                "path": "action/0/choose/0/conditions/0/entity_id/0",
+                "timestamp": "2025-05-16T13:39:15.446831+00:00",
+                "result": {
+                  "result": false,
+                  "state": 1350.0,
+                  "wanted_state_below": 1200.0
+                }
+              }
+            ],
+            "action/0/choose/1": [
+              {
+                "path": "action/0/choose/1",
+                "timestamp": "2025-05-16T13:39:15.446884+00:00",
+                "result": {
+                  "result": true
+                }
+              }
+            ],
+            "action/0/choose/1/conditions/0": [
+              {
+                "path": "action/0/choose/1/conditions/0",
+                "timestamp": "2025-05-16T13:39:15.446921+00:00",
+                "result": {
+                  "result": true
+                }
+              }
+            ],
+            "action/0/choose/1/conditions/0/entity_id/0": [
+              {
+                "path": "action/0/choose/1/conditions/0/entity_id/0",
+                "timestamp": "2025-05-16T13:39:15.446942+00:00",
+                "result": {
+                  "result": true,
+                  "state": 1350.0
+                }
+              }
+            ],
+            "action/0/choose/1/sequence/0": [
+              {
+                "path": "action/0/choose/1/sequence/0",
+                "timestamp": "2025-05-16T13:39:15.447032+00:00",
+                "result": {
+                  "params": {
+                    "domain": "light",
+                    "service": "turn_on",
+                    "service_data": {
+                      "rgb_color": [
+                        255,
+                        51,
+                        51
+                      ],
+                      "brightness": 255,
+                      "entity_id": [
+                        "light.signal_light"
+                      ]
+                    },
+                    "target": {
+                      "entity_id": [
+                        "light.signal_light"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "alias": "Air Quality Signal Light",
+            "trigger": [
+              {
+                "platform": "state",
+                "entity_id": "sensor.co2_level"
+              }
+            ],
+            "condition": [],
+            "action": [
+              {
+                "choose": [
+                  {
+                    "conditions": [
+                      {
+                        "condition": "numeric_state",
+                        "entity_id": "sensor.co2_level",
+                        "above": 1000,
+                        "below": 1200
+                      }
+                    ],
+                    "sequence": [
+                      {
+                        "target": {
+                          "entity_id": "light.signal_light"
+                        },
+                        "data": {
+                          "rgb_color": [
+                            255,
+                            102,
+                            102
+                          ],
+                          "brightness": 255
+                        },
+                        "action": "light.turn_on"
+                      }
+                    ]
+                  },
+                  {
+                    "conditions": [
+                      {
+                        "condition": "numeric_state",
+                        "entity_id": "sensor.co2_level",
+                        "above": 1200,
+                        "below": 1500
+                      }
+                    ],
+                    "sequence": [
+                      {
+                        "target": {
+                          "entity_id": "light.signal_light"
+                        },
+                        "data": {
+                          "rgb_color": [
+                            255,
+                            51,
+                            51
+                          ],
+                          "brightness": 255
+                        },
+                        "action": "light.turn_on"
+                      }
+                    ]
+                  },
+                  {
+                    "conditions": [
+                      {
+                        "condition": "numeric_state",
+                        "entity_id": "sensor.co2_level",
+                        "above": 1500
+                      }
+                    ],
+                    "sequence": [
+                      {
+                        "target": {
+                          "entity_id": "light.signal_light"
+                        },
+                        "data": {
+                          "rgb_color": [
+                            204,
+                            0,
+                            0
+                          ],
+                          "brightness": 255
+                        },
+                        "action": "light.turn_on"
+                      }
+                    ]
+                  }
+                ],
+                "default": [
+                  {
+                    "target": {
+                      "entity_id": "light.signal_light"
+                    },
+                    "action": "light.turn_off"
+                  }
+                ]
+              }
+            ],
+            "id": "224f01bf9c0b4acbb28e4c1832448a81"
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JVCN43BP1VYW5CYKGYV6MGZF",
+            "parent_id": "01JVCN43BN0Z0FDT4X53J5K76N",
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0/choose/1/sequence/0",
+          "run_id": "f494b7973ee530fc97a0eb7d9d59f470",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-05-16T13:39:15.446319+00:00",
+            "finish": "2025-05-16T13:39:15.447972+00:00"
+          },
+          "domain": "automation",
+          "item_id": "224f01bf9c0b4acbb28e4c1832448a81",
+          "trigger": "state of sensor.co2_level"
+        }
+      },
+      {
+        "extended_dict": {
+          "last_step": "action/0/default/0",
+          "run_id": "c30fa0af591aa6e9d9b72e9d0ab89040",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-05-16T13:39:15.898110+00:00",
+            "finish": "2025-05-16T13:39:15.899877+00:00"
+          },
+          "domain": "automation",
+          "item_id": "224f01bf9c0b4acbb28e4c1832448a81",
+          "trigger": "state of sensor.co2_level",
+          "trace": {
+            "trigger/0": [
+              {
+                "path": "trigger/0",
+                "timestamp": "2025-05-16T13:39:15.898190+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.air_quality_signal_light",
+                    "state": "on",
+                    "attributes": {
+                      "id": "224f01bf9c0b4acbb28e4c1832448a81",
+                      "last_triggered": "2025-05-16T13:39:15.446468+00:00",
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Air Quality Signal Light"
+                    },
+                    "last_changed": "2025-05-16T13:38:15.653303+00:00",
+                    "last_reported": "2025-05-16T13:39:15.447932+00:00",
+                    "last_updated": "2025-05-16T13:39:15.447932+00:00",
+                    "context": {
+                      "id": "01JVCN43BP1VYW5CYKGYV6MGZF",
+                      "parent_id": "01JVCN43BN0Z0FDT4X53J5K76N",
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "0",
+                    "idx": "0",
+                    "alias": null,
+                    "platform": "state",
+                    "entity_id": "sensor.co2_level",
+                    "from_state": {
+                      "entity_id": "sensor.co2_level",
+                      "state": "1350",
+                      "attributes": {
+                        "unit_of_measurement": "ppm",
+                        "friendly_name": "CO\u2082 Level"
+                      },
+                      "last_changed": "2025-05-16T13:39:15.446191+00:00",
+                      "last_reported": "2025-05-16T13:39:15.446191+00:00",
+                      "last_updated": "2025-05-16T13:39:15.446191+00:00",
+                      "context": {
+                        "id": "01JVCN43BN0Z0FDT4X53J5K76N",
+                        "parent_id": null,
+                        "user_id": "e30434cbebdc45709543007c78edd70e"
+                      }
+                    },
+                    "to_state": {
+                      "entity_id": "sensor.co2_level",
+                      "state": "860",
+                      "attributes": {
+                        "unit_of_measurement": "ppm",
+                        "friendly_name": "CO\u2082 Level"
+                      },
+                      "last_changed": "2025-05-16T13:39:15.897858+00:00",
+                      "last_reported": "2025-05-16T13:39:15.897858+00:00",
+                      "last_updated": "2025-05-16T13:39:15.897858+00:00",
+                      "context": {
+                        "id": "01JVCN43SRCSVNX7SCXZ7D5CDP",
+                        "parent_id": null,
+                        "user_id": "e30434cbebdc45709543007c78edd70e"
+                      }
+                    },
+                    "for": null,
+                    "attribute": null,
+                    "description": "state of sensor.co2_level"
+                  }
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-05-16T13:39:15.898446+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01JVCN43STE12ATDNDRCBB244B",
+                    "parent_id": "01JVCN43SRCSVNX7SCXZ7D5CDP",
+                    "user_id": null
+                  }
+                },
+                "result": {
+                  "choice": "default"
+                }
+              }
+            ],
+            "action/0/choose/0": [
+              {
+                "path": "action/0/choose/0",
+                "timestamp": "2025-05-16T13:39:15.898564+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/0/choose/0/conditions/0": [
+              {
+                "path": "action/0/choose/0/conditions/0",
+                "timestamp": "2025-05-16T13:39:15.898614+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/0/choose/0/conditions/0/entity_id/0": [
+              {
+                "path": "action/0/choose/0/conditions/0/entity_id/0",
+                "timestamp": "2025-05-16T13:39:15.898643+00:00",
+                "result": {
+                  "result": false,
+                  "state": 860.0,
+                  "wanted_state_above": 1000.0
+                }
+              }
+            ],
+            "action/0/choose/1": [
+              {
+                "path": "action/0/choose/1",
+                "timestamp": "2025-05-16T13:39:15.898716+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/0/choose/1/conditions/0": [
+              {
+                "path": "action/0/choose/1/conditions/0",
+                "timestamp": "2025-05-16T13:39:15.898771+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/0/choose/1/conditions/0/entity_id/0": [
+              {
+                "path": "action/0/choose/1/conditions/0/entity_id/0",
+                "timestamp": "2025-05-16T13:39:15.898800+00:00",
+                "result": {
+                  "result": false,
+                  "state": 860.0,
+                  "wanted_state_above": 1200.0
+                }
+              }
+            ],
+            "action/0/choose/2": [
+              {
+                "path": "action/0/choose/2",
+                "timestamp": "2025-05-16T13:39:15.898851+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/0/choose/2/conditions/0": [
+              {
+                "path": "action/0/choose/2/conditions/0",
+                "timestamp": "2025-05-16T13:39:15.898905+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/0/choose/2/conditions/0/entity_id/0": [
+              {
+                "path": "action/0/choose/2/conditions/0/entity_id/0",
+                "timestamp": "2025-05-16T13:39:15.898931+00:00",
+                "result": {
+                  "result": false,
+                  "state": 860.0,
+                  "wanted_state_above": 1500.0
+                }
+              }
+            ],
+            "action/0/default/0": [
+              {
+                "path": "action/0/default/0",
+                "timestamp": "2025-05-16T13:39:15.899053+00:00",
+                "result": {
+                  "params": {
+                    "domain": "light",
+                    "service": "turn_off",
+                    "service_data": {},
+                    "target": {
+                      "entity_id": [
+                        "light.signal_light"
+                      ]
+                    }
+                  },
+                  "running_script": false
+                }
+              }
+            ]
+          },
+          "config": {
+            "alias": "Air Quality Signal Light",
+            "trigger": [
+              {
+                "platform": "state",
+                "entity_id": "sensor.co2_level"
+              }
+            ],
+            "condition": [],
+            "action": [
+              {
+                "choose": [
+                  {
+                    "conditions": [
+                      {
+                        "condition": "numeric_state",
+                        "entity_id": "sensor.co2_level",
+                        "above": 1000,
+                        "below": 1200
+                      }
+                    ],
+                    "sequence": [
+                      {
+                        "target": {
+                          "entity_id": "light.signal_light"
+                        },
+                        "data": {
+                          "rgb_color": [
+                            255,
+                            102,
+                            102
+                          ],
+                          "brightness": 255
+                        },
+                        "action": "light.turn_on"
+                      }
+                    ]
+                  },
+                  {
+                    "conditions": [
+                      {
+                        "condition": "numeric_state",
+                        "entity_id": "sensor.co2_level",
+                        "above": 1200,
+                        "below": 1500
+                      }
+                    ],
+                    "sequence": [
+                      {
+                        "target": {
+                          "entity_id": "light.signal_light"
+                        },
+                        "data": {
+                          "rgb_color": [
+                            255,
+                            51,
+                            51
+                          ],
+                          "brightness": 255
+                        },
+                        "action": "light.turn_on"
+                      }
+                    ]
+                  },
+                  {
+                    "conditions": [
+                      {
+                        "condition": "numeric_state",
+                        "entity_id": "sensor.co2_level",
+                        "above": 1500
+                      }
+                    ],
+                    "sequence": [
+                      {
+                        "target": {
+                          "entity_id": "light.signal_light"
+                        },
+                        "data": {
+                          "rgb_color": [
+                            204,
+                            0,
+                            0
+                          ],
+                          "brightness": 255
+                        },
+                        "action": "light.turn_on"
+                      }
+                    ]
+                  }
+                ],
+                "default": [
+                  {
+                    "target": {
+                      "entity_id": "light.signal_light"
+                    },
+                    "action": "light.turn_off"
+                  }
+                ]
+              }
+            ],
+            "id": "224f01bf9c0b4acbb28e4c1832448a81"
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JVCN43STE12ATDNDRCBB244B",
+            "parent_id": "01JVCN43SRCSVNX7SCXZ7D5CDP",
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/0/default/0",
+          "run_id": "c30fa0af591aa6e9d9b72e9d0ab89040",
+          "state": "stopped",
+          "script_execution": "finished",
+          "timestamp": {
+            "start": "2025-05-16T13:39:15.898110+00:00",
+            "finish": "2025-05-16T13:39:15.899877+00:00"
+          },
+          "domain": "automation",
+          "item_id": "224f01bf9c0b4acbb28e4c1832448a81",
+          "trigger": "state of sensor.co2_level"
+        }
+      }
+    ],
+    "automation.None": [
+      {
+        "extended_dict": {
+          "last_step": "action/2/choose/3/conditions/0/entity_id/0",
+          "run_id": "3f112788bd0a5f61ed8c04d8398e25ed",
+          "state": "running",
+          "script_execution": null,
+          "timestamp": {
+            "start": "2025-05-16T13:40:00.139847+00:00",
+            "finish": null
+          },
+          "domain": "automation",
+          "item_id": "None",
+          "trigger": "time pattern",
+          "trace": {
+            "trigger/2": [
+              {
+                "path": "trigger/2",
+                "timestamp": "2025-05-16T13:40:00.140508+00:00",
+                "changed_variables": {
+                  "this": {
+                    "entity_id": "automation.dynamic_illumination_with_time_and_lux",
+                    "state": "on",
+                    "attributes": {
+                      "last_triggered": null,
+                      "mode": "single",
+                      "current": 0,
+                      "friendly_name": "Dynamic Illumination with Time and Lux"
+                    },
+                    "last_changed": "2025-05-16T13:38:15.653182+00:00",
+                    "last_reported": "2025-05-16T13:38:15.653182+00:00",
+                    "last_updated": "2025-05-16T13:38:15.653182+00:00",
+                    "context": {
+                      "id": "01JVCN28Z5FQ7M888Q4C9YAR31",
+                      "parent_id": null,
+                      "user_id": null
+                    }
+                  },
+                  "trigger": {
+                    "id": "2",
+                    "idx": "2",
+                    "alias": null,
+                    "platform": "time_pattern",
+                    "now": "2025-05-16T15:40:00.137842+02:00",
+                    "description": "time pattern"
+                  }
+                }
+              }
+            ],
+            "condition/0": [
+              {
+                "path": "condition/0",
+                "timestamp": "2025-05-16T13:40:00.140778+00:00",
+                "result": {
+                  "result": true
+                }
+              }
+            ],
+            "condition/0/entity_id/0": [
+              {
+                "path": "condition/0/entity_id/0",
+                "timestamp": "2025-05-16T13:40:00.140867+00:00",
+                "result": {
+                  "result": true,
+                  "state": "on",
+                  "wanted_state": "on"
+                }
+              }
+            ],
+            "condition/1": [
+              {
+                "path": "condition/1",
+                "timestamp": "2025-05-16T13:40:00.141119+00:00",
+                "result": {
+                  "result": true,
+                  "entities": [
+                    "input_select.illumination_mode"
+                  ]
+                }
+              }
+            ],
+            "action/0": [
+              {
+                "path": "action/0",
+                "timestamp": "2025-05-16T13:40:00.143185+00:00",
+                "changed_variables": {
+                  "context": {
+                    "id": "01JVCN5F0B56G7JK53ESEP02MC",
+                    "parent_id": null,
+                    "user_id": null
+                  },
+                  "current_lux": 0
+                }
+              }
+            ],
+            "action/1": [
+              {
+                "path": "action/1",
+                "timestamp": "2025-05-16T13:40:00.157264+00:00",
+                "result": {
+                  "params": {
+                    "domain": "persistent_notification",
+                    "service": "create",
+                    "service_data": {
+                      "title": "Illumination Automation Triggered",
+                      "message": "Lux=0, mode=High at 15:40:00"
+                    },
+                    "target": {}
+                  },
+                  "running_script": false
+                }
+              }
+            ],
+            "action/2": [
+              {
+                "path": "action/2",
+                "timestamp": "2025-05-16T13:40:00.162751+00:00"
+              }
+            ],
+            "action/2/choose/0": [
+              {
+                "path": "action/2/choose/0",
+                "timestamp": "2025-05-16T13:40:00.163132+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/2/choose/0/conditions/0": [
+              {
+                "path": "action/2/choose/0/conditions/0",
+                "timestamp": "2025-05-16T13:40:00.163184+00:00",
+                "result": {
+                  "result": false
+                }
+              }
+            ],
+            "action/2/choose/0/conditions/0/conditions/0": [
+              {
+                "path": "action/2/choose/0/conditions/0/conditions/0",
+                "timestamp": "2025-05-16T13:40:00.163199+00:00",
+                "result": {
+                  "after": {
+                    "__type": "<class 'datetime.time'>",
+                    "isoformat": "21:00:00"
+                  },
+                  "now_time": {
+                    "__type": "<class 'datetime.time'>",
+                    "isoformat": "15:40:00.163213"
+                  },
+                  "before": {
+                    "__type": "<class 'datetime.time'>",
+                    "isoformat": "23:59:59.999999"
+                  },
+                  "result": false
+                }
+              }
+            ],
+            "action/2/choose/0/conditions/0/conditions/1": [
+              {
+                "path": "action/2/choose/0/conditions/0/conditions/1",
+                "timestamp": "2025-05-16T13:40:00.163249+00:00",
+                "result": {
+                  "after": {
+                    "__type": "<class 'datetime.time'>",
+                    "isoformat": "00:00:00"
+                  },
+                  "now_time": {
+                    "__type": "<class 'datetime.time'>",
+                    "isoformat": "15:40:00.163260"
+                  },
+                  "before": {
+                    "__type": "<class 'datetime.time'>",
+                    "isoformat": "06:00:00"
+                  },
+                  "result": false
+                }
+              }
+            ],
+            "action/2/choose/1": [
+              {
+                "path": "action/2/choose/1",
+                "timestamp": "2025-05-16T13:40:00.163276+00:00",
+                "result": {
+                  "result": null
+                }
+              }
+            ],
+            "action/2/choose/1/conditions/0": [
+              {
+                "path": "action/2/choose/1/conditions/0",
+                "timestamp": "2025-05-16T13:40:00.163288+00:00",
+                "error": "In 'numeric_state':\n  In 'numeric_state' condition: unknown entity sensor.living_room_lux_10min_avg"
+              }
+            ],
+            "action/2/choose/1/conditions/0/entity_id/0": [
+              {
+                "path": "action/2/choose/1/conditions/0/entity_id/0",
+                "timestamp": "2025-05-16T13:40:00.163298+00:00",
+                "error": "In 'numeric_state' condition: unknown entity sensor.living_room_lux_10min_avg"
+              }
+            ],
+            "action/2/choose/2": [
+              {
+                "path": "action/2/choose/2",
+                "timestamp": "2025-05-16T13:40:00.164577+00:00",
+                "result": {
+                  "result": null
+                }
+              }
+            ],
+            "action/2/choose/2/conditions/0": [
+              {
+                "path": "action/2/choose/2/conditions/0",
+                "timestamp": "2025-05-16T13:40:00.164594+00:00",
+                "error": "In 'numeric_state':\n  In 'numeric_state' condition: unknown entity sensor.living_room_lux_10min_avg"
+              }
+            ],
+            "action/2/choose/2/conditions/0/entity_id/0": [
+              {
+                "path": "action/2/choose/2/conditions/0/entity_id/0",
+                "timestamp": "2025-05-16T13:40:00.164605+00:00",
+                "error": "In 'numeric_state' condition: unknown entity sensor.living_room_lux_10min_avg"
+              }
+            ],
+            "action/2/choose/3": [
+              {
+                "path": "action/2/choose/3",
+                "timestamp": "2025-05-16T13:40:00.164683+00:00",
+                "result": {
+                  "result": null
+                }
+              }
+            ],
+            "action/2/choose/3/conditions/0": [
+              {
+                "path": "action/2/choose/3/conditions/0",
+                "timestamp": "2025-05-16T13:40:00.164695+00:00",
+                "error": "In 'numeric_state':\n  In 'numeric_state' condition: unknown entity sensor.living_room_lux_10min_avg"
+              }
+            ],
+            "action/2/choose/3/conditions/0/entity_id/0": [
+              {
+                "path": "action/2/choose/3/conditions/0/entity_id/0",
+                "timestamp": "2025-05-16T13:40:00.164704+00:00",
+                "error": "In 'numeric_state' condition: unknown entity sensor.living_room_lux_10min_avg"
+              }
+            ]
+          },
+          "config": {
+            "alias": "Dynamic Illumination with Time and Lux",
+            "trigger": [
+              {
+                "platform": "state",
+                "entity_id": "sensor.living_room_lux_10min_avg"
+              },
+              {
+                "platform": "state",
+                "entity_id": "sun.sun"
+              },
+              {
+                "platform": "time_pattern",
+                "minutes": "/5"
+              }
+            ],
+            "condition": [
+              {
+                "condition": "state",
+                "entity_id": "input_boolean.illumination_auto_enabled",
+                "state": "on"
+              },
+              {
+                "condition": "template",
+                "value_template": "{{ states('input_select.illumination_mode') != 'Manual' }}"
+              }
+            ],
+            "action": [
+              {
+                "variables": {
+                  "current_lux": "{{ states('sensor.living_room_lux_10min_avg') | float(0) }}"
+                }
+              },
+              {
+                "data": {
+                  "title": "Illumination Automation Triggered",
+                  "message": "Lux={{ current_lux }}, mode={{ states('input_select.illumination_mode') }} at {{ now().strftime('%H:%M:%S') }}"
+                },
+                "action": "persistent_notification.create"
+              },
+              {
+                "choose": [
+                  {
+                    "conditions": [
+                      {
+                        "condition": "or",
+                        "conditions": [
+                          {
+                            "condition": "time",
+                            "after": "21:00:00"
+                          },
+                          {
+                            "condition": "time",
+                            "before": "06:00:00"
+                          }
+                        ]
+                      }
+                    ],
+                    "sequence": [
+                      {
+                        "data": {
+                          "entity_id": [
+                            "light.fake_light_one",
+                            "light.fake_light_two",
+                            "light.fake_light_three",
+                            "light.fake_light_four",
+                            "light.fake_light_five"
+                          ],
+                          "rgb_color": [
+                            255,
+                            160,
+                            80
+                          ],
+                          "brightness_pct": 70,
+                          "transition": 10
+                        },
+                        "action": "light.turn_on"
+                      },
+                      {
+                        "data": {
+                          "entity_id": "input_select.illumination_mode",
+                          "option": "Low"
+                        },
+                        "action": "input_select.select_option"
+                      }
+                    ]
+                  },
+                  {
+                    "conditions": [
+                      {
+                        "condition": "numeric_state",
+                        "entity_id": "sensor.living_room_lux_10min_avg",
+                        "above": 2000
+                      }
+                    ],
+                    "sequence": [
+                      {
+                        "data": {
+                          "entity_id": [
+                            "light.fake_light_one",
+                            "light.fake_light_two",
+                            "light.fake_light_three",
+                            "light.fake_light_four",
+                            "light.fake_light_five"
+                          ],
+                          "rgb_color": [
+                            255,
+                            255,
+                            200
+                          ],
+                          "brightness_pct": 100,
+                          "transition": 10
+                        },
+                        "action": "light.turn_on"
+                      },
+                      {
+                        "data": {
+                          "entity_id": "input_select.illumination_mode",
+                          "option": "High"
+                        },
+                        "action": "input_select.select_option"
+                      }
+                    ]
+                  },
+                  {
+                    "conditions": [
+                      {
+                        "condition": "numeric_state",
+                        "entity_id": "sensor.living_room_lux_10min_avg",
+                        "above": 500,
+                        "below": 2000
+                      }
+                    ],
+                    "sequence": [
+                      {
+                        "data": {
+                          "entity_id": [
+                            "light.fake_light_one",
+                            "light.fake_light_two",
+                            "light.fake_light_three",
+                            "light.fake_light_four",
+                            "light.fake_light_five"
+                          ],
+                          "rgb_color": [
+                            255,
+                            200,
+                            120
+                          ],
+                          "brightness_pct": 85,
+                          "transition": 10
+                        },
+                        "action": "light.turn_on"
+                      },
+                      {
+                        "data": {
+                          "entity_id": "input_select.illumination_mode",
+                          "option": "Medium"
+                        },
+                        "action": "input_select.select_option"
+                      }
+                    ]
+                  },
+                  {
+                    "conditions": [
+                      {
+                        "condition": "numeric_state",
+                        "entity_id": "sensor.living_room_lux_10min_avg",
+                        "below": 500
+                      }
+                    ],
+                    "sequence": [
+                      {
+                        "data": {
+                          "entity_id": [
+                            "light.fake_light_one",
+                            "light.fake_light_two",
+                            "light.fake_light_three",
+                            "light.fake_light_four",
+                            "light.fake_light_five"
+                          ],
+                          "rgb_color": [
+                            255,
+                            160,
+                            80
+                          ],
+                          "brightness_pct": 70,
+                          "transition": 10
+                        },
+                        "action": "light.turn_on"
+                      },
+                      {
+                        "data": {
+                          "entity_id": "input_select.illumination_mode",
+                          "option": "Low"
+                        },
+                        "action": "input_select.select_option"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          "blueprint_inputs": null,
+          "context": {
+            "id": "01JVCN5F0B56G7JK53ESEP02MC",
+            "parent_id": null,
+            "user_id": null
+          }
+        },
+        "short_dict": {
+          "last_step": "action/2/choose/3/conditions/0/entity_id/0",
+          "run_id": "3f112788bd0a5f61ed8c04d8398e25ed",
+          "state": "running",
+          "script_execution": null,
+          "timestamp": {
+            "start": "2025-05-16T13:40:00.139847+00:00",
+            "finish": null
+          },
+          "domain": "automation",
+          "item_id": "None",
+          "trigger": "time pattern"
+        }
+      }
+    ]
+  }
+}

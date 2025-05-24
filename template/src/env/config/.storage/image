@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "image",
+  "data": {
+    "items": [
+      {
+        "id": "be82d2b9237392acb149f526627c4c12",
+        "filesize": 80019,
+        "content_type": "image/jpeg",
+        "name": "leva.jpg",
+        "uploaded_at": "2025-04-21T12:46:35.967311+00:00"
+      },
+      {
+        "id": "49622722a02ecba5ac55f9766803e1a9",
+        "filesize": 80019,
+        "content_type": "image/jpeg",
+        "name": "leva.jpg",
+        "uploaded_at": "2025-04-21T12:47:12.165694+00:00"
+      },
+      {
+        "id": "2b9256c0d8a903195dddaafff3f1c579",
+        "filesize": 80019,
+        "content_type": "image/jpeg",
+        "name": "leva.jpg",
+        "uploaded_at": "2025-04-21T12:51:52.378675+00:00"
+      },
+      {
+        "id": "ea8b586969b38f2c1f559d1e090f635d",
+        "filesize": 117643,
+        "content_type": "image/jpeg",
+        "name": "desna.jpg",
+        "uploaded_at": "2025-04-21T12:52:55.028583+00:00"
+      },
+      {
+        "id": "c1872bbbcb80d9364567c9e23c76ba10",
+        "filesize": 28616,
+        "content_type": "image/png",
+        "name": "linebreak.png",
+        "uploaded_at": "2025-04-21T13:23:50.133158+00:00"
+      },
+      {
+        "id": "c282923a63d2ef6f3a4524f118433d14",
+        "filesize": 24716,
+        "content_type": "image/png",
+        "name": "lb.png",
+        "uploaded_at": "2025-04-21T13:27:01.786411+00:00"
+      }
+    ]
+  }
+}

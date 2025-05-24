@@ -1,0 +1,32 @@
+- name: Jazz Mode
+  id: jazz_mode
+  icon: mdi:music-note
+  entities:
+    light.fake_light_one:
+      state: true
+      brightness: 100
+      rgb_color:
+      - 50
+      - 100
+      - 255
+    light.fake_light_two:
+      state: true
+      brightness: 80
+      rgb_color:
+      - 30
+      - 80
+      - 220
+    light.fake_light_four:
+      state: true
+      brightness: 120
+      rgb_color:
+      - 70
+      - 130
+      - 255
+    light.fake_light_six:
+      state: true
+      brightness: 90
+      rgb_color:
+      - 40
+      - 90
+      - 230

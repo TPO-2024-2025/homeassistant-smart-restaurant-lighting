@@ -1,0 +1,11 @@
+title: My Dashboard
+views:
+  - title: Home
+    path: default_view
+    cards:
+      - type: entities
+        title: Fake Lights
+        entities:
+          - light.fake_light_1
+          - light.fake_light_2
+          - light.fake_light_3

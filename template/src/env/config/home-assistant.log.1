@@ -1,0 +1,39 @@
+2025-04-23 20:34:24.391 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration adaptive_lighting which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-23 20:34:24.395 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration hacs which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-23 20:34:24.399 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration virtual which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2025-04-23 20:34:27.410 WARNING (ImportExecutor_0) [homeassistant.components.light] SUPPORT_EFFECT was used from virtual, this is a deprecated constant which will be removed in HA Core 2026.1. Use LightEntityFeature.EFFECT instead, please report it to the author of the 'virtual' custom integration
+2025-04-23 20:34:27.411 WARNING (ImportExecutor_0) [homeassistant.components.light] SUPPORT_EFFECT was used from virtual, this is a deprecated constant which will be removed in HA Core 2026.1. Use LightEntityFeature.EFFECT instead, please report it to the author of the 'virtual' custom integration
+2025-04-23 20:34:27.417 WARNING (ImportExecutor_0) [homeassistant.const] STATE_LOCKED was used from virtual, this is a deprecated constant which will be removed in HA Core 2025.10. Use LockState.LOCKED instead, please report it to the author of the 'virtual' custom integration
+2025-04-23 20:34:27.444 WARNING (MainThread) [homeassistant.helpers.frame] Detected that custom integration 'virtual' is using mireds for warmest light color temperature, when it should be adjusted to use the kelvin attribute `_attr_min_color_temp_kelvin` or override the kelvin property `min_color_temp_kelvin`, possibly with default DEFAULT_MIN_KELVIN (see https://github.com/home-assistant/core/pull/79591) at custom_components/virtual/light.py, line 111: async_add_entities(entities). This will stop working in Home Assistant 2026.1, please create a bug report at https://github.com/twrecked/hass-virtual/issues
+2025-04-23 20:34:27.472 ERROR (MainThread) [homeassistant.components.sensor] Error while setting up virtual platform for sensor: extra keys not allowed @ data['device_class']
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/helpers/entity_platform.py", line 382, in _async_setup_platform
+    await asyncio.shield(awaitable)
+  File "/config/custom_components/virtual/sensor.py", line 137, in async_setup_entry
+    entity = SENSOR_SCHEMA(entity)
+  File "/usr/local/lib/python3.13/site-packages/voluptuous/schema_builder.py", line 205, in __call__
+    return self._compiled([], data)
+           ~~~~~~~~~~~~~~^^^^^^^^^^
+  File "/usr/local/lib/python3.13/site-packages/voluptuous/schema_builder.py", line 549, in validate_dict
+    return base_validate(path, data.items(), out)
+  File "/usr/local/lib/python3.13/site-packages/voluptuous/schema_builder.py", line 382, in validate_mapping
+    raise er.MultipleInvalid(errors)
+voluptuous.error.MultipleInvalid: extra keys not allowed @ data['device_class']
+2025-04-23 20:34:27.912 WARNING (MainThread) [homeassistant.components.homeassistant.triggers.numeric_state] Error initializing 'CO2 High - Show Bad Air Overlay' trigger: In 'numeric_state' condition: unknown entity sensor.virtual_co2_sensor
+2025-04-23 20:34:27.912 WARNING (MainThread) [homeassistant.components.homeassistant.triggers.numeric_state] Error initializing 'CO2 Normal - Remove Bad Air Overlay' trigger: In 'numeric_state' condition: unknown entity sensor.virtual_co2_sensor
+2025-04-23 20:34:36.240 ERROR (MainThread) [frontend.js.modern.202503060] Uncaught error from Firefox 137.0 on Windows 10
+Error: Failed to execute 'define' on 'CustomElementRegistry': the name "mushroom-select" has already been used with this registry
+72311/</window.CustomElementRegistry.prototype.define (src/scoped-custom-element-registry.js:44:14)
+il/< (/hacsfiles/lovelace-mushroom/mushroom.js:23:126)
+Kr (/hacsfiles/lovelace-mushroom/mushroom.js:1:15090)
+/hacsfiles/lovelace-mushroom/mushroom.js:286:46391
+2025-04-23 20:34:38.581 WARNING (MainThread) [homeassistant.helpers.frame] Detected that integration 'websocket_api' is using mireds for warmest light color temperature, when it should be adjusted to use the kelvin attribute `_attr_min_color_temp_kelvin` or override the kelvin property `min_color_temp_kelvin`, possibly with default DEFAULT_MIN_KELVIN (see https://github.com/home-assistant/core/pull/79591) at homeassistant/components/websocket_api/commands.py, line 245: response = await hass.services.async_call(. This will stop working in Home Assistant 2026.1, please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+websocket_api%22
+2025-04-23 20:34:57.472 WARNING (MainThread) [homeassistant.helpers.frame] Detected that custom integration 'virtual' is using mireds for warmest light color temperature, when it should be adjusted to use the kelvin attribute `_attr_min_color_temp_kelvin` or override the kelvin property `min_color_temp_kelvin`, possibly with default DEFAULT_MIN_KELVIN (see https://github.com/home-assistant/core/pull/79591). This will stop working in Home Assistant 2026.1, please create a bug report at https://github.com/twrecked/hass-virtual/issues
+2025-04-23 20:34:57.472 WARNING (MainThread) [homeassistant.helpers.frame] Detected that custom integration 'virtual' is using mireds for coldest light color temperature, when it should be adjusted to use the kelvin attribute `_attr_max_color_temp_kelvin` or override the kelvin property `max_color_temp_kelvin`, possibly with default DEFAULT_MAX_KELVIN (see https://github.com/home-assistant/core/pull/79591). This will stop working in Home Assistant 2026.1, please create a bug report at https://github.com/twrecked/hass-virtual/issues
+2025-04-23 20:37:06.425 ERROR (MainThread) [frontend.js.modern.202503060] Uncaught error from Firefox 137.0 on Windows 10
+Error: Failed to execute 'define' on 'CustomElementRegistry': the name "mushroom-select" has already been used with this registry
+72311/</window.CustomElementRegistry.prototype.define (src/scoped-custom-element-registry.js:44:14)
+il/< (/hacsfiles/lovelace-mushroom/mushroom.js:23:126)
+Kr (/hacsfiles/lovelace-mushroom/mushroom.js:1:15090)
+/hacsfiles/lovelace-mushroom/mushroom.js:286:46391
+2025-04-23 20:37:08.570 WARNING (MainThread) [homeassistant.helpers.frame] Detected that integration 'automation' is using mireds for warmest light color temperature, when it should be adjusted to use the kelvin attribute `_attr_min_color_temp_kelvin` or override the kelvin property `min_color_temp_kelvin`, possibly with default DEFAULT_MIN_KELVIN (see https://github.com/home-assistant/core/pull/79591) at homeassistant/components/automation/__init__.py, line 717: return await self.action_script.async_run(. This will stop working in Home Assistant 2026.1, please create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+automation%22

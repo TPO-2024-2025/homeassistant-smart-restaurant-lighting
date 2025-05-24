@@ -1,0 +1,1006 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.test_dash",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "title": "Home",
+          "sections": [
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "custom:mushroom-vacuum-card"
+                },
+                {
+                  "type": "heading",
+                  "icon": "mdi:floor-plan",
+                  "heading": "Pregled nad restavracijo. Ob kliku na tloris določene sekcije restavracije boste preusmerjeni na 3D nadzorno ploščo izbrane sekcije. ",
+                  "heading_style": "title"
+                },
+                {
+                  "type": "picture",
+                  "image": "/api/image/serve/2b9256c0d8a903195dddaafff3f1c579/512x512",
+                  "tap_action": {
+                    "action": "navigate",
+                    "navigation_path": "/coolhouse-floorplan"
+                  },
+                  "alt_text": "Leva sekcija restavracije"
+                },
+                {
+                  "type": "picture",
+                  "image": "/api/image/serve/ea8b586969b38f2c1f559d1e090f635d/512x512"
+                },
+                {
+                  "type": "heading",
+                  "icon": "mdi:alarm-light",
+                  "heading_style": "title",
+                  "heading": "Leva sekcija - Nadzor nad lučmi"
+                },
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "grid",
+                      "width": "100%",
+                      "cards": [
+                        {
+                          "type": "vertical-stack",
+                          "cards": [
+                            {
+                              "type": "custom:mushroom-light-card",
+                              "entity": "light.fake_light_one",
+                              "name": "Sekundarna Jedilnica (Leva)",
+                              "icon": "mdi:lightbulb",
+                              "show_brightness_control": true,
+                              "show_color_control": true,
+                              "use_light_color": true,
+                              "layout": "vertical",
+                              "fill_container": true,
+                              "card_mod": {
+                                "style": "ha-card { margin-bottom: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }"
+                              }
+                            },
+                            {
+                              "type": "horizontal-stack",
+                              "cards": [
+                                {
+                                  "type": "custom:mushroom-template-card",
+                                  "entity": "light.fake_light_one",
+                                  "icon": "mdi:candle",
+                                  "icon_color": "{% if is_state('light.fake_light_one', 'on') and state_attr('light.fake_light_one', 'brightness')|int / 255 * 100 | round == 40 and state_attr('light.fake_light_one', 'rgb_color')[0] == 255 and state_attr('light.fake_light_one', 'rgb_color')[1] == 147 %}pink{% else %}blue{% endif %}",
+                                  "primary": "Romantično",
+                                  "layout": "vertical",
+                                  "fill_container": true,
+                                  "card_mod": {
+                                    "style": "ha-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 100px; height: 80px; } .primary { width: 100%; text-align: center; overflow: visible; white-space: normal; }"
+                                  },
+                                  "tap_action": {
+                                    "action": "call-service",
+                                    "service": "script.apply_romantic_mode_to_individual_light",
+                                    "service_data": {
+                                      "light_entity": "light.fake_light_one",
+                                      "presence_entity": "input_boolean.fake_light_one_presence"
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "custom:mushroom-template-card",
+                                  "entity": "light.fake_light_one",
+                                  "icon": "mdi:power",
+                                  "icon_color": "{% if is_state('light.fake_light_one', 'off') %}red{% else %}blue{% endif %}",
+                                  "primary": "Off",
+                                  "layout": "vertical",
+                                  "fill_container": true,
+                                  "card_mod": {
+                                    "style": "ha-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 100px; height: 80px; } .primary { width: 100%; text-align: center; overflow: visible; white-space: normal; }"
+                                  },
+                                  "tap_action": {
+                                    "action": "call-service",
+                                    "service": "light.turn_off",
+                                    "service_data": {
+                                      "entity_id": "light.fake_light_one",
+                                      "transition": 2
+                                    }
+                                  }
+                                }
+                              ],
+                              "card_mod": {
+                                "style": "ha-card { box-shadow: none; background: var(--card-background-color, var(--ha-card-background)); border-top-left-radius: 0; border-top-right-radius: 0; margin-top: 0; }"
+                              }
+                            }
+                          ],
+                          "card_mod": {
+                            "style": "ha-card { box-shadow: none; background: var(--card-background-color, var(--ha-card-background)); border-top-left-radius: 0; border-top-right-radius: 0; margin-top: 0; }"
+                          }
+                        }
+                      ],
+                      "columns": 1,
+                      "card_mod": {
+                        "style": "ha-card { width: 100%; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "vertical-stack",
+                      "cards": [
+                        {
+                          "type": "custom:mushroom-light-card",
+                          "entity": "light.fake_light_two",
+                          "name": "Miza L1",
+                          "icon": "mdi:lightbulb-on",
+                          "show_brightness_control": true,
+                          "show_color_control": true,
+                          "use_light_color": true,
+                          "layout": "vertical",
+                          "fill_container": true,
+                          "card_mod": {
+                            "style": "ha-card { margin-bottom: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }"
+                          }
+                        },
+                        {
+                          "type": "horizontal-stack",
+                          "cards": [
+                            {
+                              "type": "custom:mushroom-template-card",
+                              "entity": "light.fake_light_two",
+                              "icon": "mdi:candle",
+                              "icon_color": "{% if is_state('light.fake_light_two', 'on') and state_attr('light.fake_light_two', 'brightness')|int / 255 * 100 | round == 40 and state_attr('light.fake_light_two', 'rgb_color')[0] == 255 and state_attr('light.fake_light_two', 'rgb_color')[1] == 147 %}pink{% else %}blue{% endif %}",
+                              "primary": "Romantično",
+                              "layout": "vertical",
+                              "fill_container": true,
+                              "card_mod": {
+                                "style": "ha-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 100px; height: 80px; } .primary { width: 100%; text-align: center; overflow: visible; white-space: normal; }"
+                              },
+                              "tap_action": {
+                                "action": "call-service",
+                                "service": "script.apply_romantic_mode_to_individual_light",
+                                "service_data": {
+                                  "light_entity": "light.fake_light_two",
+                                  "presence_entity": "input_boolean.fake_light_two_presence"
+                                }
+                              }
+                            },
+                            {
+                              "type": "custom:mushroom-template-card",
+                              "entity": "light.fake_light_two",
+                              "icon": "mdi:power",
+                              "icon_color": "{% if is_state('light.fake_light_two', 'off') %}red{% else %}blue{% endif %}",
+                              "primary": "Off",
+                              "layout": "vertical",
+                              "fill_container": true,
+                              "card_mod": {
+                                "style": "ha-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 100px; height: 80px; } .primary { width: 100%; text-align: center; overflow: visible; white-space: normal; }"
+                              },
+                              "tap_action": {
+                                "action": "call-service",
+                                "service": "light.turn_off",
+                                "service_data": {
+                                  "entity_id": "light.fake_light_two",
+                                  "transition": 2
+                                }
+                              }
+                            }
+                          ],
+                          "card_mod": {
+                            "style": "ha-card { box-shadow: none; background: var(--card-background-color, var(--ha-card-background)); border-top-left-radius: 0; border-top-right-radius: 0; margin-top: 0; }"
+                          }
+                        }
+                      ],
+                      "card_mod": {
+                        "style": "ha-card { width: 100%; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }"
+                      }
+                    }
+                  ]
+                },
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "grid",
+                      "width": "100%",
+                      "cards": [
+                        {
+                          "type": "vertical-stack",
+                          "cards": [
+                            {
+                              "type": "custom:mushroom-light-card",
+                              "entity": "light.fake_light_three",
+                              "name": "Miza L2",
+                              "icon": "mdi:lightbulb",
+                              "show_brightness_control": true,
+                              "show_color_control": true,
+                              "use_light_color": true,
+                              "layout": "vertical",
+                              "fill_container": true,
+                              "card_mod": {
+                                "style": "ha-card { margin-bottom: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }"
+                              }
+                            },
+                            {
+                              "type": "horizontal-stack",
+                              "cards": [
+                                {
+                                  "type": "custom:mushroom-template-card",
+                                  "entity": "light.fake_light_three",
+                                  "icon": "mdi:candle",
+                                  "icon_color": "{% if is_state('light.fake_light_three', 'on') and state_attr('light.fake_light_three', 'brightness')|int / 255 * 100 | round == 40 and state_attr('light.fake_light_three', 'rgb_color')[0] == 255 and state_attr('light.fake_light_three', 'rgb_color')[1] == 147 %}pink{% else %}blue{% endif %}",
+                                  "primary": "Romantično",
+                                  "layout": "vertical",
+                                  "fill_container": true,
+                                  "card_mod": {
+                                    "style": "ha-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 100px; height: 80px; } .primary { width: 100%; text-align: center; overflow: visible; white-space: normal; }"
+                                  },
+                                  "tap_action": {
+                                    "action": "call-service",
+                                    "service": "script.apply_romantic_mode_to_individual_light",
+                                    "service_data": {
+                                      "light_entity": "light.fake_light_three",
+                                      "presence_entity": "input_boolean.fake_light_three_presence"
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "custom:mushroom-template-card",
+                                  "entity": "light.fake_light_three",
+                                  "icon": "mdi:power",
+                                  "icon_color": "{% if is_state('light.fake_light_three', 'off') %}red{% else %}blue{% endif %}",
+                                  "primary": "Off",
+                                  "layout": "vertical",
+                                  "fill_container": true,
+                                  "card_mod": {
+                                    "style": "ha-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 100px; height: 80px; } .primary { width: 100%; text-align: center; overflow: visible; white-space: normal; }"
+                                  },
+                                  "tap_action": {
+                                    "action": "call-service",
+                                    "service": "light.turn_off",
+                                    "service_data": {
+                                      "entity_id": "light.fake_light_three",
+                                      "transition": 2
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ],
+                          "card_mod": {
+                            "style": "ha-card { box-shadow: none; background: var(--card-background-color, var(--ha-card-background)); border-top-left-radius: 0; border-top-right-radius: 0; margin-top: 0; }"
+                          }
+                        }
+                      ],
+                      "columns": 1
+                    }
+                  ]
+                },
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "grid",
+                      "width": "100%",
+                      "cards": [
+                        {
+                          "type": "vertical-stack",
+                          "cards": [
+                            {
+                              "type": "custom:mushroom-light-card",
+                              "entity": "light.fake_light_four",
+                              "name": "Miza L3",
+                              "icon": "mdi:lightbulb",
+                              "show_brightness_control": true,
+                              "show_color_control": true,
+                              "use_light_color": true,
+                              "layout": "vertical",
+                              "fill_container": true,
+                              "card_mod": {
+                                "style": "ha-card { margin-bottom: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }"
+                              }
+                            },
+                            {
+                              "type": "horizontal-stack",
+                              "cards": [
+                                {
+                                  "type": "custom:mushroom-template-card",
+                                  "entity": "light.fake_light_four",
+                                  "icon": "mdi:candle",
+                                  "icon_color": "{% if is_state('light.fake_light_four', 'on') and state_attr('light.fake_light_four', 'brightness')|int / 255 * 100 | round == 40 and state_attr('light.fake_light_four', 'rgb_color')[0] == 255 and state_attr('light.fake_light_four', 'rgb_color')[1] == 147 %}pink{% else %}blue{% endif %}",
+                                  "primary": "Romantično",
+                                  "layout": "vertical",
+                                  "fill_container": true,
+                                  "card_mod": {
+                                    "style": "ha-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 100px; height: 80px; } .primary { width: 100%; text-align: center; overflow: visible; white-space: normal; }"
+                                  },
+                                  "tap_action": {
+                                    "action": "call-service",
+                                    "service": "script.apply_romantic_mode_to_individual_light",
+                                    "service_data": {
+                                      "light_entity": "light.fake_light_four",
+                                      "presence_entity": "input_boolean.fake_light_four_presence"
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "custom:mushroom-template-card",
+                                  "entity": "light.fake_light_four",
+                                  "icon": "mdi:power",
+                                  "icon_color": "{% if is_state('light.fake_light_four', 'off') %}red{% else %}blue{% endif %}",
+                                  "primary": "Off",
+                                  "layout": "vertical",
+                                  "fill_container": true,
+                                  "card_mod": {
+                                    "style": "ha-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 100px; height: 80px; } .primary { width: 100%; text-align: center; overflow: visible; white-space: normal; }"
+                                  },
+                                  "tap_action": {
+                                    "action": "call-service",
+                                    "service": "light.turn_off",
+                                    "service_data": {
+                                      "entity_id": "light.fake_light_four",
+                                      "transition": 2
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ],
+                          "card_mod": {
+                            "style": "ha-card { box-shadow: none; background: var(--card-background-color, var(--ha-card-background)); border-top-left-radius: 0; border-top-right-radius: 0; margin-top: 0; }"
+                          }
+                        }
+                      ],
+                      "columns": 1,
+                      "card_mod": {
+                        "style": "ha-card { width: 100%; }"
+                      }
+                    }
+                  ],
+                  "card_mod": {
+                    "style": "ha-card { width: 100%; margin-bottom: 20px; }"
+                  }
+                },
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "grid",
+                      "width": "100%",
+                      "cards": [
+                        {
+                          "type": "vertical-stack",
+                          "cards": [
+                            {
+                              "type": "custom:mushroom-light-card",
+                              "entity": "light.fake_light_five",
+                              "name": "Miza L4",
+                              "icon": "mdi:lightbulb",
+                              "show_brightness_control": true,
+                              "show_color_control": true,
+                              "use_light_color": true,
+                              "layout": "vertical",
+                              "fill_container": true,
+                              "card_mod": {
+                                "style": "ha-card { margin-bottom: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }"
+                              }
+                            },
+                            {
+                              "type": "horizontal-stack",
+                              "cards": [
+                                {
+                                  "type": "custom:mushroom-template-card",
+                                  "entity": "light.fake_light_five",
+                                  "icon": "mdi:candle",
+                                  "icon_color": "{% if is_state('light.fake_light_five', 'on') and state_attr('light.fake_light_five', 'brightness')|int / 255 * 100 | round == 40 and state_attr('light.fake_light_five', 'rgb_color')[0] == 255 and state_attr('light.fake_light_five', 'rgb_color')[1] == 147 %}pink{% else %}blue{% endif %}",
+                                  "primary": "Romantično",
+                                  "layout": "vertical",
+                                  "fill_container": true,
+                                  "card_mod": {
+                                    "style": "ha-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 100px; height: 80px; } .primary { width: 100%; text-align: center; overflow: visible; white-space: normal; }"
+                                  },
+                                  "tap_action": {
+                                    "action": "call-service",
+                                    "service": "script.apply_romantic_mode_to_individual_light",
+                                    "service_data": {
+                                      "light_entity": "light.fake_light_five",
+                                      "presence_entity": "input_boolean.fake_light_five_presence"
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "custom:mushroom-template-card",
+                                  "entity": "light.fake_light_five",
+                                  "icon": "mdi:power",
+                                  "icon_color": "{% if is_state('light.fake_light_five', 'off') %}red{% else %}blue{% endif %}",
+                                  "primary": "Off",
+                                  "layout": "vertical",
+                                  "fill_container": true,
+                                  "card_mod": {
+                                    "style": "ha-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 100px; height: 80px; } .primary { width: 100%; text-align: center; overflow: visible; white-space: normal; }"
+                                  },
+                                  "tap_action": {
+                                    "action": "call-service",
+                                    "service": "light.turn_off",
+                                    "service_data": {
+                                      "entity_id": "light.fake_light_five",
+                                      "transition": 2
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ],
+                          "card_mod": {
+                            "style": "ha-card { box-shadow: none; background: var(--card-background-color, var(--ha-card-background)); border-top-left-radius: 0; border-top-right-radius: 0; margin-top: 0; }"
+                          }
+                        }
+                      ],
+                      "columns": 1,
+                      "card_mod": {
+                        "style": "ha-card { width: 100%; }"
+                      }
+                    }
+                  ],
+                  "card_mod": {
+                    "style": "ha-card { width: 100%; margin-bottom: 20px; }"
+                  }
+                }
+              ],
+              "badges": [
+                {
+                  "type": "entity",
+                  "show_name": true,
+                  "show_state": true,
+                  "show_icon": true,
+                  "entity": "light.fake_light_one",
+                  "show_entity_picture": false,
+                  "name": "Sekundarna Jedilnica (Levo)"
+                },
+                {
+                  "type": "entity",
+                  "show_name": true,
+                  "show_state": true,
+                  "show_icon": true,
+                  "entity": "light.fake_light_two",
+                  "show_entity_picture": false,
+                  "name": "Miza L1"
+                },
+                {
+                  "type": "entity",
+                  "show_name": true,
+                  "show_state": true,
+                  "show_icon": true,
+                  "entity": "light.fake_light_three",
+                  "show_entity_picture": false,
+                  "name": "Miza L2"
+                },
+                {
+                  "type": "entity",
+                  "show_name": true,
+                  "show_state": true,
+                  "show_icon": true,
+                  "entity": "light.fake_light_four",
+                  "show_entity_picture": false,
+                  "name": "Miza L3"
+                },
+                {
+                  "type": "entity",
+                  "show_name": true,
+                  "show_state": true,
+                  "show_icon": true,
+                  "entity": "light.fake_light_five",
+                  "show_entity_picture": false,
+                  "name": "Miza L4"
+                },
+                {
+                  "type": "heading",
+                  "icon": "mdi:alarm-light",
+                  "heading": "Desna Sekcija - Nadzor nad lučmi",
+                  "heading_style": "title"
+                }
+              ],
+              "header": {
+                "card": {
+                  "type": "markdown",
+                  "content": "#  {{ user }}\nPregled in nadzor nad vsemi lučmi v restavraciji."
+                }
+              },
+              "card_mod": {
+                "style": "ha-card { max-width: 1200px; margin: 0 auto; } :host { --mush-card-primary-margin: 0; }"
+              },
+              "column_span": 4
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "heading": "Desna Sekcija - Nadzor nad lučmi",
+                  "heading_style": "title",
+                  "icon": "mdi:alarm-light"
+                },
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "grid",
+                      "width": "100%",
+                      "cards": [
+                        {
+                          "type": "vertical-stack",
+                          "cards": [
+                            {
+                              "type": "custom:mushroom-light-card",
+                              "entity": "light.fake_light_six",
+                              "name": "Primarna jedilnica",
+                              "icon": "mdi:lightbulb",
+                              "show_brightness_control": true,
+                              "show_color_control": true,
+                              "use_light_color": true,
+                              "layout": "vertical",
+                              "fill_container": true,
+                              "card_mod": {
+                                "style": "ha-card { margin-bottom: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }"
+                              }
+                            },
+                            {
+                              "type": "horizontal-stack",
+                              "cards": [
+                                {
+                                  "type": "custom:mushroom-template-card",
+                                  "entity": "light.fake_light_six",
+                                  "icon": "mdi:candle",
+                                  "icon_color": "{% if is_state('light.fake_light_six','on') and state_attr('light.fake_light_six','brightness')|int/255*100|round == 40 and state_attr('light.fake_light_six','rgb_color')[0] == 255 and state_attr('light.fake_light_six','rgb_color')[1] == 147 %} pink{% else %}blue{% endif %}",
+                                  "primary": "Romantično",
+                                  "layout": "vertical",
+                                  "fill_container": true,
+                                  "card_mod": {
+                                    "style": "ha-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 100px; height: 80px; } .primary { width: 100%; text-align: center; }"
+                                  },
+                                  "tap_action": {
+                                    "action": "call-service",
+                                    "service": "script.apply_romantic_mode_to_individual_light",
+                                    "service_data": {
+                                      "light_entity": "light.fake_light_six",
+                                      "presence_entity": "input_boolean.fake_light_six_presence"
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "custom:mushroom-template-card",
+                                  "entity": "light.fake_light_six",
+                                  "icon": "mdi:power",
+                                  "icon_color": "{% if is_state('light.fake_light_six','off') %}red{% else %} blue{% endif %}",
+                                  "primary": "Off",
+                                  "layout": "vertical",
+                                  "fill_container": true,
+                                  "card_mod": {
+                                    "style": "ha-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 100px; height: 80px; } .primary { width: 100%; text-align: center; }"
+                                  },
+                                  "tap_action": {
+                                    "action": "call-service",
+                                    "service": "light.turn_off",
+                                    "service_data": {
+                                      "entity_id": "light.fake_light_six",
+                                      "transition": 2
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ],
+                          "card_mod": {
+                            "style": "ha-card { box-shadow: none; background: var(--card-background-color, var(--ha-card-background)); border-top-left-radius: 0; border-top-right-radius: 0; margin-top: 0; }"
+                          }
+                        }
+                      ],
+                      "columns": 1,
+                      "card_mod": {
+                        "style": "ha-card { width: 100%; }"
+                      }
+                    }
+                  ],
+                  "card_mod": {
+                    "style": "ha-card { width: 100%; margin-bottom: 20px; }"
+                  }
+                },
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "grid",
+                      "width": "100%",
+                      "cards": [
+                        {
+                          "type": "vertical-stack",
+                          "cards": [
+                            {
+                              "type": "custom:mushroom-light-card",
+                              "entity": "light.fake_light_seven",
+                              "name": "Miza D1",
+                              "icon": "mdi:lightbulb",
+                              "show_brightness_control": true,
+                              "show_color_control": true,
+                              "use_light_color": true,
+                              "layout": "vertical",
+                              "fill_container": true,
+                              "card_mod": {
+                                "style": "ha-card { margin-bottom: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }"
+                              }
+                            },
+                            {
+                              "type": "horizontal-stack",
+                              "cards": [
+                                {
+                                  "type": "custom:mushroom-template-card",
+                                  "entity": "light.fake_light_seven",
+                                  "icon": "mdi:candle",
+                                  "icon_color": "{% if is_state('light.fake_light_seven','on') and state_attr('light.fake_light_seven','brightness')|int/255*100|round == 40 and state_attr('light.fake_light_seven','rgb_color')[0] == 255 and state_attr('light.fake_light_seven','rgb_color')[1] == 147 %} pink{% else %}blue{% endif %}",
+                                  "primary": "Romantično",
+                                  "layout": "vertical",
+                                  "fill_container": true,
+                                  "card_mod": {
+                                    "style": "ha-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 100px; height: 80px; } .primary { width: 100%; text-align: center; }"
+                                  },
+                                  "tap_action": {
+                                    "action": "call-service",
+                                    "service": "script.apply_romantic_mode_to_individual_light",
+                                    "service_data": {
+                                      "light_entity": "light.fake_light_seven",
+                                      "presence_entity": "input_boolean.fake_light_seven_presence"
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "custom:mushroom-template-card",
+                                  "entity": "light.fake_light_seven",
+                                  "icon": "mdi:power",
+                                  "icon_color": "{% if is_state('light.fake_light_seven','off') %}red{% else %} blue{% endif %}",
+                                  "primary": "Off",
+                                  "layout": "vertical",
+                                  "fill_container": true,
+                                  "card_mod": {
+                                    "style": "ha-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 100px; height: 80px; } .primary { width: 100%; text-align: center; }"
+                                  },
+                                  "tap_action": {
+                                    "action": "call-service",
+                                    "service": "light.turn_off",
+                                    "service_data": {
+                                      "entity_id": "light.fake_light_seven",
+                                      "transition": 2
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ],
+                          "card_mod": {
+                            "style": "ha-card { box-shadow: none; background: var(--card-background-color, var(--ha-card-background)); border-top-left-radius: 0; border-top-right-radius: 0; margin-top: 0; }"
+                          }
+                        }
+                      ],
+                      "columns": 1,
+                      "card_mod": {
+                        "style": "ha-card { width: 100%; }"
+                      }
+                    }
+                  ],
+                  "card_mod": {
+                    "style": "ha-card { width: 100%; margin-bottom: 20px; }"
+                  }
+                },
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "grid",
+                      "width": "100%",
+                      "cards": [
+                        {
+                          "type": "vertical-stack",
+                          "cards": [
+                            {
+                              "type": "custom:mushroom-light-card",
+                              "entity": "light.fake_light_eight",
+                              "name": "Miza D2",
+                              "icon": "mdi:lightbulb",
+                              "show_brightness_control": true,
+                              "show_color_control": true,
+                              "use_light_color": true,
+                              "layout": "vertical",
+                              "fill_container": true,
+                              "card_mod": {
+                                "style": "ha-card { margin-bottom: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }"
+                              }
+                            },
+                            {
+                              "type": "horizontal-stack",
+                              "cards": [
+                                {
+                                  "type": "custom:mushroom-template-card",
+                                  "entity": "light.fake_light_eight",
+                                  "icon": "mdi:candle",
+                                  "icon_color": "{% if is_state('light.fake_light_eight','on') and state_attr('light.fake_light_eight','brightness')|int/255*100|round == 40 and state_attr('light.fake_light_eight','rgb_color')[0] == 255 and state_attr('light.fake_light_eight','rgb_color')[1] == 147 %} pink{% else %}blue{% endif %}",
+                                  "primary": "Romantično",
+                                  "layout": "vertical",
+                                  "fill_container": true,
+                                  "card_mod": {
+                                    "style": "ha-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 100px; height: 80px; } .primary { width: 100%; text-align: center; }"
+                                  },
+                                  "tap_action": {
+                                    "action": "call-service",
+                                    "service": "script.apply_romantic_mode_to_individual_light",
+                                    "service_data": {
+                                      "light_entity": "light.fake_light_eight",
+                                      "presence_entity": "input_boolean.fake_light_eight_presence"
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "custom:mushroom-template-card",
+                                  "entity": "light.fake_light_eight",
+                                  "icon": "mdi:power",
+                                  "icon_color": "{% if is_state('light.fake_light_eight','off') %}red{% else %} blue{% endif %}",
+                                  "primary": "Off",
+                                  "layout": "vertical",
+                                  "fill_container": true,
+                                  "card_mod": {
+                                    "style": "ha-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 100px; height: 80px; } .primary { width: 100%; text-align: center; }"
+                                  },
+                                  "tap_action": {
+                                    "action": "call-service",
+                                    "service": "light.turn_off",
+                                    "service_data": {
+                                      "entity_id": "light.fake_light_eight",
+                                      "transition": 2
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ],
+                          "card_mod": {
+                            "style": "ha-card { box-shadow: none; background: var(--card-background-color, var(--ha-card-background)); border-top-left-radius: 0; border-top-right-radius: 0; margin-top: 0; }"
+                          }
+                        }
+                      ],
+                      "columns": 1,
+                      "card_mod": {
+                        "style": "ha-card { width: 100%; }"
+                      }
+                    }
+                  ],
+                  "card_mod": {
+                    "style": "ha-card { width: 100%; margin-bottom: 20px; }"
+                  }
+                },
+                {
+                  "type": "vertical-stack",
+                  "cards": [
+                    {
+                      "type": "grid",
+                      "width": "100%",
+                      "cards": [
+                        {
+                          "type": "vertical-stack",
+                          "cards": [
+                            {
+                              "type": "custom:mushroom-light-card",
+                              "entity": "light.fake_light_nine",
+                              "name": "Miza D3",
+                              "icon": "mdi:lightbulb",
+                              "show_brightness_control": true,
+                              "show_color_control": true,
+                              "use_light_color": true,
+                              "layout": "vertical",
+                              "fill_container": true,
+                              "card_mod": {
+                                "style": "ha-card { margin-bottom: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }"
+                              }
+                            },
+                            {
+                              "type": "horizontal-stack",
+                              "cards": [
+                                {
+                                  "type": "custom:mushroom-template-card",
+                                  "entity": "light.fake_light_nine",
+                                  "icon": "mdi:candle",
+                                  "icon_color": "{% if is_state('light.fake_light_nine','on') and state_attr('light.fake_light_nine','brightness')|int/255*100|round == 40 and state_attr('light.fake_light_nine','rgb_color')[0] == 255 and state_attr('light.fake_light_nine','rgb_color')[1] == 147 %} pink{% else %}blue{% endif %}",
+                                  "primary": "Romantično",
+                                  "layout": "vertical",
+                                  "fill_container": true,
+                                  "card_mod": {
+                                    "style": "ha-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 100px; height: 80px; } .primary { width: 100%; text-align: center; }"
+                                  },
+                                  "tap_action": {
+                                    "action": "call-service",
+                                    "service": "script.apply_romantic_mode_to_individual_light",
+                                    "service_data": {
+                                      "light_entity": "light.fake_light_nine",
+                                      "presence_entity": "input_boolean.fake_light_nine_presence"
+                                    }
+                                  }
+                                },
+                                {
+                                  "type": "custom:mushroom-template-card",
+                                  "entity": "light.fake_light_nine",
+                                  "icon": "mdi:power",
+                                  "icon_color": "{% if is_state('light.fake_light_nine','off') %}red{% else %} blue{% endif %}",
+                                  "primary": "Off",
+                                  "layout": "vertical",
+                                  "fill_container": true,
+                                  "card_mod": {
+                                    "style": "ha-card { display: flex; flex-direction: column; align-items: center; justify-content: center; min-width: 100px; height: 80px; } .primary { width: 100%; text-align: center; }"
+                                  },
+                                  "tap_action": {
+                                    "action": "call-service",
+                                    "service": "light.turn_off",
+                                    "service_data": {
+                                      "entity_id": "light.fake_light_nine",
+                                      "transition": 2
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          ],
+                          "card_mod": {
+                            "style": "ha-card { box-shadow: none; background: var(--card-background-color, var(--ha-card-background)); border-top-left-radius: 0; border-top-right-radius: 0; margin-top: 0; }"
+                          }
+                        }
+                      ],
+                      "columns": 1,
+                      "card_mod": {
+                        "style": "ha-card { width: 100%; }"
+                      }
+                    }
+                  ],
+                  "card_mod": {
+                    "style": "ha-card { width: 100%; margin-bottom: 20px; }"
+                  }
+                }
+              ],
+              "column_span": 4
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "icon": "mdi:chart-histogram",
+                  "heading_style": "title",
+                  "heading": "Leva sekcija - Zgodovina stanja luči"
+                },
+                {
+                  "type": "history-graph",
+                  "entities": [
+                    {
+                      "entity": "light.fake_light_one"
+                    }
+                  ],
+                  "title": "Sekundarna Jedilnica (Leva)",
+                  "hours_to_show": 24,
+                  "grid_options": {
+                    "columns": 48,
+                    "rows": 2
+                  }
+                },
+                {
+                  "type": "history-graph",
+                  "entities": [
+                    {
+                      "entity": "light.fake_light_two"
+                    }
+                  ],
+                  "title": "Miza L1",
+                  "hours_to_show": 24
+                },
+                {
+                  "type": "history-graph",
+                  "entities": [
+                    {
+                      "entity": "light.fake_light_three"
+                    }
+                  ],
+                  "title": "Miza L2",
+                  "hours_to_show": 24
+                },
+                {
+                  "type": "history-graph",
+                  "entities": [
+                    {
+                      "entity": "light.fake_light_four"
+                    }
+                  ],
+                  "title": "Miza L3",
+                  "hours_to_show": 24
+                },
+                {
+                  "type": "history-graph",
+                  "entities": [
+                    {
+                      "entity": "light.fake_light_five"
+                    }
+                  ],
+                  "title": "Miza L4",
+                  "hours_to_show": 24
+                }
+              ],
+              "column_span": 4
+            },
+            {
+              "type": "grid",
+              "cards": [
+                {
+                  "type": "heading",
+                  "icon": "mdi:chart-histogram",
+                  "heading_style": "title",
+                  "heading": "Desna sekcija - Zgodovina stanja luči"
+                },
+                {
+                  "type": "history-graph",
+                  "entities": [
+                    {
+                      "entity": "light.fake_light_six"
+                    }
+                  ],
+                  "title": "Primarna Jedilnica (Desna)",
+                  "grid_options": {
+                    "columns": 48,
+                    "rows": "auto"
+                  }
+                },
+                {
+                  "type": "history-graph",
+                  "entities": [
+                    {
+                      "entity": "light.fake_light_seven"
+                    }
+                  ],
+                  "title": "Miza D1"
+                },
+                {
+                  "type": "history-graph",
+                  "entities": [
+                    {
+                      "entity": "light.fake_light_eight"
+                    }
+                  ],
+                  "title": "Miza D2",
+                  "hours_to_show": 24
+                },
+                {
+                  "type": "history-graph",
+                  "entities": [
+                    {
+                      "entity": "light.fake_light_nine"
+                    }
+                  ],
+                  "title": "Miza D3",
+                  "hours_to_show": 24
+                }
+              ],
+              "column_span": 4
+            }
+          ],
+          "card_mod": {
+            "style": ":host { --mush-card-primary-margin: 0; max-width: 1200px; margin: 0 auto; padding: 0 16px; } hui-view { max-width: 100%; }"
+          },
+          "badges": [
+            {
+              "type": "entity",
+              "entity": "input_boolean.illumination_auto_enabled"
+            },
+            {
+              "type": "entity",
+              "entity": "input_select.illumination_mode"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

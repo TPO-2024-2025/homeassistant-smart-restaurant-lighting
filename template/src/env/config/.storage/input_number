@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "input_number",
+  "data": {
+    "items": [
+      {
+        "id": "test_lux",
+        "min": 0.0,
+        "max": 2500.0,
+        "name": "Test Lux",
+        "icon": "mdi:alarm-light",
+        "mode": "slider",
+        "step": 1.0
+      }
+    ]
+  }
+}

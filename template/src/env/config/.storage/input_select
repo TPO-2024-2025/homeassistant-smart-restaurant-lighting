@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "minor_version": 2,
+  "key": "input_select",
+  "data": {
+    "items": [
+      {
+        "id": "light_state_image_path",
+        "name": "Light State Image Path",
+        "icon": "mdi:awning-outline",
+        "options": [
+          "/local/pics/3DL_0.png",
+          "/local/pics/3DL_1.png",
+          "/local/pics/3DL_2.png",
+          "/local/pics/3DL_3.png",
+          "/local/pics/3DL_4.png",
+          "/local/pics/3DL_5.png",
+          "/local/pics/3DL_6.png",
+          "/local/pics/3DL_7.png",
+          "/local/pics/3DL_8.png",
+          "/local/pics/3DL_9.png",
+          "/local/pics/3DL_10.png",
+          "/local/pics/3DL_11.png",
+          "/local/pics/3DL_12.png",
+          "/local/pics/3DL_13.png",
+          "/local/pics/3DL_14.png",
+          "/local/pics/3DL_15.png",
+          "/local/pics/3DL_16.png",
+          "/local/pics/3DL_17.png",
+          "/local/pics/3DL_18.png",
+          "/local/pics/3DL_19.png",
+          "/local/pics/3DL_20.png",
+          "/local/pics/3DL_21.png",
+          "/local/pics/3DL_22.png",
+          "/local/pics/3DL_23.png",
+          "/local/pics/3DL_24.png",
+          "/local/pics/3DL_25.png",
+          "/local/pics/3DL_26.png",
+          "/local/pics/3DL_27.png",
+          "/local/pics/3DL_28.png",
+          "/local/pics/3DL_29.png",
+          "/local/pics/3DL_30.png"
+        ]
+      }
+    ]
+  }
+}

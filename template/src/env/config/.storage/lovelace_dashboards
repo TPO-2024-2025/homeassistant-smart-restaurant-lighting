@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace_dashboards",
+  "data": {
+    "items": [
+      {
+        "id": "coolhouse_floorplan",
+        "show_in_sidebar": true,
+        "icon": "mdi:food",
+        "title": "2- Coolhouse 3D (Sekcija L)",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "coolhouse-floorplan"
+      },
+      {
+        "id": "test_dash",
+        "show_in_sidebar": true,
+        "icon": "mdi:air-filter",
+        "title": "0- Coolhouse Pregled",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "test-dash"
+      },
+      {
+        "id": "2d_dash_v2",
+        "show_in_sidebar": true,
+        "icon": "mdi:floor-plan",
+        "title": "1- Coolhouse 2D (L+D Sekcije)",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "2d-dash-v2"
+      },
+      {
+        "id": "3_scenariji_in_dogodki",
+        "show_in_sidebar": true,
+        "title": "3 - Scenariji in dogodki",
+        "require_admin": false,
+        "mode": "storage",
+        "url_path": "3-scenariji-in-dogodki",
+        "icon": "mdi:liquor"
+      }
+    ]
+  }
+}

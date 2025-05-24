@@ -1,0 +1,337 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.2d_dash_v2",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "title": "Coolhouse Floorplan",
+          "type": "panel",
+          "path": "first",
+          "badges": [],
+          "cards": [
+            {
+              "type": "horizontal-stack",
+              "cards": [
+                {
+                  "type": "picture-elements",
+                  "image": "/local/2D/2D_0.png",
+                  "panel": true,
+                  "elements": [
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_one",
+                      "style": {
+                        "left": "50%",
+                        "top": "50%",
+                        "width": "100%",
+                        "mix-blend-mode": "multiply",
+                        "filter": "${ \"hue-rotate(\" + (states[‘light.fake_light_one’].attributes.hs_color ? states[‘light.fake_light_one’].attributes.hs_color[0] : 0) + \"deg)\"}",
+                        "opacity": "${states[‘light.fake_light_one’].state === 'on' ? (states[‘light.fake_light_one’].attributes.brightness / 255) : '0'}"
+                      },
+                      "state_image": {
+                        "on": "/local/2D/transparent.png",
+                        "off": "/local/2D/2D_0.png"
+                      },
+                      "tap_action": {
+                        "action": "none"
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_two",
+                      "style": {
+                        "left": "50%",
+                        "top": "50%",
+                        "width": "100%",
+                        "mix-blend-mode": "multiply",
+                        "filter": "${ \"hue-rotate(\" + (states[‘light.fake_light_two’].attributes.hs_color ? states[‘light.fake_light_two’].attributes.hs_color[0] : 0) + \"deg)\"}",
+                        "opacity": "${states[‘light.fake_light_two’].state === 'on' ? (states[‘light.fake_light_two’].attributes.brightness / 255) : '0'}"
+                      },
+                      "state_image": {
+                        "on": "/local/2D/2D_2.png",
+                        "off": "/local/2D/2D_0.png"
+                      },
+                      "tap_action": {
+                        "action": "none"
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_three",
+                      "style": {
+                        "left": "50%",
+                        "top": "50%",
+                        "width": "100%",
+                        "mix-blend-mode": "multiply",
+                        "filter": "${ \"hue-rotate(\" + (states[‘light.fake_light_three’].attributes.hs_color ? states[‘light.fake_light_three’].attributes.hs_color[0] : 0) + \"deg)\"}",
+                        "opacity": "${states[‘light.fake_light_three’].state === 'on' ? (states[‘light.fake_light_three’].attributes.brightness / 255) : '0'}"
+                      },
+                      "state_image": {
+                        "on": "/local/2D/2D_3.png",
+                        "off": "/local/2D/2D_0.png"
+                      },
+                      "tap_action": {
+                        "action": "none"
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_four",
+                      "style": {
+                        "left": "50%",
+                        "top": "50%",
+                        "width": "100%",
+                        "mix-blend-mode": "multiply",
+                        "filter": "${ \"hue-rotate(\" + (states[‘light.fake_light_four’].attributes.hs_color ? states[‘light.fake_light_four’].attributes.hs_color[0] : 0) + \"deg)\"}",
+                        "opacity": "${states[‘light.fake_light_four’].state === 'on' ? (states[‘light.fake_light_four’].attributes.brightness / 255) : '0'}"
+                      },
+                      "state_image": {
+                        "on": "/local/2D/2D_4.png",
+                        "off": "/local/2D/2D_0.png"
+                      },
+                      "tap_action": {
+                        "action": "none"
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_five",
+                      "style": {
+                        "left": "50%",
+                        "top": "50%",
+                        "width": "100%",
+                        "mix-blend-mode": "multiply",
+                        "filter": "${ \"hue-rotate(\" + (states[‘light.fake_light_five’].attributes.hs_color ? states[‘light.fake_light_five’].attributes.hs_color[0] : 0) + \"deg)\"}",
+                        "opacity": "${states[‘light.fake_light_five’].state === 'on' ? (states[‘light.fake_light_five’].attributes.brightness / 255) : '0'}"
+                      },
+                      "state_image": {
+                        "on": "/local/2D/2D_5.png",
+                        "off": "/local/2D/2D_0.png"
+                      },
+                      "tap_action": {
+                        "action": "none"
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_six",
+                      "style": {
+                        "left": "50%",
+                        "top": "50%",
+                        "width": "100%",
+                        "mix-blend-mode": "multiply",
+                        "filter": "${ \"hue-rotate(\" + (states[‘light.fake_light_six’].attributes.hs_color ? states[‘light.fake_light_six’].attributes.hs_color[0] : 0) + \"deg)\"}",
+                        "opacity": "${states[‘light.fake_light_six’].state === 'on' ? (states[‘light.fake_light_six’].attributes.brightness / 255) : '0'}"
+                      },
+                      "state_image": {
+                        "on": "/local/2D/2D_6.png",
+                        "off": "/local/2D/2D_0.png"
+                      },
+                      "tap_action": {
+                        "action": "none"
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_seven",
+                      "style": {
+                        "left": "50%",
+                        "top": "50%",
+                        "width": "100%",
+                        "mix-blend-mode": "multiply",
+                        "filter": "${ \"hue-rotate(\" + (states[‘light.fake_light_seven’].attributes.hs_color ? states[‘light.fake_light_seven’].attributes.hs_color[0] : 0) + \"deg)\"}",
+                        "opacity": "${states[‘light.fake_light_seven’].state === 'on' ? (states[‘light.fake_light_seven’].attributes.brightness / 255) : '0'}"
+                      },
+                      "state_image": {
+                        "on": "/local/2D/2D_7.png",
+                        "off": "/local/2D/2D_0.png"
+                      },
+                      "tap_action": {
+                        "action": "none"
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_eight",
+                      "style": {
+                        "left": "50%",
+                        "top": "50%",
+                        "width": "100%",
+                        "mix-blend-mode": "multiply",
+                        "filter": "${ \"hue-rotate(\" + (states[‘light.fake_light_eight’].attributes.hs_color ? states[‘light.fake_light_eight’].attributes.hs_color[0] : 0) + \"deg)\"}",
+                        "opacity": "${states[‘light.fake_light_eight’].state === 'on' ? (states[‘light.fake_light_eight’].attributes.brightness / 255) : '0'}"
+                      },
+                      "state_image": {
+                        "on": "/local/2D/2D_8.png",
+                        "off": "/local/2D/2D_0.png"
+                      },
+                      "tap_action": {
+                        "action": "none"
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_nine",
+                      "style": {
+                        "left": "50%",
+                        "top": "50%",
+                        "width": "100%",
+                        "mix-blend-mode": "multiply",
+                        "filter": "${ \"hue-rotate(\" + (states[‘light.fake_light_nine’].attributes.hs_color ? states[‘light.fake_light_nine’].attributes.hs_color[0] : 0) + \"deg)\"}",
+                        "opacity": "${states[‘light.fake_light_nine’].state === 'on' ? (states[‘light.fake_light_nine’].attributes.brightness / 255) : '0'}"
+                      },
+                      "state_image": {
+                        "on": "/local/2D/2D_9.png",
+                        "off": "/local/2D/2D_0.png"
+                      },
+                      "tap_action": {
+                        "action": "none"
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_one",
+                      "image": "/local/transparent.png",
+                      "style": {
+                        "left": "10%",
+                        "top": "18%",
+                        "width": "50%",
+                        "height": "18%",
+                        "pointer-events": "auto"
+                      },
+                      "tap_action": {
+                        "action": "toggle"
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_two",
+                      "image": "/local/transparent.png",
+                      "style": {
+                        "left": "5%",
+                        "top": "36%",
+                        "width": "9%",
+                        "height": "18%",
+                        "pointer-events": "auto"
+                      },
+                      "tap_action": {
+                        "action": "toggle"
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_three",
+                      "image": "/local/transparent.png",
+                      "style": {
+                        "left": "14%",
+                        "top": "36%",
+                        "width": "8%",
+                        "height": "18%",
+                        "pointer-events": "auto"
+                      },
+                      "tap_action": {
+                        "action": "toggle"
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_four",
+                      "image": "/local/transparent.png",
+                      "style": {
+                        "left": "22%",
+                        "top": "36%",
+                        "width": "8%",
+                        "height": "18%",
+                        "pointer-events": "auto"
+                      },
+                      "tap_action": {
+                        "action": "toggle"
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_five",
+                      "image": "/local/transparent.png",
+                      "style": {
+                        "left": "29.8%",
+                        "top": "36%",
+                        "width": "8%",
+                        "height": "18%",
+                        "pointer-events": "auto"
+                      },
+                      "tap_action": {
+                        "action": "toggle"
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_six",
+                      "image": "/local/transparent.png",
+                      "style": {
+                        "left": "71%",
+                        "top": "70%",
+                        "width": "55%",
+                        "height": "18%",
+                        "pointer-events": "auto"
+                      },
+                      "tap_action": {
+                        "action": "toggle"
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_seven",
+                      "image": "/local/transparent.png",
+                      "style": {
+                        "left": "74%",
+                        "top": "90%",
+                        "width": "9%",
+                        "height": "18%",
+                        "pointer-events": "auto"
+                      },
+                      "tap_action": {
+                        "action": "toggle"
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_eight",
+                      "image": "/local/transparent.png",
+                      "style": {
+                        "left": "83.8%",
+                        "top": "90%",
+                        "width": "10%",
+                        "height": "18%",
+                        "pointer-events": "auto"
+                      },
+                      "tap_action": {
+                        "action": "toggle"
+                      }
+                    },
+                    {
+                      "type": "image",
+                      "entity": "light.fake_light_nine",
+                      "image": "/local/transparent.png",
+                      "style": {
+                        "left": "93.9%",
+                        "top": "90%",
+                        "width": "10%",
+                        "height": "18%",
+                        "pointer-events": "auto"
+                      },
+                      "tap_action": {
+                        "action": "toggle"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

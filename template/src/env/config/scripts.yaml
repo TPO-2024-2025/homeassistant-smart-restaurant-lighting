@@ -1,0 +1,1198 @@
+# Table Scene Scripts
+set_romantic_scene:
+  alias: "Set Romantic Scene"
+  mode: single
+  sequence:
+    - choose:
+        - conditions:
+            - condition: template
+              value_template: "{{ states('input_select.selected_table') == 'Miza 1' }}"
+          sequence:
+            - service: light.turn_on
+              target:
+                entity_id: light.fake_light_two
+              data:
+                brightness_pct: 40
+                rgb_color: [255, 150, 150]
+                transition: 2
+        - conditions:
+            - condition: template
+              value_template: "{{ states('input_select.selected_table') == 'Miza 2' }}"
+          sequence:
+            - service: light.turn_on
+              target:
+                entity_id: light.fake_light_three
+              data:
+                brightness_pct: 40
+                rgb_color: [255, 150, 150]
+                transition: 2
+        - conditions:
+            - condition: template
+              value_template: "{{ states('input_select.selected_table') == 'Miza 3' }}"
+          sequence:
+            - service: light.turn_on
+              target:
+                entity_id: light.fake_light_four
+              data:
+                brightness_pct: 40
+                rgb_color: [255, 150, 150]
+                transition: 2
+        - conditions:
+            - condition: template
+              value_template: "{{ states('input_select.selected_table') == 'Miza 4' }}"
+          sequence:
+            - service: light.turn_on
+              target:
+                entity_id: light.fake_light_five
+              data:
+                brightness_pct: 40
+                rgb_color: [255, 150, 150]
+                transition: 2
+
+set_working_scene:
+  alias: "Set Working Scene"
+  mode: single
+  sequence:
+    - choose:
+        - conditions:
+            - condition: template
+              value_template: "{{ states('input_select.selected_table') == 'Miza 1' }}"
+          sequence:
+            - service: light.turn_on
+              target:
+                entity_id: light.fake_light_two
+              data:
+                brightness_pct: 100
+                color_temp: 250
+                transition: 1
+        - conditions:
+            - condition: template
+              value_template: "{{ states('input_select.selected_table') == 'Miza 2' }}"
+          sequence:
+            - service: light.turn_on
+              target:
+                entity_id: light.fake_light_three
+              data:
+                brightness_pct: 100
+                color_temp: 250
+                transition: 1
+        - conditions:
+            - condition: template
+              value_template: "{{ states('input_select.selected_table') == 'Miza 3' }}"
+          sequence:
+            - service: light.turn_on
+              target:
+                entity_id: light.fake_light_four
+              data:
+                brightness_pct: 100
+                color_temp: 250
+                transition: 1
+        - conditions:
+            - condition: template
+              value_template: "{{ states('input_select.selected_table') == 'Miza 4' }}"
+          sequence:
+            - service: light.turn_on
+              target:
+                entity_id: light.fake_light_five
+              data:
+                brightness_pct: 100
+                color_temp: 250
+                transition: 1
+
+set_dining_scene:
+  alias: "Set Dining Scene"
+  mode: single
+  sequence:
+    - choose:
+        - conditions:
+            - condition: template
+              value_template: "{{ states('input_select.selected_table') == 'Miza 1' }}"
+          sequence:
+            - service: light.turn_on
+              target:
+                entity_id: light.fake_light_two
+              data:
+                brightness_pct: 70
+                color_temp: 300
+                transition: 2
+        - conditions:
+            - condition: template
+              value_template: "{{ states('input_select.selected_table') == 'Miza 2' }}"
+          sequence:
+            - service: light.turn_on
+              target:
+                entity_id: light.fake_light_three
+              data:
+                brightness_pct: 70
+                color_temp: 300
+                transition: 2
+        - conditions:
+            - condition: template
+              value_template: "{{ states('input_select.selected_table') == 'Miza 3' }}"
+          sequence:
+            - service: light.turn_on
+              target:
+                entity_id: light.fake_light_four
+              data:
+                brightness_pct: 70
+                color_temp: 300
+                transition: 2
+        - conditions:
+            - condition: template
+              value_template: "{{ states('input_select.selected_table') == 'Miza 4' }}"
+          sequence:
+            - service: light.turn_on
+              target:
+                entity_id: light.fake_light_five
+              data:
+                brightness_pct: 70
+                color_temp: 300
+                transition: 2
+
+turn_off_table:
+  alias: "Turn Off Table"
+  mode: single
+  sequence:
+    - choose:
+        - conditions:
+            - condition: template
+              value_template: "{{ states('input_select.selected_table') == 'Miza 1' }}"
+          sequence:
+            - service: light.turn_off
+              target:
+                entity_id: light.fake_light_two
+              data:
+                transition: 2
+        - conditions:
+            - condition: template
+              value_template: "{{ states('input_select.selected_table') == 'Miza 2' }}"
+          sequence:
+            - service: light.turn_off
+              target:
+                entity_id: light.fake_light_three
+              data:
+                transition: 2
+        - conditions:
+            - condition: template
+              value_template: "{{ states('input_select.selected_table') == 'Miza 3' }}"
+          sequence:
+            - service: light.turn_off
+              target:
+                entity_id: light.fake_light_four
+              data:
+                transition: 2
+        - conditions:
+            - condition: template
+              value_template: "{{ states('input_select.selected_table') == 'Miza 4' }}"
+          sequence:
+            - service: light.turn_off
+              target:
+                entity_id: light.fake_light_five
+              data:
+                transition: 2
+
+# Event mode scripts for selected lights
+
+apply_wedding_mode_to_selected:
+  alias: "Apply Wedding Mode to Selected Lights"
+  sequence:
+    - choose:
+        # If wedding mode is already on, turn it off
+        - conditions:
+            - condition: state
+              entity_id: input_boolean.active_wedding_mode
+              state: 'on'
+          sequence:
+            - service: input_boolean.turn_off
+              target:
+                entity_id: input_boolean.active_wedding_mode
+            - service: script.turn_off_selected_lights
+            - service: persistent_notification.create
+              data:
+                title: "Wedding Mode Disabled"
+                message: "Wedding mode has been turned off"
+      default:
+        # Check if at least one light is selected
+        - choose:
+            - conditions:
+                - condition: template
+                  value_template: >
+                    {{
+                      is_state('input_boolean.select_light_one', 'on') or
+                      is_state('input_boolean.select_light_two', 'on') or
+                      is_state('input_boolean.select_light_three', 'on') or
+                      is_state('input_boolean.select_light_four', 'on') or
+                      is_state('input_boolean.select_light_five', 'on') or
+                      is_state('input_boolean.select_light_six', 'on') or
+                      is_state('input_boolean.select_light_seven', 'on') or
+                      is_state('input_boolean.select_light_eight', 'on') or
+                      is_state('input_boolean.select_light_nine', 'on')
+                    }}
+              sequence:
+                - service: input_boolean.turn_off
+                  target:
+                    entity_id:
+                      - input_boolean.active_team_building_mode
+                      - input_boolean.active_birthday_party_mode
+                - service: input_boolean.turn_on
+                  target:
+                    entity_id: input_boolean.active_wedding_mode
+                - service: light.turn_on
+                  data:
+                    entity_id: >
+                      {% set selected = [] %}
+                      {% if is_state('input_boolean.select_light_one', 'on') %}
+                        {% set selected = selected + ['light.fake_light_one'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_two', 'on') %}
+                        {% set selected = selected + ['light.fake_light_two'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_three', 'on') %}
+                        {% set selected = selected + ['light.fake_light_three'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_four', 'on') %}
+                        {% set selected = selected + ['light.fake_light_four'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_five', 'on') %}
+                        {% set selected = selected + ['light.fake_light_five'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_six', 'on') %}
+                        {% set selected = selected + ['light.fake_light_six'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_seven', 'on') %}
+                        {% set selected = selected + ['light.fake_light_seven'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_eight', 'on') %}
+                        {% set selected = selected + ['light.fake_light_eight'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_nine', 'on') %}
+                        {% set selected = selected + ['light.fake_light_nine'] %}
+                      {% endif %}
+                      {{ selected }}
+                    brightness_pct: 80
+                    rgb_color: [255, 223, 223]
+                    transition: 2
+                - service: script.turn_on
+                  target:
+                    entity_id: script.update_active_lighting_mode
+                - service: persistent_notification.create
+                  data:
+                    title: "Wedding Mode Applied"
+                    message: >
+                      Wedding mode has been applied to: {{ states('sensor.wedding_mode_lights') }}
+          default:
+            - service: persistent_notification.create
+              data:
+                title: "No Lights Selected"
+                message: "Please select at least one light before applying Wedding Mode"
+
+apply_team_building_to_selected:
+  alias: "Apply Team Building Mode to Selected Lights"
+  sequence:
+    - choose:
+        # If team building mode is already on, turn it off
+        - conditions:
+            - condition: state
+              entity_id: input_boolean.active_team_building_mode
+              state: 'on'
+          sequence:
+            - service: input_boolean.turn_off
+              target:
+                entity_id: input_boolean.active_team_building_mode
+            - service: script.turn_off_selected_lights
+            - service: persistent_notification.create
+              data:
+                title: "Team Building Mode Disabled"
+                message: "Team building mode has been turned off"
+      default:
+        # Check if at least one light is selected
+        - choose:
+            - conditions:
+                - condition: template
+                  value_template: >
+                    {{
+                      is_state('input_boolean.select_light_one', 'on') or
+                      is_state('input_boolean.select_light_two', 'on') or
+                      is_state('input_boolean.select_light_three', 'on') or
+                      is_state('input_boolean.select_light_four', 'on') or
+                      is_state('input_boolean.select_light_five', 'on') or
+                      is_state('input_boolean.select_light_six', 'on') or
+                      is_state('input_boolean.select_light_seven', 'on') or
+                      is_state('input_boolean.select_light_eight', 'on') or
+                      is_state('input_boolean.select_light_nine', 'on')
+                    }}
+              sequence:
+                - service: input_boolean.turn_off
+                  target:
+                    entity_id:
+                      - input_boolean.active_wedding_mode
+                      - input_boolean.active_birthday_party_mode
+                - service: input_boolean.turn_on
+                  target:
+                    entity_id: input_boolean.active_team_building_mode
+                - service: light.turn_on
+                  data:
+                    entity_id: >
+                      {% set selected = [] %}
+                      {% if is_state('input_boolean.select_light_one', 'on') %}
+                        {% set selected = selected + ['light.fake_light_one'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_two', 'on') %}
+                        {% set selected = selected + ['light.fake_light_two'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_three', 'on') %}
+                        {% set selected = selected + ['light.fake_light_three'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_four', 'on') %}
+                        {% set selected = selected + ['light.fake_light_four'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_five', 'on') %}
+                        {% set selected = selected + ['light.fake_light_five'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_six', 'on') %}
+                        {% set selected = selected + ['light.fake_light_six'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_seven', 'on') %}
+                        {% set selected = selected + ['light.fake_light_seven'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_eight', 'on') %}
+                        {% set selected = selected + ['light.fake_light_eight'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_nine', 'on') %}
+                        {% set selected = selected + ['light.fake_light_nine'] %}
+                      {% endif %}
+                      {{ selected }}
+                    brightness_pct: 100
+                    rgb_color: [255, 255, 255]
+                    transition: 2
+                - service: script.turn_on
+                  target:
+                    entity_id: script.update_active_lighting_mode
+                - service: persistent_notification.create
+                  data:
+                    title: "Team Building Mode Applied"
+                    message: "Team building mode has been applied to selected lights"
+          default:
+            - service: persistent_notification.create
+              data:
+                title: "No Lights Selected"
+                message: "Please select at least one light before applying Team Building Mode"
+
+apply_birthday_party_to_selected:
+  alias: "Apply Birthday Party Mode to Selected Lights"
+  sequence:
+    - choose:
+        # If birthday party mode is already on, turn it off
+        - conditions:
+            - condition: state
+              entity_id: input_boolean.active_birthday_party_mode
+              state: 'on'
+          sequence:
+            - service: input_boolean.turn_off
+              target:
+                entity_id: input_boolean.active_birthday_party_mode
+            - service: script.turn_off_selected_lights
+            - service: persistent_notification.create
+              data:
+                title: "Birthday Party Mode Disabled"
+                message: "Birthday party mode has been turned off"
+      default:
+        # Check if at least one light is selected
+        - choose:
+            - conditions:
+                - condition: template
+                  value_template: >
+                    {{
+                      is_state('input_boolean.select_light_one', 'on') or
+                      is_state('input_boolean.select_light_two', 'on') or
+                      is_state('input_boolean.select_light_three', 'on') or
+                      is_state('input_boolean.select_light_four', 'on') or
+                      is_state('input_boolean.select_light_five', 'on') or
+                      is_state('input_boolean.select_light_six', 'on') or
+                      is_state('input_boolean.select_light_seven', 'on') or
+                      is_state('input_boolean.select_light_eight', 'on') or
+                      is_state('input_boolean.select_light_nine', 'on')
+                    }}
+              sequence:
+                - service: input_boolean.turn_off
+                  target:
+                    entity_id:
+                      - input_boolean.active_wedding_mode
+                      - input_boolean.active_team_building_mode
+                - service: input_boolean.turn_on
+                  target:
+                    entity_id: input_boolean.active_birthday_party_mode
+                - service: light.turn_on
+                  data:
+                    entity_id: >
+                      {% set selected = [] %}
+                      {% if is_state('input_boolean.select_light_one', 'on') %}
+                        {% set selected = selected + ['light.fake_light_one'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_two', 'on') %}
+                        {% set selected = selected + ['light.fake_light_two'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_three', 'on') %}
+                        {% set selected = selected + ['light.fake_light_three'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_four', 'on') %}
+                        {% set selected = selected + ['light.fake_light_four'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_five', 'on') %}
+                        {% set selected = selected + ['light.fake_light_five'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_six', 'on') %}
+                        {% set selected = selected + ['light.fake_light_six'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_seven', 'on') %}
+                        {% set selected = selected + ['light.fake_light_seven'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_eight', 'on') %}
+                        {% set selected = selected + ['light.fake_light_eight'] %}
+                      {% endif %}
+                      {% if is_state('input_boolean.select_light_nine', 'on') %}
+                        {% set selected = selected + ['light.fake_light_nine'] %}
+                      {% endif %}
+                      {{ selected }}
+                    brightness_pct: 90
+                    rgb_color: [255, 182, 193]
+                    transition: 2
+                - service: script.turn_on
+                  target:
+                    entity_id: script.update_active_lighting_mode
+                - service: persistent_notification.create
+                  data:
+                    title: "Birthday Party Mode Applied"
+                    message: "Birthday party mode has been applied to selected lights"
+          default:
+            - service: persistent_notification.create
+              data:
+                title: "No Lights Selected"
+                message: "Please select at least one light before applying Birthday Party Mode"
+
+turn_on_selected_lights:
+  alias: "Turn On Selected Lights"
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: >
+          {% set selected = [] %}
+          {% if is_state('input_boolean.select_light_one', 'on') %}
+            {% set selected = selected + ['light.fake_light_one'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_two', 'on') %}
+            {% set selected = selected + ['light.fake_light_two'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_three', 'on') %}
+            {% set selected = selected + ['light.fake_light_three'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_four', 'on') %}
+            {% set selected = selected + ['light.fake_light_four'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_five', 'on') %}
+            {% set selected = selected + ['light.fake_light_five'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_six', 'on') %}
+            {% set selected = selected + ['light.fake_light_six'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_seven', 'on') %}
+            {% set selected = selected + ['light.fake_light_seven'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_eight', 'on') %}
+            {% set selected = selected + ['light.fake_light_eight'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_nine', 'on') %}
+            {% set selected = selected + ['light.fake_light_nine'] %}
+          {% endif %}
+          {{ selected }}
+        brightness_pct: 100
+        transition: 2
+
+turn_off_selected_lights:
+  alias: "Turn Off Selected Lights"
+  sequence:
+    - service: light.turn_off
+      data:
+        entity_id: >
+          {% set selected = [] %}
+          {% if is_state('input_boolean.select_light_one', 'on') %}
+            {% set selected = selected + ['light.fake_light_one'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_two', 'on') %}
+            {% set selected = selected + ['light.fake_light_two'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_three', 'on') %}
+            {% set selected = selected + ['light.fake_light_three'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_four', 'on') %}
+            {% set selected = selected + ['light.fake_light_four'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_five', 'on') %}
+            {% set selected = selected + ['light.fake_light_five'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_six', 'on') %}
+            {% set selected = selected + ['light.fake_light_six'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_seven', 'on') %}
+            {% set selected = selected + ['light.fake_light_seven'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_eight', 'on') %}
+            {% set selected = selected + ['light.fake_light_eight'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_nine', 'on') %}
+            {% set selected = selected + ['light.fake_light_nine'] %}
+          {% endif %}
+          {{ selected }}
+        transition: 2
+
+toggle_selected_left_section:
+  alias: "Toggle Left Section Lights"
+  sequence:
+    - service: input_boolean.turn_on
+      data:
+        entity_id:
+          - input_boolean.select_light_one
+          - input_boolean.select_light_two
+          - input_boolean.select_light_three
+          - input_boolean.select_light_four
+          - input_boolean.select_light_five
+
+toggle_selected_right_section:
+  alias: "Toggle Right Section Lights"
+  sequence:
+    - service: input_boolean.turn_on
+      data:
+        entity_id:
+          - input_boolean.select_light_six
+          - input_boolean.select_light_seven
+          - input_boolean.select_light_eight
+          - input_boolean.select_light_nine
+
+select_all_lights:
+  alias: "Select All Lights"
+  sequence:
+    - service: input_boolean.turn_on
+      data:
+        entity_id:
+          - input_boolean.select_light_one
+          - input_boolean.select_light_two
+          - input_boolean.select_light_three
+          - input_boolean.select_light_four
+          - input_boolean.select_light_five
+          - input_boolean.select_light_six
+          - input_boolean.select_light_seven
+          - input_boolean.select_light_eight
+          - input_boolean.select_light_nine
+
+deselect_all_lights:
+  alias: "Deselect All Lights"
+  sequence:
+    - service: input_boolean.turn_off
+      data:
+        entity_id:
+          - input_boolean.select_light_one
+          - input_boolean.select_light_two
+          - input_boolean.select_light_three
+          - input_boolean.select_light_four
+          - input_boolean.select_light_five
+          - input_boolean.select_light_six
+          - input_boolean.select_light_seven
+          - input_boolean.select_light_eight
+          - input_boolean.select_light_nine
+
+update_active_lighting_mode:
+  alias: "Update Active Lighting Mode"
+  sequence:
+    - service: homeassistant.update_entity
+      target:
+        entity_id: sensor.active_lighting_mode
+
+apply_custom_mode_to_selected:
+  alias: "Apply Custom Mode to Selected Lights"
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: >
+          {% set selected = [] %}
+          {% if is_state('input_boolean.select_light_one', 'on') %}
+            {% set selected = selected + ['light.fake_light_one'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_two', 'on') %}
+            {% set selected = selected + ['light.fake_light_two'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_three', 'on') %}
+            {% set selected = selected + ['light.fake_light_three'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_four', 'on') %}
+            {% set selected = selected + ['light.fake_light_four'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_five', 'on') %}
+            {% set selected = selected + ['light.fake_light_five'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_six', 'on') %}
+            {% set selected = selected + ['light.fake_light_six'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_seven', 'on') %}
+            {% set selected = selected + ['light.fake_light_seven'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_eight', 'on') %}
+            {% set selected = selected + ['light.fake_light_eight'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_nine', 'on') %}
+            {% set selected = selected + ['light.fake_light_nine'] %}
+          {% endif %}
+          {{ selected }}
+        brightness_pct: "{{ states('input_number.custom_mode_brightness') | int }}"
+        rgb_color: 
+          - "{{ states('input_number.custom_mode_red') | int }}"
+          - "{{ states('input_number.custom_mode_green') | int }}"
+          - "{{ states('input_number.custom_mode_blue') | int }}"
+        transition: 2
+
+save_custom_mode:
+  alias: "Save Custom Light Mode"
+  sequence:
+    - service: input_select.set_options
+      data:
+        entity_id: input_select.saved_light_modes
+        options: >
+          {% set current_options = state_attr('input_select.saved_light_modes', 'options') %}
+          {% set mode_name = states('input_text.custom_mode_name') %}
+          {% if mode_name not in current_options %}
+            {{ current_options + [mode_name] }}
+          {% else %}
+            {{ current_options }}
+          {% endif %}
+          
+load_custom_mode:
+  alias: "Load Custom Light Mode"
+  sequence:
+    - service: input_text.set_value
+      data:
+        entity_id: input_text.custom_mode_name
+        value: "{{ states('input_select.saved_light_modes') }}"
+
+apply_custom_color_to_selected:
+  alias: "Apply Custom Color to Selected Lights"
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: >
+          {% set selected = [] %}
+          {% if is_state('input_boolean.select_light_one', 'on') %}
+            {% set selected = selected + ['light.fake_light_one'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_two', 'on') %}
+            {% set selected = selected + ['light.fake_light_two'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_three', 'on') %}
+            {% set selected = selected + ['light.fake_light_three'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_four', 'on') %}
+            {% set selected = selected + ['light.fake_light_four'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_five', 'on') %}
+            {% set selected = selected + ['light.fake_light_five'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_six', 'on') %}
+            {% set selected = selected + ['light.fake_light_six'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_seven', 'on') %}
+            {% set selected = selected + ['light.fake_light_seven'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_eight', 'on') %}
+            {% set selected = selected + ['light.fake_light_eight'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_nine', 'on') %}
+            {% set selected = selected + ['light.fake_light_nine'] %}
+          {% endif %}
+          {{ selected }}
+        brightness_pct: "{{ states('input_number.light_mode_brightness') | int }}"
+        rgb_color: 
+          - "{{ states('input_number.light_mode_red') | int }}"
+          - "{{ states('input_number.light_mode_green') | int }}"
+          - "{{ states('input_number.light_mode_blue') | int }}"
+        transition: 2
+
+# Preset loading scripts
+load_wedding_preset:
+  alias: "Load Wedding Mode Preset"
+  sequence:
+    - variables:
+        presets: "{{ states('input_text.light_presets') }}"
+    - choose:
+      - conditions:
+          - condition: template
+            value_template: "{{ presets != '' and presets|trim != 'unknown' }}"
+        sequence:
+          - variables:
+              preset_data: "{{ (presets|from_json)['wedding_mode'] if presets|from_json is mapping and 'wedding_mode' in presets|from_json else {'rgb_color': [255, 150, 150], 'brightness_pct': 40} }}"
+          - service: input_number.set_value
+            data:
+              entity_id: input_number.light_mode_red
+              value: "{{ preset_data.rgb_color[0] }}"
+          - service: input_number.set_value
+            data:
+              entity_id: input_number.light_mode_green
+              value: "{{ preset_data.rgb_color[1] }}"
+          - service: input_number.set_value
+            data:
+              entity_id: input_number.light_mode_blue
+              value: "{{ preset_data.rgb_color[2] }}"
+          - service: input_number.set_value
+            data:
+              entity_id: input_number.light_mode_brightness
+              value: "{{ preset_data.brightness_pct }}"
+      default:
+        - service: input_number.set_value
+          data:
+            entity_id: input_number.light_mode_red
+            value: 255
+        - service: input_number.set_value
+          data:
+            entity_id: input_number.light_mode_green
+            value: 150
+        - service: input_number.set_value
+          data:
+            entity_id: input_number.light_mode_blue
+            value: 150
+        - service: input_number.set_value
+          data:
+            entity_id: input_number.light_mode_brightness
+            value: 40
+    - service: input_text.set_value
+      data:
+        entity_id: input_text.light_mode_name
+        value: "Poročni Način"
+
+load_team_building_preset:
+  alias: "Load Team Building Preset"
+  sequence:
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_mode_red
+        value: 100
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_mode_green
+        value: 150
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_mode_blue
+        value: 255
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_mode_brightness
+        value: 90
+    - service: input_text.set_value
+      data:
+        entity_id: input_text.light_mode_name
+        value: "Team Building"
+
+load_birthday_preset:
+  alias: "Load Birthday Party Preset"
+  sequence:
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_mode_red
+        value: 255
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_mode_green
+        value: 50
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_mode_blue
+        value: 200
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_mode_brightness
+        value: 70
+    - service: input_text.set_value
+      data:
+        entity_id: input_text.light_mode_name
+        value: "Rojstnodnevna Zabava"
+
+load_wedding_preset_for_edit:
+  alias: "Load Wedding Mode for Edit"
+  sequence:
+    - service: input_boolean.turn_on
+      target:
+        entity_id: input_boolean.is_editing_mode
+    - service: input_text.set_value
+      data:
+        entity_id: input_text.editing_preset_id
+        value: "wedding_mode"
+    - event: load_light_preset
+      event_data:
+        preset_id: wedding_mode
+
+load_team_building_preset_for_edit:
+  alias: "Load Team Building Preset for Edit"
+  sequence:
+    - service: input_boolean.turn_on
+      target:
+        entity_id: input_boolean.is_editing_mode
+    - service: input_text.set_value
+      data:
+        entity_id: input_text.editing_preset_id
+        value: "team_building"
+    - event: load_light_preset
+      event_data:
+        preset_id: team_building
+
+load_birthday_preset_for_edit:
+  alias: "Load Birthday Party Preset for Edit"
+  sequence:
+    - service: input_boolean.turn_on
+      target:
+        entity_id: input_boolean.is_editing_mode
+    - service: input_text.set_value
+      data:
+        entity_id: input_text.editing_preset_id
+        value: "birthday_party"
+    - event: load_light_preset
+      event_data:
+        preset_id: birthday_party
+
+save_wedding_preset:
+  alias: "Save Wedding Mode"
+  sequence:
+    - service: persistent_notification.create
+      data:
+        title: "Saving Wedding Mode"
+        message: "Saving current settings as wedding mode..."
+    - variables:
+        current_presets_json: "{{ states('input_text.light_presets') }}"
+    - choose:
+      - conditions:
+          - condition: template
+            value_template: "{{ current_presets_json != '' and current_presets_json|trim != 'unknown' }}"
+        sequence:
+          - variables:
+              current_presets: "{{ current_presets_json|from_json }}"
+              updated_presets: >
+                {% set presets = current_presets_json|from_json %}
+                {% set preset_data = {
+                  'name': 'Poročni Način',
+                  'rgb_color': [
+                    states('input_number.edit_mode_red')|int,
+                    states('input_number.edit_mode_green')|int,
+                    states('input_number.edit_mode_blue')|int
+                  ],
+                  'brightness_pct': states('input_number.edit_mode_brightness')|int,
+                  'transition': 2,
+                  'description': 'Romantična topla svetloba'
+                } %}
+                {% set updated = presets %}
+                {% set x = updated.update({'wedding_mode': preset_data}) %}
+                {{ updated|to_json }}
+          - service: input_text.set_value
+            data:
+              entity_id: input_text.light_presets
+              value: "{{ updated_presets }}"
+      default:
+        - service: input_text.set_value
+          data:
+            entity_id: input_text.light_presets
+            value: >
+              {"wedding_mode":{"name":"Poročni Način","rgb_color":[{{ states('input_number.edit_mode_red')|int }},{{ states('input_number.edit_mode_green')|int }},{{ states('input_number.edit_mode_blue')|int }}],"brightness_pct":{{ states('input_number.edit_mode_brightness')|int }},"transition":2,"description":"Romantična topla svetloba"}}
+    - service: input_boolean.turn_off
+      target:
+        entity_id: input_boolean.is_editing_mode
+    # Update light mode values for immediate use
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_mode_red
+        value: "{{ states('input_number.edit_mode_red') }}"
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_mode_green
+        value: "{{ states('input_number.edit_mode_green') }}"
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_mode_blue
+        value: "{{ states('input_number.edit_mode_blue') }}"
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.light_mode_brightness
+        value: "{{ states('input_number.edit_mode_brightness') }}"
+    # Apply the changes to selected lights
+    - service: script.apply_custom_edit_to_selected
+    - service: persistent_notification.create
+      data:
+        title: "Preset Saved Successfully"
+        message: "Settings for wedding_mode have been saved."
+
+save_team_building_preset:
+  alias: "Save Team Building Mode"
+  sequence:
+    - event: save_light_preset
+      event_data:
+        preset_id: "team_building"
+        name: "Team Building"
+        red: "{{ states('input_number.edit_mode_red') | int }}"
+        green: "{{ states('input_number.edit_mode_green') | int }}"
+        blue: "{{ states('input_number.edit_mode_blue') | int }}"
+        brightness: "{{ states('input_number.edit_mode_brightness') | int }}"
+        description: "Svetla, energična osvetlitev"
+    - service: input_boolean.turn_off
+      target:
+        entity_id: input_boolean.is_editing_mode
+    # Apply the changes
+    - service: script.apply_custom_edit_to_selected
+
+save_birthday_preset:
+  alias: "Save Birthday Party Mode"
+  sequence:
+    - event: save_light_preset
+      event_data:
+        preset_id: "birthday_party"
+        name: "Rojstnodnevna Zabava"
+        red: "{{ states('input_number.edit_mode_red') | int }}"
+        green: "{{ states('input_number.edit_mode_green') | int }}"
+        blue: "{{ states('input_number.edit_mode_blue') | int }}"
+        brightness: "{{ states('input_number.edit_mode_brightness') | int }}"
+        description: "Praznična barvna osvetlitev"
+    - service: input_boolean.turn_off
+      target:
+        entity_id: input_boolean.is_editing_mode
+    # Apply the changes
+    - service: script.apply_custom_edit_to_selected
+
+apply_custom_edit_to_selected:
+  alias: "Apply Edited Mode to Selected Lights"
+  sequence:
+    - service: light.turn_on
+      data:
+        entity_id: >
+          {% set selected = [] %}
+          {% if is_state('input_boolean.select_light_one', 'on') %}
+            {% set selected = selected + ['light.fake_light_one'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_two', 'on') %}
+            {% set selected = selected + ['light.fake_light_two'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_three', 'on') %}
+            {% set selected = selected + ['light.fake_light_three'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_four', 'on') %}
+            {% set selected = selected + ['light.fake_light_four'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_five', 'on') %}
+            {% set selected = selected + ['light.fake_light_five'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_six', 'on') %}
+            {% set selected = selected + ['light.fake_light_six'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_seven', 'on') %}
+            {% set selected = selected + ['light.fake_light_seven'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_eight', 'on') %}
+            {% set selected = selected + ['light.fake_light_eight'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_nine', 'on') %}
+            {% set selected = selected + ['light.fake_light_nine'] %}
+          {% endif %}
+          {{ selected }}
+        brightness_pct: "{{ states('input_number.edit_mode_brightness') | int }}"
+        rgb_color: 
+          - "{{ states('input_number.edit_mode_red') | int }}"
+          - "{{ states('input_number.edit_mode_green') | int }}"
+          - "{{ states('input_number.edit_mode_blue') | int }}"
+        transition: 2
+
+save_current_preset:
+  alias: "Save Current Preset"
+  sequence:
+    - event: save_light_preset
+      event_data:
+        preset_id: "{{ states('input_text.editing_preset_id') }}"
+        name: >
+          {% if states('input_text.editing_preset_id') == 'wedding_mode' %}
+            Poročni Način
+          {% elif states('input_text.editing_preset_id') == 'team_building' %}
+            Team Building
+          {% elif states('input_text.editing_preset_id') == 'birthday_party' %}
+            Rojstnodnevna Zabava
+          {% else %}
+            {{ states('input_text.editing_preset_id').replace('_', ' ') | title }}
+          {% endif %}
+        description: >
+          {% if states('input_text.editing_preset_id') == 'wedding_mode' %}
+            Romantična topla svetloba
+          {% elif states('input_text.editing_preset_id') == 'team_building' %}
+            Svetla, energična osvetlitev
+          {% elif states('input_text.editing_preset_id') == 'birthday_party' %}
+            Praznična barvna osvetlitev
+          {% else %}
+            Prilagojena osvetlitev
+          {% endif %}
+        red: "{{ states('input_number.edit_mode_red') | int }}"
+        green: "{{ states('input_number.edit_mode_green') | int }}"
+        blue: "{{ states('input_number.edit_mode_blue') | int }}"
+        brightness: "{{ states('input_number.edit_mode_brightness') | int }}"
+    - service: input_boolean.turn_off
+      target:
+        entity_id: input_boolean.is_editing_mode
+    - service: persistent_notification.create
+      data:
+        title: "Preset Saved Successfully"
+        message: "Settings for {{ states('input_text.editing_preset_id') }} have been saved."
+
+reset_edited_preset:
+  alias: "Reset Edited Preset"
+  sequence:
+    - event: load_light_preset
+      event_data:
+        preset_id: "{{ states('input_text.editing_preset_id') }}"
+
+apply_romantic_mode_to_individual_light:
+  alias: "Apply Romantic Mode to Individual Light"
+  fields:
+    light_entity:
+      description: "The light entity to control"
+      example: "light.fake_light_one"
+    presence_entity:
+      description: "The presence sensor entity"
+      example: "input_boolean.fake_light_one_presence"
+  sequence:
+    - variables:
+        light_entity: "{{ light_entity }}"
+        presence_entity: "{{ presence_entity }}"
+    - choose:
+        # If light is already in romantic mode, turn it to normal
+        - conditions:
+            - condition: template
+              value_template: >
+                {{ 
+                  is_state(light_entity, 'on') and 
+                  state_attr(light_entity, 'rgb_color') == [255, 147, 141] and
+                  (state_attr(light_entity, 'brightness')|int / 255 * 100) | round == 40
+                }}
+          sequence:
+            # Turn back to normal lighting
+            - service: light.turn_on
+              data:
+                entity_id: "{{ light_entity }}"
+                brightness_pct: 100
+                transition: 2
+            - service: persistent_notification.create
+              data:
+                title: "Romantic Mode Disabled"
+                message: "{{ state_attr(light_entity, 'friendly_name') }} returned to normal lighting"
+      default:
+        # Apply romantic mode
+        - service: light.turn_on
+          data:
+            entity_id: "{{ light_entity }}"
+            brightness_pct: 40
+            rgb_color: [255, 147, 141]
+            transition: 2
+        - service: persistent_notification.create
+          data:
+            title: "Romantic Mode Applied"
+            message: "{{ state_attr(light_entity, 'friendly_name') }} set to romantic mode. Will auto-disable after 5 minutes of no presence."
+
+turn_off_jazz_scene:
+  alias: "Turn Off Jazz Scene"
+  sequence:
+    - service: light.turn_off
+      target:
+        entity_id:
+          - light.fake_light_one
+          - light.fake_light_two
+          - light.fake_light_four
+          - light.fake_light_six
+
+turn_off_obhajilo_scene:
+  alias: "Turn Off Obhajilo Scene"
+  sequence:
+    - service: light.turn_off
+      target:
+        entity_id:
+          - light.fake_light_six
+          - light.fake_light_seven
+          - light.fake_light_eight
+          - light.fake_light_nine
+
+turn_off_scene_lights:
+  alias: "Turn Off Scene Lights"
+  fields:
+    entity_id:
+      description: "Comma-separated list of light entities to turn off"
+      example: "light.fake_light_one,light.fake_light_two"
+  sequence:
+    - service: light.turn_off
+      target:
+        entity_id: "{{ entity_id.split(',') }}"
+
+toggle_jazz_scene:
+  alias: "Toggle Jazz Mode Scene"
+  sequence:
+    - choose:
+        # Check if Jazz Mode is active by checking if the lights are on with the right color
+        - conditions:
+            - condition: and
+              conditions:
+                - condition: state
+                  entity_id: light.fake_light_one
+                  state: 'on'
+                - condition: state
+                  entity_id: light.fake_light_two
+                  state: 'on'
+                - condition: state
+                  entity_id: light.fake_light_four
+                  state: 'on'
+                - condition: state
+                  entity_id: light.fake_light_six
+                  state: 'on'
+                - condition: template
+                  value_template: >
+                    {% set rgb = state_attr('light.fake_light_one', 'rgb_color')|default([0,0,0]) %}
+                    {{ rgb[0] >= 30 and rgb[0] <= 70 and rgb[1] >= 80 and rgb[1] <= 130 and rgb[2] >= 220 and rgb[2] <= 255 }}
+          sequence:
+            # If Jazz Mode is active, turn off the lights
+            - service: script.turn_on
+              target:
+                entity_id: script.turn_off_jazz_scene
+      default:
+        # If Jazz Mode is not active, turn it on
+        - service: scene.turn_on
+          data:
+            entity_id: scene.jazz_mode
+
+toggle_obhajilo_scene:
+  alias: "Toggle Obhajilo Scene"
+  sequence:
+    - choose:
+        # Check if Obhajilo is active by checking if the lights are on with the right color
+        - conditions:
+            - condition: and
+              conditions:
+                - condition: state
+                  entity_id: light.fake_light_six
+                  state: 'on'
+                - condition: state
+                  entity_id: light.fake_light_seven
+                  state: 'on'
+                - condition: state
+                  entity_id: light.fake_light_eight
+                  state: 'on'
+                - condition: state
+                  entity_id: light.fake_light_nine
+                  state: 'on'
+                - condition: template
+                  value_template: >
+                    {% set rgb = state_attr('light.fake_light_six', 'rgb_color')|default([0,0,0]) %}
+                    {{ rgb[0] == 255 and rgb[1] == 223 and rgb[2] == 180 }}
+          sequence:
+            # If Obhajilo is active, turn off the lights
+            - service: script.turn_on
+              target:
+                entity_id: script.turn_off_obhajilo_scene
+      default:
+        # If Obhajilo is not active, turn it on
+        - service: scene.turn_on
+          data:
+            entity_id: scene.obhajilo

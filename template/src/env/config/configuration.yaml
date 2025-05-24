@@ -1,0 +1,536 @@
+# Loads default set of integrations. Do not remove.
+default_config:
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 127.0.0.1
+    - ::1
+    - 172.17.0.1 
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+input_select:
+  illumination_mode:
+    name: Illumination Mode
+    options:
+      - High
+      - Medium
+      - Low
+      - Manual
+    initial: High
+  selected_table:
+    name: "Selected Table"
+    options:
+      - "Sekundarna Jedilnica (Leva)"
+      - "Primarna Jedilnica (Desna)"
+      - "Miza 1"
+      - "Miza 2"
+      - "Miza 3"
+      - "Miza 4"
+      - "Jedilnica D2"
+      - "Jedilnica D3"
+      - "Jedilnica D4"
+      - "Jedilnica D5"
+    initial: "Miza 1"
+    icon: mdi:table-chair
+
+input_number:
+  fake_co2_sensor:
+    name: "Fake CO₂ Sensor"
+    initial: 800
+    min: 400
+    max: 2000
+    step: 10
+  custom_mode_red:
+    name: "Red Value"
+    initial: 255
+    min: 0
+    max: 255
+    step: 1
+    icon: mdi:palette
+  custom_mode_green:
+    name: "Green Value"
+    initial: 200
+    min: 0
+    max: 255
+    step: 1
+    icon: mdi:palette
+  custom_mode_blue:
+    name: "Blue Value"
+    initial: 200
+    min: 0
+    max: 255
+    step: 1
+    icon: mdi:palette
+  custom_mode_brightness:
+    name: "Brightness"
+    initial: 70
+    min: 10
+    max: 100
+    step: 5
+    unit_of_measurement: "%"
+    icon: mdi:brightness-6
+  light_mode_red:
+    name: "Red Value"
+    initial: 255
+    min: 0
+    max: 255
+    step: 1
+    icon: mdi:palette
+  light_mode_green:
+    name: "Green Value"
+    initial: 150
+    min: 0
+    max: 255
+    step: 1
+    icon: mdi:palette
+  light_mode_blue:
+    name: "Blue Value"
+    initial: 150
+    min: 0
+    max: 255
+    step: 1
+    icon: mdi:palette
+  light_mode_brightness:
+    name: "Brightness"
+    initial: 70
+    min: 10
+    max: 100
+    step: 5
+    unit_of_measurement: "%"
+    icon: mdi:brightness-6
+
+input_boolean:
+  illumination_auto_enabled:
+    name: Illumination Automation Enabled
+    initial: on
+  fake_light_one_presence:
+    name: "Presence: Light One"
+  fake_light_two_presence:
+    name: "Presence: Light Two"
+  fake_light_three_presence:
+    name: "Presence: Light Three"
+  fake_light_four_presence:
+    name: "Presence: Light Four"
+  fake_light_five_presence:
+    name: "Presence: Light Five"
+  select_light_one:
+    name: "Select: Sekundarna Jedilnica (Leva)"
+    initial: off
+    icon: mdi:checkbox-marked-circle-outline
+  select_light_two:
+    name: "Select: Miza L1"
+    initial: off
+    icon: mdi:checkbox-marked-circle-outline
+  select_light_three:
+    name: "Select: Miza L2"
+    initial: off
+    icon: mdi:checkbox-marked-circle-outline
+  select_light_four:
+    name: "Select: Miza L3"
+    initial: off
+    icon: mdi:checkbox-marked-circle-outline
+  select_light_five:
+    name: "Select: Miza L4"
+    initial: off
+    icon: mdi:checkbox-marked-circle-outline
+  select_light_six:
+    name: "Select: Primarna Jedilnica"
+    initial: off
+    icon: mdi:checkbox-marked-circle-outline
+  select_light_seven:
+    name: "Select: Miza D1"
+    initial: off
+    icon: mdi:checkbox-marked-circle-outline
+  select_light_eight:
+    name: "Select: Miza D2"
+    initial: off
+    icon: mdi:checkbox-marked-circle-outline
+  select_light_nine:
+    name: "Select: Miza D3"
+    initial: off
+    icon: mdi:checkbox-marked-circle-outline
+  active_wedding_mode:
+    name: "Wedding Mode Active"
+    initial: off
+    icon: mdi:heart-multiple
+  active_team_building_mode: 
+    name: "Team Building Mode Active"
+    initial: off
+    icon: mdi:account-group
+  active_birthday_party_mode:
+    name: "Birthday Party Mode Active" 
+    initial: off
+    icon: mdi:cake-variant
+  active_romantic_mode:
+    name: "Romantic Mode Active"
+    initial: off
+    icon: mdi:heart
+
+sensor:
+  - platform: template
+    sensors:
+      co2_level:
+        friendly_name: "CO₂ Level"
+        unit_of_measurement: 'ppm'
+        value_template: "{{ states('input_number.fake_co2_sensor') | int }}"
+      wedding_mode_lights:
+        friendly_name: "Wedding Mode Lights"
+        value_template: >-
+          {% set lights = [] %}
+          {% if is_state('input_boolean.active_wedding_mode', 'on') %}
+            {% if is_state('input_boolean.select_light_one', 'on') %}
+              {% set lights = lights + ['Sekundarna Jedilnica'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_two', 'on') %}
+              {% set lights = lights + ['Miza L1'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_three', 'on') %}
+              {% set lights = lights + ['Miza L2'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_four', 'on') %}
+              {% set lights = lights + ['Miza L3'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_five', 'on') %}
+              {% set lights = lights + ['Miza L4'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_six', 'on') %}
+              {% set lights = lights + ['Primarna Jedilnica'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_seven', 'on') %}
+              {% set lights = lights + ['Miza D1'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_eight', 'on') %}
+              {% set lights = lights + ['Miza D2'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_nine', 'on') %}
+              {% set lights = lights + ['Miza D3'] %}
+            {% endif %}
+          {% endif %}
+          {{ lights|join(', ') if lights else 'None' }}
+      team_building_mode_lights:
+        friendly_name: "Team Building Mode Lights"
+        value_template: >-
+          {% set lights = [] %}
+          {% if is_state('input_boolean.active_team_building_mode', 'on') %}
+            {% if is_state('input_boolean.select_light_one', 'on') %}
+              {% set lights = lights + ['Sekundarna Jedilnica'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_two', 'on') %}
+              {% set lights = lights + ['Miza L1'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_three', 'on') %}
+              {% set lights = lights + ['Miza L2'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_four', 'on') %}
+              {% set lights = lights + ['Miza L3'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_five', 'on') %}
+              {% set lights = lights + ['Miza L4'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_six', 'on') %}
+              {% set lights = lights + ['Primarna Jedilnica'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_seven', 'on') %}
+              {% set lights = lights + ['Miza D1'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_eight', 'on') %}
+              {% set lights = lights + ['Miza D2'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_nine', 'on') %}
+              {% set lights = lights + ['Miza D3'] %}
+            {% endif %}
+          {% endif %}
+          {{ lights|join(', ') if lights else 'None' }}
+      birthday_party_mode_lights:
+        friendly_name: "Birthday Party Mode Lights"
+        value_template: >-
+          {% set lights = [] %}
+          {% if is_state('input_boolean.active_birthday_party_mode', 'on') %}
+            {% if is_state('input_boolean.select_light_one', 'on') %}
+              {% set lights = lights + ['Sekundarna Jedilnica'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_two', 'on') %}
+              {% set lights = lights + ['Miza L1'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_three', 'on') %}
+              {% set lights = lights + ['Miza L2'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_four', 'on') %}
+              {% set lights = lights + ['Miza L3'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_five', 'on') %}
+              {% set lights = lights + ['Miza L4'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_six', 'on') %}
+              {% set lights = lights + ['Primarna Jedilnica'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_seven', 'on') %}
+              {% set lights = lights + ['Miza D1'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_eight', 'on') %}
+              {% set lights = lights + ['Miza D2'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_nine', 'on') %}
+              {% set lights = lights + ['Miza D3'] %}
+            {% endif %}
+          {% endif %}
+          {{ lights|join(', ') if lights else 'None' }}
+      selected_lights:
+        friendly_name: "Selected Lights"
+        value_template: >-
+          {% set lights = [] %}
+          {% if is_state('input_boolean.select_light_one', 'on') %}
+            {% set lights = lights + ['Sekundarna Jedilnica'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_two', 'on') %}
+            {% set lights = lights + ['Miza L1'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_three', 'on') %}
+            {% set lights = lights + ['Miza L2'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_four', 'on') %}
+            {% set lights = lights + ['Miza L3'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_five', 'on') %}
+            {% set lights = lights + ['Miza L4'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_six', 'on') %}
+            {% set lights = lights + ['Primarna Jedilnica'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_seven', 'on') %}
+            {% set lights = lights + ['Miza D1'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_eight', 'on') %}
+            {% set lights = lights + ['Miza D2'] %}
+          {% endif %}
+          {% if is_state('input_boolean.select_light_nine', 'on') %}
+            {% set lights = lights + ['Miza D3'] %}
+          {% endif %}
+          {{ lights|join(', ') if lights else 'None selected' }}
+      light_one_mode:
+        friendly_name: "Light One Mode"
+        value_template: >-
+          {% if is_state('light.fake_light_one', 'on') %}
+            {% set rgb = state_attr('light.fake_light_one', 'rgb_color') %}
+            {% if rgb and rgb[0] == 255 and rgb[1] == 150 and rgb[2] == 150 %}
+              Poročni Način
+            {% elif rgb and rgb[0] == 100 and rgb[1] == 150 and rgb[2] == 255 %}
+              Team Building
+            {% elif rgb and rgb[0] == 255 and rgb[1] == 50 and rgb[2] == 200 %}
+              Rojstnodnevna Zabava
+            {% elif rgb and rgb[0] == 180 and rgb[1] == 80 and rgb[2] == 120 %}
+              Romantični Način
+            {% else %}
+              On
+            {% endif %}
+          {% else %}
+            Off
+          {% endif %}
+      
+      light_two_mode:
+        friendly_name: "Light Two Mode"
+        value_template: >-
+          {% if is_state('light.fake_light_two', 'on') %}
+            {% set rgb = state_attr('light.fake_light_two', 'rgb_color') %}
+            {% if rgb and rgb[0] == 255 and rgb[1] == 150 and rgb[2] == 150 %}
+              Poročni Način
+            {% elif rgb and rgb[0] == 100 and rgb[1] == 150 and rgb[2] == 255 %}
+              Team Building
+            {% elif rgb and rgb[0] == 255 and rgb[1] == 50 and rgb[2] == 200 %}
+              Rojstnodnevna Zabava
+            {% elif rgb and rgb[0] == 180 and rgb[1] == 80 and rgb[2] == 120 %}
+              Romantični Način
+            {% else %}
+              On
+            {% endif %}
+          {% else %}
+            Off
+          {% endif %}
+      
+      light_three_mode:
+        friendly_name: "Light Three Mode"
+        value_template: >-
+          {% if is_state('light.fake_light_three', 'on') %}
+            {% set rgb = state_attr('light.fake_light_three', 'rgb_color') %}
+            {% if rgb and rgb[0] == 255 and rgb[1] == 150 and rgb[2] == 150 %}
+              Poročni Način
+            {% elif rgb and rgb[0] == 100 and rgb[1] == 150 and rgb[2] == 255 %}
+              Team Building
+            {% elif rgb and rgb[0] == 255 and rgb[1] == 50 and rgb[2] == 200 %}
+              Rojstnodnevna Zabava
+            {% elif rgb and rgb[0] == 180 and rgb[1] == 80 and rgb[2] == 120 %}
+              Romantični Način
+            {% else %}
+              On
+            {% endif %}
+          {% else %}
+            Off
+          {% endif %}
+      
+      light_four_mode:
+        friendly_name: "Light Four Mode"
+        value_template: >-
+          {% if is_state('light.fake_light_four', 'on') %}
+            {% set rgb = state_attr('light.fake_light_four', 'rgb_color') %}
+            {% if rgb and rgb[0] == 255 and rgb[1] == 150 and rgb[2] == 150 %}
+              Poročni Način
+            {% elif rgb and rgb[0] == 100 and rgb[1] == 150 and rgb[2] == 255 %}
+              Team Building
+            {% elif rgb and rgb[0] == 255 and rgb[1] == 50 and rgb[2] == 200 %}
+              Rojstnodnevna Zabava
+            {% elif rgb and rgb[0] == 180 and rgb[1] == 80 and rgb[2] == 120 %}
+              Romantični Način
+            {% else %}
+              On
+            {% endif %}
+          {% else %}
+            Off
+          {% endif %}
+      
+      light_five_mode:
+        friendly_name: "Light Five Mode"
+        value_template: >-
+          {% if is_state('light.fake_light_five', 'on') %}
+            {% set rgb = state_attr('light.fake_light_five', 'rgb_color') %}
+            {% if rgb and rgb[0] == 255 and rgb[1] == 150 and rgb[2] == 150 %}
+              Poročni Način
+            {% elif rgb and rgb[0] == 100 and rgb[1] == 150 and rgb[2] == 255 %}
+              Team Building
+            {% elif rgb and rgb[0] == 255 and rgb[1] == 50 and rgb[2] == 200 %}
+              Rojstnodnevna Zabava
+            {% elif rgb and rgb[0] == 180 and rgb[1] == 80 and rgb[2] == 120 %}
+              Romantični Način
+            {% else %}
+              On
+            {% endif %}
+          {% else %}
+            Off
+          {% endif %}
+      
+      light_six_mode:
+        friendly_name: "Light Six Mode"
+        value_template: >-
+          {% if is_state('light.fake_light_six', 'on') %}
+            {% set rgb = state_attr('light.fake_light_six', 'rgb_color') %}
+            {% if rgb and rgb[0] == 255 and rgb[1] == 150 and rgb[2] == 150 %}
+              Poročni Način
+            {% elif rgb and rgb[0] == 100 and rgb[1] == 150 and rgb[2] == 255 %}
+              Team Building
+            {% elif rgb and rgb[0] == 255 and rgb[1] == 50 and rgb[2] == 200 %}
+              Rojstnodnevna Zabava
+            {% elif rgb and rgb[0] == 180 and rgb[1] == 80 and rgb[2] == 120 %}
+              Romantični Način
+            {% else %}
+              On
+            {% endif %}
+          {% else %}
+            Off
+          {% endif %}
+      
+      light_seven_mode:
+        friendly_name: "Light Seven Mode"
+        value_template: >-
+          {% if is_state('light.fake_light_seven', 'on') %}
+            {% set rgb = state_attr('light.fake_light_seven', 'rgb_color') %}
+            {% if rgb and rgb[0] == 255 and rgb[1] == 150 and rgb[2] == 150 %}
+              Poročni Način
+            {% elif rgb and rgb[0] == 100 and rgb[1] == 150 and rgb[2] == 255 %}
+              Team Building
+            {% elif rgb and rgb[0] == 255 and rgb[1] == 50 and rgb[2] == 200 %}
+              Rojstnodnevna Zabava
+            {% elif rgb and rgb[0] == 180 and rgb[1] == 80 and rgb[2] == 120 %}
+              Romantični Način
+            {% else %}
+              On
+            {% endif %}
+          {% else %}
+            Off
+          {% endif %}
+      
+      light_eight_mode:
+        friendly_name: "Light Eight Mode"
+        value_template: >-
+          {% if is_state('light.fake_light_eight', 'on') %}
+            {% set rgb = state_attr('light.fake_light_eight', 'rgb_color') %}
+            {% if rgb and rgb[0] == 255 and rgb[1] == 150 and rgb[2] == 150 %}
+              Poročni Način
+            {% elif rgb and rgb[0] == 100 and rgb[1] == 150 and rgb[2] == 255 %}
+              Team Building
+            {% elif rgb and rgb[0] == 255 and rgb[1] == 50 and rgb[2] == 200 %}
+              Rojstnodnevna Zabava
+            {% elif rgb and rgb[0] == 180 and rgb[1] == 80 and rgb[2] == 120 %}
+              Romantični Način
+            {% else %}
+              On
+            {% endif %}
+          {% else %}
+            Off
+          {% endif %}
+      
+      light_nine_mode:
+        friendly_name: "Light Nine Mode"
+        value_template: >-
+          {% if is_state('light.fake_light_nine', 'on') %}
+            {% set rgb = state_attr('light.fake_light_nine', 'rgb_color') %}
+            {% if rgb and rgb[0] == 255 and rgb[1] == 150 and rgb[2] == 150 %}
+              Poročni Način
+            {% elif rgb and rgb[0] == 100 and rgb[1] == 150 and rgb[2] == 255 %}
+              Team Building
+            {% elif rgb and rgb[0] == 255 and rgb[1] == 50 and rgb[2] == 200 %}
+              Rojstnodnevna Zabava
+            {% elif rgb and rgb[0] == 180 and rgb[1] == 80 and rgb[2] == 120 %}
+              Romantični Način
+            {% else %}
+              On
+            {% endif %}
+          {% else %}
+            Off
+          {% endif %}
+      romantic_mode_lights:
+        friendly_name: "Romantic Mode Lights"
+        value_template: >-
+          {% set lights = [] %}
+          {% if is_state('input_boolean.active_romantic_mode', 'on') %}
+            {% if is_state('input_boolean.select_light_one', 'on') %}
+              {% set lights = lights + ['Sekundarna Jedilnica'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_two', 'on') %}
+              {% set lights = lights + ['Miza L1'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_three', 'on') %}
+              {% set lights = lights + ['Miza L2'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_four', 'on') %}
+              {% set lights = lights + ['Miza L3'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_five', 'on') %}
+              {% set lights = lights + ['Miza L4'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_six', 'on') %}
+              {% set lights = lights + ['Primarna Jedilnica'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_seven', 'on') %}
+              {% set lights = lights + ['Miza D1'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_eight', 'on') %}
+              {% set lights = lights + ['Miza D2'] %}
+            {% endif %}
+            {% if is_state('input_boolean.select_light_nine', 'on') %}
+              {% set lights = lights + ['Miza D3'] %}
+            {% endif %}
+          {% endif %}
+          {{ lights|join(', ') if lights else 'None' }}
+
+input_text:
+  custom_mode_name:
+    name: "Custom Mode Name"
+    initial: "New Mode"
+  light_mode_name:
+    name: "Mode Name"
+    initial: "Custom Mode"

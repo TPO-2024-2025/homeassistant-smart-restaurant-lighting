@@ -1,0 +1,137 @@
+version: 1
+devices:
+  test_lights:
+    - name: virtual_co2_sensor
+      platform: sensor
+      initial_value: 800
+      unit_of_measurement: ppm
+      device_class: carbon_dioxide
+
+    - name: fake_light_one
+      platform: light
+      initial_value: 'on'
+      support_brightness: true
+      initial_brightness: 100
+      support_color: true
+      initial_color: [0, 255]
+      support_color_temp: true
+      initial_color_temp: 255
+      support_white_value: true
+      initial_white_value: 240
+
+    - name: fake_light_two
+      platform: light
+      initial_value: 'on'
+      support_brightness: true
+      initial_brightness: 100
+      support_color: true
+      initial_color: [0, 255]
+      support_color_temp: true
+      initial_color_temp: 255
+      support_white_value: true
+      initial_white_value: 240
+
+    - name: fake_light_three
+      platform: light
+      initial_value: 'on'
+      support_brightness: true
+      initial_brightness: 100
+      support_color: true
+      initial_color: [0, 255]
+      support_color_temp: true
+      initial_color_temp: 255
+      support_white_value: true
+      initial_white_value: 240
+
+    - name: fake_light_four
+      platform: light
+      initial_value: 'on'
+      support_brightness: true
+      initial_brightness: 100
+      support_color: true
+      initial_color: [0, 255]
+      support_color_temp: true
+      initial_color_temp: 255
+      support_white_value: true
+      initial_white_value: 240
+
+    - name: fake_light_five
+      platform: light
+      initial_value: 'on'
+      support_brightness: true
+      initial_brightness: 100
+      support_color: true
+      initial_color: [0, 255]
+      support_color_temp: true
+      initial_color_temp: 255
+      support_white_value: true
+      initial_white_value: 240
+
+    - name: fake_light_six
+      platform: light
+      initial_value: 'on'
+      support_brightness: true
+      initial_brightness: 100
+      support_color: true
+      initial_color: [0, 255]
+      support_color_temp: true
+      initial_color_temp: 255
+      support_white_value: true
+      initial_white_value: 240
+
+    - name: fake_light_seven
+      platform: light
+      initial_value: 'on'
+      support_brightness: true
+      initial_brightness: 100
+      support_color: true
+      initial_color: [0, 255]
+      support_color_temp: true
+      initial_color_temp: 255
+      support_white_value: true
+      initial_white_value: 240
+
+    - name: fake_light_eight
+      platform: light
+      initial_value: 'on'
+      support_brightness: true
+      initial_brightness: 100
+      support_color: true
+      initial_color: [0, 255]
+      support_color_temp: true
+      initial_color_temp: 255
+      support_white_value: true
+      initial_white_value: 240
+
+    - name: fake_light_nine
+      platform: light
+      initial_value: 'on'
+      support_brightness: true
+      initial_brightness: 100
+      support_color: true
+      initial_color: [0, 255]
+      support_color_temp: true
+      initial_color_temp: 255
+      support_white_value: true
+      initial_white_value: 240
+
+
+    - name: signal_light
+      platform: light
+      initial_value: 'off'
+      support_brightness: true
+      initial_brightness: 255
+      support_color: true
+      initial_color: [255, 102, 102]
+
+    - name: signal_light_two
+      platform: light
+      initial_value: 'on'
+      support_brightness: true
+      initial_brightness: 100
+      support_color: true
+      initial_color: [0, 255]
+      support_color_temp: true
+      initial_color_temp: 255
+      support_white_value: true
+      initial_white_value: 240

@@ -1,0 +1,23 @@
+wedding_mode:
+  name: "Poročni Način"
+  rgb_color: [255, 223, 223]
+  brightness_pct: 80
+  kelvin: 2700
+  transition: 2
+  description: "Romantična topla svetloba"
+
+team_building:
+  name: "Team Building"
+  rgb_color: [255, 255, 255]
+  brightness_pct: 100
+  kelvin: 4000
+  transition: 2
+  description: "Svetla, energična osvetlitev"
+
+birthday_party:
+  name: "Rojstnodnevna Zabava"
+  rgb_color: [255, 182, 193]
+  brightness_pct: 90
+  kelvin: 3000
+  transition: 2
+  description: "Praznična barvna osvetlitev"
